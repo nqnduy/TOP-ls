@@ -1,6 +1,6 @@
 import "antd/dist/antd.min.css";
-
 import Color from "plugins/utils/Color";
+
 
 const DefaultStyles = {
   fontFamily: "CerebriSans",

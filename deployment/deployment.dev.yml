@@ -1,18 +1,18 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: topliveshow-ns
+  name: topls-ns
   labels:
-    project: topliveshow-duy
+    project: topls-duy
 
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: topliveshow-duy-ingress
-  namespace: topliveshow-ns
+  name: topls-duy-ingress
+  namespace: topls-ns
   labels:
-    project: topliveshow-duy
+    project: topls-duy
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/proxy-body-size: 50m
@@ -25,11 +25,11 @@ spec:
     - host: dev1.digitop.vn
       http:
         paths:
-          - path: /topliveshow-duy
+          - path: /topls-duy
             pathType: Prefix
             backend:
               service:
-                name: topliveshow-duy-svc
+                name: topls-duy-svc
                 port:
                   number: 80
 
@@ -37,41 +37,41 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: topliveshow-duy-svc
-  namespace: topliveshow-ns
+  name: topls-duy-svc
+  namespace: topls-ns
   labels:
-    app: topliveshow-duy
-    project: topliveshow-duy
+    app: topls-duy
+    project: topls-duy
 spec:
   ports:
     - port: 80
       targetPort: 3000
   selector:
-    app: topliveshow-duy
+    app: topls-duy
   sessionAffinity: ClientIP
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: topliveshow-duy
-  namespace: topliveshow-ns
+  name: topls-duy
+  namespace: topls-ns
   labels:
-    project: topliveshow-duy
+    project: topls-duy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: topliveshow-duy
+      app: topls-duy
   template:
     metadata:
       labels:
-        app: topliveshow-duy
-        project: topliveshow-duy
+        app: topls-duy
+        project: topls-duy
     spec:
       containers:
-        - name: topliveshow-duy
-          image: 'asia.gcr.io/top-group-k8s/topliveshow-duy:2022-05-17-18-49-12'
+        - name: topls-duy
+          image: 'asia.gcr.io/top-group-k8s/topls-duy:2022-05-17-18-39-33'
           ports:
             - containerPort: 3000
           resources: {}
@@ -79,13 +79,13 @@ spec:
             - name: NEXT_PUBLIC_ENV
               value: development
             - name: NEXT_PUBLIC_BASE_PATH
-              value: topliveshow-duy
+              value: topls-duy
             - name: NEXT_PUBLIC_API_BASE_PATH
-              value: 'https://dev1.digitop.vn/topliveshow-duy/backend'
+              value: 'https://dev1.digitop.vn/topls-duy/backend'
             - name: NEXT_PUBLIC_CDN_BASE_PATH
-              value: 'https://google-cdn.digitop.vn/topliveshow-duy/dev'
+              value: 'https://google-cdn.digitop.vn/topls-duy/dev'
             - name: NEXT_PUBLIC_BASE_URL
-              value: 'https://dev1.digitop.vn/topliveshow-duy'
+              value: 'https://dev1.digitop.vn/topls-duy'
             - name: IRON_SESSION_SECRET
               value: SHPfrs9nuSdutAw2mn8trxCVG93YVGVR
 

@@ -1,7 +1,7 @@
-import { Collapse, Select } from "antd";
-import { Input, TextArea, InputSelect } from "@/diginext/form/Form";
-import { HorizontalList, ListItem, ListItemSize } from "@/diginext/layout/ListLayout";
 import AdminButton, { ButtonSize, ButtonType } from "@/dashkit/Buttons";
+import { Input, InputSelect } from "@/diginext/form/Form";
+import { ListItem } from "@/diginext/layout/ListLayout";
+import { Collapse, Select } from "antd";
 import { useRef } from "react";
 const { Panel } = Collapse;
 const { Option } = Select;
@@ -27,7 +27,7 @@ const SectionDefault2 = (props) => {
                             return(
                                 <Select.Option key={`SectionBox_${props.locale}${index}`} value={index + 1}>{name}</Select.Option>
                             )
-                        })}                            
+                        })}
                     </InputSelect>
                 </ListItem>
                 <AdminButton

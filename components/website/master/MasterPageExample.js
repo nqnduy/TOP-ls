@@ -1,16 +1,14 @@
-import Head from "next/head";
-import Header from "components/website/elements/Header";
-import CONFIG from "web.config";
-import { useRouter } from "next/router";
-import BasicLayout from "components/diginext/layout/BasicLayout";
-import { BS } from "components/diginext/elements/Splitters";
-import asset from "plugins/assets/asset";
 import { NextSeo } from "next-seo";
-import GlobalStyle from "styles/global";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import asset from "plugins/assets/asset";
 import { useNextResponsive } from "plugins/next-reponsive";
+import GlobalStyle from "styles/global";
+import CONFIG from "web.config";
+import Footer from "../elements/Footer";
 import GtagScript from "../tracking/GtagScript";
 
-function MasterPageExample({ pageName, children, header, hidePrevButton = false, hideFooter = false }) {
+function MasterPageExample({ pageName, children, hidePrevButton = false, hideFooter = false }) {
 	const router = useRouter();
 	const { device, breakpoint, orientation } = useNextResponsive();
 
@@ -45,22 +43,13 @@ function MasterPageExample({ pageName, children, header, hidePrevButton = false,
 			{/* TRACKING SCRIPTS - CHANGE THE ID TO THE CORRECT ONE*/}
 			<GtagScript id="G-EE9VED6EC3" />
 
-			{/* - STYLE OF THE WEBSITE - 
+			{/* - STYLE OF THE WEBSITE -
       		USE THIS COMPONENT TO AVOID CSS CONFLICTED WITH ADMIN PANEL */}
 			<GlobalStyle />
-
 			<main className={[device, orientation, breakpoint].join(" ")}>
-				<BasicLayout padding="50px">
-					<Header hideButtons={hidePrevButton}>{header}</Header>
-					<hr />
-					<BS size={40} />
-
 					{children}
-
-					<BS size={40} />
-					<hr />
-				</BasicLayout>
 			</main>
+			<Footer/>
 		</>
 	);
 }

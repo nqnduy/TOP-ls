@@ -1,0 +1,19 @@
+$purple-cl-tx: #b8b7d0;
+$blue-cl-tx: #20ade4;
+$pink-cl-tx: #e71882;
+$main-cl-tx: #060070;
+$container-max-width: 100%;
+$container-width: 1170px;
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 400px;
+$xs-min: 768px;
+$sm-min: 992px;
+$md-min: 1200px;
+$lg-min: 1600px;
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop

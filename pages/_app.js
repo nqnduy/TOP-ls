@@ -2,7 +2,6 @@
  * !!!!!!!!! IMPORTANT !!!!!!!!!
  * DO NOT ADD GLOBAL CSS HERE
  */
-
 function MyApp({ Component, pageProps }) {
 	return <Component {...pageProps} />;
 }
