@@ -1,0 +1,35 @@
+{
+  "isDebugging": false,
+  "framework": "diginext",
+  "git": {
+    "creator": "nqnduy",
+    "repoURL": "https://bitbucket.org/digitopvn/topliveshow-duy/src"
+  },
+  "env": "dev",
+  "shoudInherit": false,
+  "namespace": {
+    "dev": "topliveshow-ns",
+    "prod": "topliveshow-ns"
+  },
+  "ssl": true,
+  "username": "nqnduy",
+  "code": "sE7fTXAcHmvR4uDQKa",
+  "refreshToken": "mEgcnkvDXPhZBtfaFQ",
+  "projectSlug": "topliveshow-duy",
+  "remoteURL": "",
+  "projectName": "topliveshow-duy",
+  "diginext-cli": "1.0.2",
+  "domain": {
+    "staging": [],
+    "prod": []
+  },
+  "cdn": {
+    "dev": false,
+    "staging": false,
+    "prod": false
+  },
+  "pipeline": {
+    "prod": true
+  },
+  "version": "2.0.3"
+}
