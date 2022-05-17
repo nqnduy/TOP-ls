@@ -1,18 +1,18 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: topls-ns
+  name: topliveshow-ns
   labels:
-    project: topls-duy
+    project: topliveshow-duy
 
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: topls-duy-ingress
-  namespace: topls-ns
+  name: topliveshow-duy-ingress
+  namespace: topliveshow-ns
   labels:
-    project: topls-duy
+    project: topliveshow-duy
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/proxy-body-size: 50m
@@ -29,7 +29,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: topls-duy-svc
+                name: topliveshow-duy-svc
                 port:
                   number: 80
 
@@ -37,41 +37,41 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: topls-duy-svc
-  namespace: topls-ns
+  name: topliveshow-duy-svc
+  namespace: topliveshow-ns
   labels:
-    app: topls-duy
-    project: topls-duy
+    app: topliveshow-duy
+    project: topliveshow-duy
 spec:
   ports:
     - port: 80
       targetPort: 3000
   selector:
-    app: topls-duy
+    app: topliveshow-duy
   sessionAffinity: ClientIP
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: topls-duy
-  namespace: topls-ns
+  name: topliveshow-duy
+  namespace: topliveshow-ns
   labels:
-    project: topls-duy
+    project: topliveshow-duy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: topls-duy
+      app: topliveshow-duy
   template:
     metadata:
       labels:
-        app: topls-duy
-        project: topls-duy
+        app: topliveshow-duy
+        project: topliveshow-duy
     spec:
       containers:
-        - name: topls-duy
-          image: 'asia.gcr.io/top-group-k8s/topls-duy:2022-05-17-18-39-33'
+        - name: topliveshow-duy
+          image: 'asia.gcr.io/top-group-k8s/topliveshow-duy:2022-05-17-19-06-21'
           ports:
             - containerPort: 3000
           resources: {}
