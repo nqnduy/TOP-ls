@@ -21,7 +21,7 @@ const GlobalStyle = () => (
         }
         @font-face {
             font-family: "fm-r";
-            src: url("/fonts/SVN-GothamBook.woff2") format("woff2"), url("/fonts/SVN-GothamBook.woff") format("woff");
+            src: url("../public/fonts/SVN-GothamBook.woff2") format("woff2"), url("../public/fonts/SVN-GothamBook.woff") format("woff");
             font-weight: normal;
             font-style: normal;
             font-display: fallback;
@@ -29,7 +29,7 @@ const GlobalStyle = () => (
 
         @font-face {
             font-family: "fm-m";
-            src: url("/fonts/SVN-Gotham.woff2") format("woff2"), url("/fonts/SVN-Gotham.woff") format("woff");
+            src: url("../public/fonts/SVN-Gotham.woff2") format("woff2"), url("../public/fonts/SVN-Gotham.woff") format("woff");
             font-weight: 500;
             font-style: normal;
             font-display: fallback;
@@ -37,14 +37,14 @@ const GlobalStyle = () => (
 
         @font-face {
             font-family: "fm-b";
-            src: url("/fonts/SVN-GothamBold.woff2") format("woff2"), url("/fonts/SVN-GothamBold.woff") format("woff");
+            src: url("../public/fonts/SVN-GothamBold.woff2") format("woff2"), url("../public/fonts/SVN-GothamBold.woff") format("woff");
             font-weight: bold;
             font-style: normal;
             font-display: fallback;
         }
         @font-face {
             font-family: "fm-t";
-            src: url("/fonts/SVN-GothamLight.woff2") format("woff2"), url("/fonts/SVN-GothamLight.woff") format("woff");
+            src: url("../public/fonts/SVN-GothamLight.woff2") format("woff2"), url("../public/fonts/SVN-GothamLight.woff") format("woff");
             font-weight: 300;
             font-style: normal;
             font-display: fallback;
