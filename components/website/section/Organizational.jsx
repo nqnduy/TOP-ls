@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+import asset from "plugins/assets/asset";
 import React from "react";
 function Organizational() {
     return (
@@ -7,11 +9,11 @@ function Organizational() {
                     Organizational units
                 </h3>
                 <div className="Organizational__brands flexSB">
-                    <img src="/images/icons/snapit.svg" alt="" />
-                    <img src="/images/icons/digitop.svg" alt="" />
-                    <img src="/images/icons/topgroup.svg" alt="" />
-                    <img src="/images/icons/tops.svg" alt="" />
-                    <img src="/images/icons/topevent.svg" alt="" />
+                    <img src={asset("/images/icons/snapit.svg")} alt="" />
+                    <img src={asset("/images/icons/digitop.svg")} alt="" />
+                    <img src={asset("/images/icons/topgroup.svg")} alt="" />
+                    <img src={asset("/images/icons/tops.svg")} alt="" />
+                    <img src={asset("/images/icons/topevent.svg")} alt="" />
                 </div>
             </div>
             <style jsx>{`

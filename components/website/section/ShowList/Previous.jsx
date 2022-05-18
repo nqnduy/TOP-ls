@@ -1,4 +1,3 @@
-import asset from "@/plugins/assets/asset";
 import ArrowNext from "@/website/common/ArrowNext";
 import ArrowPrev from "@/website/common/ArrowPrev";
 import PreviousShowCard from "@/website/common/Card/PreviousShowCard";
@@ -65,12 +64,7 @@ function PreviousShowList() {
             <div className="PreviousShowList PLMain">
                 <Slider {...settings}>
                     {[...Array(6)].map((item, i) => (
-                        <PreviousShowCard
-                            key={i}
-                            active={index === i ? "active" : ""}
-                            image={asset("/images/prv1.png")}
-                            title="Live show"
-                            event="2"></PreviousShowCard>
+                        <PreviousShowCard key={i} active={index === i ? "active" : ""} image="/images/prv1.png" title="Live show" event="2"></PreviousShowCard>
                     ))}
                 </Slider>
             </div>

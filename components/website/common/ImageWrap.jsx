@@ -1,3 +1,4 @@
+import asset from "@/plugins/assets/asset";
 import React from "react";
 
 export default function ImageWrap({ src, gif, bora = "0px", ...props }) {
@@ -25,7 +26,7 @@ export default function ImageWrap({ src, gif, bora = "0px", ...props }) {
 
             <div className="ImageWrap">
                 <div style={{ background: `url(${src}) no-repeat center` }}></div>
-                <img src={gif} {...props} />
+                <img src={asset(gif)} {...props} />
             </div>
         </>
     );

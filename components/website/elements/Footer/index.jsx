@@ -1,4 +1,6 @@
-import Image from "next/image";
+import Logo from "@/common/Logo";
+import SocialGroup from "@/common/SocialGroup";
+import asset from "@/plugins/assets/asset";
 import Input from "./Input";
 function Footer() {
     return (
@@ -19,7 +21,7 @@ function Footer() {
                     </div>
                     <div className="Footer__navigate flexSB">
                         <div className="logo">
-                            <Image src="/images/icons/logo.svg" alt="Logo" width={107} height={40} />
+                            <Logo />
                         </div>
                         <ul className="menu flex" style={{ gap: 40 }}>
                             <li className="txMain normal fz-16">
@@ -41,23 +43,13 @@ function Footer() {
                     </div>
                     <div className="Footer__bottom flexSB">
                         <p className="txMain purple normal">©2022 Top Live Show. All rights reserved.</p>
-                        <div className="flexAC" style={{ gap: 25 }}>
-                            <div className="icon facebook">
-                                <Image src="/images/icons/facebook.svg" alt="Facebook" width={10} height={18} />
-                            </div>
-                            <div className="icon tiktok">
-                                <Image src="/images/icons/tiktok.svg" alt="Tiktok" width={15} height={18} />
-                            </div>
-                            <div className="icon youtube">
-                                <Image src="/images/icons/youtube.svg" alt="Youtube" width={20} height={14} />
-                            </div>
-                        </div>
+                        <SocialGroup />
                     </div>
                 </div>
             </footer>
             <style jsx global>{`
                 .backBannerFooter {
-                    background: url(/images/footer.png) no-repeat center center/cover;
+                    background: url(${asset("/images/footer.png")}) no-repeat center center/cover;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;

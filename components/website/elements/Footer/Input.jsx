@@ -1,10 +1,11 @@
+import asset from "@/plugins/assets/asset";
 function Input() {
     return (
         <>
             <form className="Input">
                 <input className="txMain normal" type="text" placeholder="Enter your email..." />
                 <button>
-                    <img src="/images/icons/sendfooter.svg" alt="" />
+                    <img src={asset("/images/icons/sendfooter.svg")} alt="" />
                 </button>
             </form>
             <style jsx>{`

@@ -1,3 +1,4 @@
+import asset from "@/plugins/assets/asset";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -30,7 +31,7 @@ function Header() {
                         <div className="language">
                             <div className="language-current">
                                 English
-                                <Image src="/images/icons/lang-arrow.svg" alt="lang-arrow" width={9.5} height={5.5} />
+                                <Image src={asset("/images/icons/lang-arrow.svg")} alt="lang-arrow" width={9.5} height={5.5} />
                             </div>
                             <div className="language-select hide">Việt Nam</div>
                         </div>
@@ -71,10 +72,10 @@ function Header() {
                     </ul>
                     <div className="action">
                         <div className="action-search">
-                            <Image src="/images/icons/search.svg" alt="search-icon" width={20} height={20} />
+                            <Image src={asset("/images/icons/search.svg")} alt="search-icon" width={20} height={20} />
                         </div>
                         <div className="action-user">
-                            <Image src="/images/icons/user.svg" alt="user-icon" width={16} height={20} />
+                            <Image src={asset("/images/icons/user.svg")} alt="user-icon" width={16} height={20} />
                         </div>
                     </div>
                 </div>

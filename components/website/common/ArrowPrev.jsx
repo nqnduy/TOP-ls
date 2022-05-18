@@ -1,3 +1,4 @@
+import asset from "@/plugins/assets/asset";
 const ArrowPrev = ({ currentSlide, slideCount, ...props }) => (
     <button
         {...props}
@@ -5,7 +6,7 @@ const ArrowPrev = ({ currentSlide, slideCount, ...props }) => (
         aria-hidden="true"
         aria-disabled={currentSlide === 0 ? true : false}
         type="button">
-        <img src="/images/icons/arrow-prev.svg" alt="" />
+        <img src={asset("/images/icons/arrow-prev.svg")} alt="" />
     </button>
 );
 
@@ -14,7 +15,7 @@ ArrowPrev.Paging = () => {
     return (
         <>
             <button className="btnPrev">
-                <img src="/images/icons/arrow-prev.svg" alt="" />
+                <img src={asset("/images/icons/arrow-prev.svg")} alt="" />
             </button>
             <style jsx>{`
                 .btnPrev {

@@ -1,3 +1,4 @@
+import asset from "@/plugins/assets/asset";
 const ArrowNext = ({ currentSlide, slideCount, ...props }) => (
     <button
         {...props}
@@ -5,7 +6,7 @@ const ArrowNext = ({ currentSlide, slideCount, ...props }) => (
         aria-hidden="true"
         aria-disabled={currentSlide === 0 ? true : false}
         type="button">
-        <img src="/images/icons/arrow-next.svg" alt="" />
+        <img src={asset("/images/icons/arrow-next.svg")} alt="" />
     </button>
 );
 
@@ -14,7 +15,7 @@ ArrowNext.Paging = () => {
     return (
         <>
             <button className="btnNext">
-                <img src="/images/icons/arrow-next.svg" alt="" />
+                <img src={asset("/images/icons/arrow-next.svg")} alt="" />
             </button>
             <style jsx>{`
                 .btnNext {

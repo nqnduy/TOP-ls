@@ -1,3 +1,4 @@
+import asset from "@/plugins/assets/asset";
 import Image from "next/image";
 import SearchBar from "./SearchBar";
 function HeroBanner({ searchBar }) {
@@ -7,28 +8,28 @@ function HeroBanner({ searchBar }) {
                 <div className="banner">
                     <div className="banner-title">
                         <div className="item1">
-                            <Image src="/images/phongtra1.png" alt="" width={229} height={28.5} layout="intrinsic" />
+                            <Image src={asset("/images/phongtra1.png")} alt="" width={229} height={28.5} layout="intrinsic" />
                         </div>
                         <div className="item2">
-                            <Image src="/images/title-banner.png" alt="" width={609} height={321} layout="intrinsic" />
+                            <Image src={asset("/images/title-banner.png")} alt="" width={609} height={321} layout="intrinsic" />
                         </div>
                         <div className="item3">
                             <div>
-                                <Image src="/images/time.png" alt="" width={137} height={47} layout="intrinsic" />
+                                <Image src={asset("/images/time.png")} alt="" width={137} height={47} layout="intrinsic" />
                             </div>
                             <div>
-                                <Image src="/images/location.png" alt="" width={185} height={55} layout="intrinsic" />
+                                <Image src={asset("/images/location.png")} alt="" width={185} height={55} layout="intrinsic" />
                             </div>
                         </div>
                     </div>
                     <div className="character">
-                        <img src="/images/character.png" alt="" />
+                        <img src={asset("/images/character.png")} alt="" />
                     </div>
                     <div className="pmc-name">
-                        <Image src="/images/pmc.png" alt="" width={186} height={116.28} layout="intrinsic" />
+                        <Image src={asset("/images/pmc.png")} alt="" width={186} height={116.28} layout="intrinsic" />
                     </div>
                     <div className="erik-name">
-                        <Image src="/images/erik-name.png" alt="" width={96} height={60} layout="intrinsic" />
+                        <Image src={asset("/images/erik-name.png")} alt="" width={96} height={60} layout="intrinsic" />
                     </div>
                 </div>
             </div>
@@ -44,7 +45,7 @@ function HeroBanner({ searchBar }) {
                     .banner {
                         width: 100%;
                         height: 80vh;
-                        background: url(/images/bg-banner.png) no-repeat center center/cover;
+                        background: url(${asset("/images/bg-banner.png")}) no-repeat center center/cover;
                         position: relative;
                         display: flex;
                         &-title {

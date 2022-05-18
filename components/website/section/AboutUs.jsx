@@ -1,6 +1,6 @@
+import asset from "@/plugins/assets/asset";
 import React from "react";
 import TextTitle from "../common/TextTitle";
-
 const AboutUs = (props) => {
     return (
         <div className="AboutUs">
@@ -32,14 +32,14 @@ const AboutUs = (props) => {
                 <div className="imgWrap">
                     <div className="flex" style={{ flexDirection: "column", alignItems: "flex-end" }}>
                         <div className="img img1">
-                            <img src="/images/aboutus1.png" alt="" />
+                            <img src={asset("/images/aboutus1.png")} alt="" />
                         </div>
                         <div className="img img2">
-                            <img src="/images/aboutus2.png" alt="" />
+                            <img src={asset("/images/aboutus2.png")} alt="" />
                         </div>
                     </div>
                     <div className="img img3">
-                        <img src="/images/aboutus3.png" alt="" />
+                        <img src={asset("/images/aboutus3.png")} alt="" />
                     </div>
                 </div>
             </div>

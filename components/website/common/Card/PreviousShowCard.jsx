@@ -1,3 +1,4 @@
+import asset from "plugins/assets/asset";
 import ButtonMain from "../Button/ButtonMain";
 import ButtonPlay from "../Button/ButtonPlay";
 
@@ -7,7 +8,7 @@ function PreviousShowCard({ image, title, event, active }) {
             <div className={`PreviousShowCard ${active}`}>
                 <div className="PreviousShowCard-content">
                     <div className="img">
-                        <img src={image} alt="Show Card" />
+                        <img src={asset(image)} alt="Show Card" />
                     </div>
                     <div className="layer"></div>
                     <div className="textWrapLayer flexSB">
