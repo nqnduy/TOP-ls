@@ -1,3 +1,4 @@
+import asset from '@/plugins/assets/asset';
 import "antd/dist/antd.min.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -12,16 +13,18 @@ const GlobalStyle = () => (
 
         @font-face {
             font-family: "ProximaNova";
-            src: url("../public/fonts/ProximaNovaRegular.eot");
-            src: url("../public/fonts/ProximaNovaRegular.eot") format("embedded-opentype"), url("../public/fonts/ProximaNovaRegular.woff2") format("woff2"),
-                url("../public/fonts/ProximaNovaRegular.woff") format("woff"), url("../public/fonts/ProximaNovaRegular.ttf") format("truetype"),
-                url("../public/fonts/ProximaNovaRegular.svg#ProximaNovaRegular") format("svg");
+            src: url(${asset("../public/fonts/ProximaNovaRegular.eot")});
+            src: url(${asset("../public/fonts/ProximaNovaRegular.eot")}) format("embedded-opentype"),
+                url(${asset("../public/fonts/ProximaNovaRegular.woff2")}) format("woff2"),
+                url(${asset("../public/fonts/ProximaNovaRegular.woff")}) format("woff"),
+                url(${asset("../public/fonts/ProximaNovaRegular.ttf")}) format("truetype"),
+                url(${asset("../public/fonts/ProximaNovaRegular.svg#ProximaNovaRegular")}) format("svg");
             font-style: normal;
             font-weight: normal;
         }
         @font-face {
             font-family: "fm-r";
-            src: url("../public/fonts/SVN-GothamBook.woff2") format("woff2"), url("../public/fonts/SVN-GothamBook.woff") format("woff");
+            src: url(${asset("/fonts/SVN-GothamBook.woff2")}) format("woff2"), url(${asset("/fonts/SVN-GothamBook.woff")}) format("woff");
             font-weight: normal;
             font-style: normal;
             font-display: fallback;
@@ -29,7 +32,7 @@ const GlobalStyle = () => (
 
         @font-face {
             font-family: "fm-m";
-            src: url("../public/fonts/SVN-Gotham.woff2") format("woff2"), url("../public/fonts/SVN-Gotham.woff") format("woff");
+            src: url(${asset("/fonts/SVN-Gotham.woff2")}) format("woff2"), url(${asset("/fonts/SVN-Gotham.woff")}) format("woff");
             font-weight: 500;
             font-style: normal;
             font-display: fallback;
@@ -37,14 +40,14 @@ const GlobalStyle = () => (
 
         @font-face {
             font-family: "fm-b";
-            src: url("../public/fonts/SVN-GothamBold.woff2") format("woff2"), url("../public/fonts/SVN-GothamBold.woff") format("woff");
+            src: url(${asset("/fonts/SVN-GothamBold.woff2")}) format("woff2"), url(${asset("/fonts/SVN-GothamBold.woff")}) format("woff");
             font-weight: bold;
             font-style: normal;
             font-display: fallback;
         }
         @font-face {
             font-family: "fm-t";
-            src: url("../public/fonts/SVN-GothamLight.woff2") format("woff2"), url("../public/fonts/SVN-GothamLight.woff") format("woff");
+            src: url(${asset("/fonts/SVN-GothamLight.woff2")}) format("woff2"), url(${asset("/fonts/SVN-GothamLight.woff")}) format("woff");
             font-weight: 300;
             font-style: normal;
             font-display: fallback;
