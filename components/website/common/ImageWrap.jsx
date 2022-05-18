@@ -25,7 +25,7 @@ export default function ImageWrap({ src, gif, bora = "0px", ...props }) {
             `}</style>
 
             <div className="ImageWrap">
-                <div style={{ background: `url(${src}) no-repeat center` }}></div>
+                <div style={{ background: `url(${asset(src)}) no-repeat center` }}></div>
                 <img src={asset(gif)} {...props} />
             </div>
         </>
