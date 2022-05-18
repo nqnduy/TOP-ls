@@ -13,7 +13,6 @@ export default function SocialGroup() {
             </div>
             <div className="SocialGroup__item youtube">
                 <Image src={asset("/images/icons/youtube.svg")} alt="Youtube" width={20} height={14} />
-                <Image src={asset("/images/icons/youtube.svg")} alt="Youtube" width={20} height={14} />
             </div>
             <style jsx>{`
                 .SocialGroup {
