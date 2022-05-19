@@ -16,13 +16,15 @@ function TextTitle({ small_text, big_text, textAlign = "initial" }) {
                     }
                 }
 
-                @media (max-width: 686px) {
+                @media (max-width: 820px) {
                     .TextTitle {
                         h3 {
-                            margin-bottom: 5px;
+                            margin-bottom: 8px;
                         }
                         h4 {
-                            font-size: 34px;
+                            font-size: 30px;
+                            line-height: 40px;
+                            margin-bottom: 24px;
                         }
                     }
                 }
@@ -33,7 +35,8 @@ function TextTitle({ small_text, big_text, textAlign = "initial" }) {
                             font-size: 13px;
                         }
                         h4 {
-                            font-size: 30px;
+                            font-size: 28px;
+                            margin-bottom: 19px;
                         }
                     }
                 }

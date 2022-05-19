@@ -116,8 +116,19 @@
         text-align: center;
     }
 }
+@mixin displayFlex($flexDirection: row, $alignItems: flex-start, $justifyContent) {
+    display: flex;
+    flex-direction: $flexDirection;
+    align-items: $alignItems;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
 .flex {
     display: flex;
+
+    &.jc-sb {
+        @include displayFlex(row, flex-start, space-between);
+    }
 }
 .flexAC {
     display: flex;

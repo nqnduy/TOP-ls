@@ -89,7 +89,9 @@ const VariableStyle = () => {
                         --fzr36: 22px;
                         --lhr36: 30px;
                     }
-
+                    @media (max-width: 550px) {
+                        --fzr16: 14px;
+                    }
                     @media (max-width: 500px) {
                         font-size: 12px;
                         --arrowSize: 38px;

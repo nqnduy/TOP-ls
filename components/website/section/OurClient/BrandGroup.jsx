@@ -33,6 +33,23 @@ export default function BrandGroup({ column = 3 }) {
                     grid-template-columns: repeat(${column}, 1fr);
                     row-gap: 55px;
                 }
+                @media (max-width: 1200px) {
+                    .BrandGroup {
+                        div > img {
+                            width: 75%;
+                        }
+                    }
+                }
+                @media (max-width: 900px) {
+                    .BrandGroup {
+                        grid-template-columns: repeat(2, 1fr);
+                        row-gap: 35px;
+
+                        div > img {
+                            width: 60%;
+                        }
+                    }
+                }
             `}</style>
         </div>
     );

@@ -12,17 +12,118 @@ export default function TypeCenter() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        // pauseOnHover: true,
         initialSlide: 2,
         nextArrow: <ArrowNext />,
         prevArrow: <ArrowPrev />,
+        responsive: [
+            {
+                breakpoint: 1310,
+                settings: {
+                    centerMode: true,
+                    centerPadding: "50px",
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 1210,
+                settings: {
+                    centerMode: true,
+                    centerPadding: "100px",
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 1110,
+                settings: {
+                    centerMode: true,
+                    centerPadding: "50px",
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 820,
+                settings: {
+                    centerMode: true,
+                    centerPadding: "50px",
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 750,
+                settings: {
+                    centerMode: true,
+                    centerPadding: "50px",
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    initialSlide: 2,
+                    arrows: false,
+                },
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    centerMode: true,
+                    centerPadding: "20px",
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    initialSlide: 2,
+                    arrows: false,
+                },
+            },
+            {
+                breakpoint: 450,
+                settings: {
+                    centerMode: true,
+                    centerPadding: "20px",
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    initialSlide: 2,
+                    arrows: false,
+                },
+            },
+            {
+                breakpoint: 400,
+                settings: {
+                    centerMode: true,
+                    centerPadding: "0px",
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    initialSlide: 2,
+                    arrows: false,
+                },
+            },
+        ],
     };
     return (
         <>
             <div className="OurTeam">
                 <div className="textWrap flexAC flexCOL">
-                    <TextTitle small_text={"Our teams"} big_text={"Many famous celebrities"} />
-                    <p className="txMain purple normal" style={{ marginBottom: 60, textAlign: "center", width: "40%" }}>
+                    <TextTitle small_text={"Our teams"} big_text={"Many famous celebrities"} textAlign="center" />
+                    <p className="textWrap__desc txMain fz-16 purple normal">
                         Nifty team is a diverse network of consultants and industry professionals with a global mindset & a collaborative culture. We work to
                         understand your issues
                     </p>
@@ -46,7 +147,13 @@ export default function TypeCenter() {
                     .textWrap {
                         width: 100%;
                         text-align: center;
+                        &__desc {
+                            width: 40%;
+                            margin-bottom: 60px;
+                            text-align: center;
+                        }
                     }
+
                     .MemberCard {
                         margin-right: 20px;
                         transition: ease-out 0.4s;
@@ -68,6 +175,85 @@ export default function TypeCenter() {
                             cursor: pointer;
                             opacity: 1;
                             transition: ease-out 0.4s;
+                        }
+                    }
+                }
+                @media (max-width: 950px) {
+                    .OurTeam {
+                        .textWrap {
+                            &__desc {
+                                width: 45%;
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 835px) {
+                    .OurTeam {
+                        --fzr18: 18px;
+                        --fzr16: 15px;
+                        --fzr21: 19px;
+                        .textWrap {
+                            &__desc {
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 750px) {
+                    .OurTeam {
+                        .textWrap {
+                            &__desc {
+                                width: 55%;
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 550px) {
+                    .OurTeam {
+                        .slick-slide {
+                            &:nth-child(2n) {
+                                margin-top: 50px;
+                            }
+                            &:nth-child(2n + 1) {
+                                margin-top: 0px;
+                            }
+                            &:hover {
+                                cursor: pointer;
+                                opacity: 1;
+                                transition: ease-out 0.4s;
+                            }
+                        }
+                        .textWrap {
+                            &__desc {
+                                width: 70%;
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 450px) {
+                    .OurTeam {
+                        .slick-slide {
+                            &:nth-child(n) {
+                                margin-top: 0px;
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 400px) {
+                    .OurTeam {
+                        .textWrap {
+                            &__desc {
+                                width: 85%;
+                            }
+                        }
+                        .MemberCard {
+                            margin-right: var(--pdContainer);
+                            transition: ease-out 0.4s;
+                        }
+                        .slick-slide {
+                            &:nth-child(n) {
+                                margin-top: 0px;
+                            }
                         }
                     }
                 }

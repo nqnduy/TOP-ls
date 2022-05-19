@@ -69,7 +69,7 @@ function HeroBanner({ searchBar }) {
                         }
                         .character {
                             position: absolute;
-                            bottom: 0;
+                            bottom: -1%;
                             right: 15vw;
                             width: var(--widthCharacter);
                             height: auto;

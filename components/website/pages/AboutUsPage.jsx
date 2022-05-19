@@ -23,6 +23,11 @@ export default function AboutUsPage() {
                 .FAQ {
                     margin: 100px 0;
                 }
+                @media (max-width: 1024px) {
+                    .AboutUs {
+                        margin-top: 120px;
+                    }
+                }
             `}</style>
         </>
     );

@@ -113,6 +113,7 @@ const AboutUs = (props) => {
                         }
                     }
                 }
+
                 @media (max-width: 1000px) {
                     .AboutUs {
                         --sizeImg: 100px;
@@ -146,6 +147,7 @@ const AboutUs = (props) => {
                         .container {
                             align-items: center;
                             flex-direction: column;
+
                             & > div {
                                 width: 100%;
                             }

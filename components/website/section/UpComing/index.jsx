@@ -6,14 +6,16 @@ function Upcoming({ isList = true, haveTitle = true, pTop = 100 }) {
     return (
         <>
             <div className="Upcoming">
-                <div className="container">{haveTitle && <TextTitle small_text="Discover" big_text="Upcoming shows" />}</div>
+                <div className="container">
+                    <div className="Upcoming__title">{haveTitle && <TextTitle small_text="Discover" big_text="Upcoming shows" />}</div>
+                </div>
                 {isList ? <ListCard /> : <GridCard />}
             </div>
             <style jsx global>{`
                 .Upcoming {
                     position: relative;
                     padding-top: ${pTop}px;
-                    .container {
+                    &__title {
                         display: flex;
                         align-items: center;
                         justify-content: space-between;

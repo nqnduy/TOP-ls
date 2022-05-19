@@ -8,8 +8,10 @@ export default function UpComingDetail() {
     return (
         <div className="UpComingShowDetail">
             <div className="container" style={{ marginBottom: 80 }}>
-                <div className="flex" style={{ gap: 85, justifyContent: "space-between" }}>
-                    <div className="w50" style={{ paddingBottom: 40, marginBottom: 20, borderBottom: "1px solid rgba(255, 255, 255, 0.07);" }}>
+                <div className="UpComingShowDetail__content flex">
+                    <div
+                        className="UpComingShowDetail__content-article w50"
+                        style={{ paddingBottom: 40, marginBottom: 20, borderBottom: "1px solid rgba(255, 255, 255, 0.07);" }}>
                         <h2 className="txMain fz-36 bold" style={{ marginBottom: 40 }}>
                             France Rock Music Conference March 2022
                         </h2>
@@ -32,7 +34,7 @@ export default function UpComingDetail() {
                             <br />
                             Pellentesque massa erat adipiscing lorem molestie amet augue. Lorem ipsum amet vitae ipsum at a sagittis cras arcu interdum
                         </div>
-                        <div className="flex" style={{ justifyContent: "space-between", marginBlock: 30 }}>
+                        <div className="TicketList flex" style={{ justifyContent: "space-between", marginBlock: 30 }}>
                             <Ticket title="Economy ticket" price="0.99" ticket="49">
                                 <p>Entrance card </p>
                                 <p>Drinking water</p>
@@ -79,7 +81,7 @@ export default function UpComingDetail() {
                             iaculis turpis sed dolor ac lacus. Amet, pellentesque diam leo aliquam a proin volutpat.
                         </div>
                     </div>
-                    <div style={{ width: "30%" }}>
+                    <div className="getTicket">
                         <GetTicket />
                     </div>
                 </div>
@@ -88,12 +90,152 @@ export default function UpComingDetail() {
                     <SocialGroup />
                 </div>
             </div>
-            <p className=" PLMain txMain bold fz-21">Looking for an upcoming show? You can explore by categories, location, and date start... Ready?</p>
+            <div className="container">
+                <p className="sliderTitle txMain bold fz-21">Looking for an upcoming show? You can explore by categories, location, and date start... Ready?</p>
+            </div>
             <Upcoming haveTitle={false} pTop={50} />
 
             <style jsx global>{`
+                .UpComingShowDetail {
+                    &__content {
+                        gap: 85px;
+                        justify-content: space-between;
+                        ul {
+                            li {
+                                margin-left: 1em;
+                            }
+                        }
+                    }
+                    .getTicket {
+                        width: 30%;
+                    }
+                    .sliderTitle {
+                        padding-right: 100px;
+                    }
+                }
                 .Ticket {
                     width: calc((100% / 3) - (40px / 3));
+                }
+                @media (max-width: 1350px) {
+                    .UpComingShowDetail {
+                        .getTicket {
+                            width: 33%;
+                        }
+                    }
+                }
+                @media (max-width: 1290px) {
+                    .UpComingShowDetail {
+                        &__content {
+                            &-article {
+                                .TicketList {
+                                    width: 100%;
+                                    flex-direction: column;
+                                    gap: 20px;
+                                    .Ticket {
+                                        margin: 0 auto;
+                                        width: 80%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 1250px) {
+                    .UpComingShowDetail {
+                        .getTicket {
+                            width: 36%;
+                        }
+                    }
+                }
+                @media (max-width: 1150px) {
+                    .UpComingShowDetail {
+                        .getTicket {
+                            width: 39%;
+                        }
+                    }
+                }
+                @media (max-width: 1024px) {
+                    .UpComingShowDetail {
+                        &__content {
+                            gap: 20px;
+                            flex-direction: column;
+                            margin-bottom: 50px;
+                            .w50,
+                            .getTicket {
+                                width: 100%;
+                                .GetTicket {
+                                    &__content {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                            &-article {
+                                .TicketList {
+                                    width: 100%;
+                                    gap: 20px;
+                                    flex-direction: row;
+                                    .Ticket {
+                                        width: calc((100% / 3) - (40px / 3));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 650px) {
+                    .UpComingShowDetail {
+                        &__content {
+                            flex-direction: column;
+                            .w50,
+                            .getTicket {
+                                width: 100%;
+                            }
+                            &-article {
+                                .TicketList {
+                                    flex-direction: column;
+                                    gap: 20px;
+                                    .Ticket {
+                                        margin: 0 auto;
+                                        width: 70%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 630px) {
+                    .UpComingShowDetail {
+                        .sliderTitle {
+                            text-align: right;
+                            font-size: 21px;
+                            line-height: 30px;
+                            margin-bottom: 50px;
+                            padding-right: 0;
+                        }
+                    }
+                }
+                @media (max-width: 500px) {
+                    .UpComingShowDetail {
+                        .sliderTitle {
+                            text-align: center;
+                            font-size: 15px;
+                            line-height: 28px;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                @media (max-width: 400px) {
+                    .UpComingShowDetail {
+                        &__content {
+                            &-article {
+                                .TicketList {
+                                    .Ticket {
+                                        width: 90%;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             `}</style>
         </div>

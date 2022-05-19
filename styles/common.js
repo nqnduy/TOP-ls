@@ -4,6 +4,7 @@ const CommonStyle = () => {
     return (
         <>
             <style jsx global>{`
+
                 .hide {
                     opacity: 0;
                     pointer-events: none;
@@ -54,7 +55,7 @@ const CommonStyle = () => {
                         font-size: var(--fzr30);
                         line-height: var(--lhr30);
                     }
-                    &.fz-28{
+                    &.fz-28 {
                         font-size: var(--fzr28);
                         line-height: var(--lhr28);
                     }
@@ -117,8 +118,13 @@ const CommonStyle = () => {
                         text-align: center;
                     }
                 }
+
                 .flex {
                     display: flex;
+
+                    &.jc-sb {
+                        justify-content: space-between;
+                    }
                 }
                 .flexAC {
                     display: flex;

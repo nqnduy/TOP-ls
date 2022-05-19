@@ -1,22 +1,28 @@
 import Button from "@/website/common/Button/ButtonMain";
 import ImageWrap from "@/website/common/ImageWrap";
+import Link from "next/link";
 
 function ShowCard({ time, location, image, price, title, ticket }) {
     return (
         <>
-            <div className="showCard">
-                <div>
-                    <ImageWrap src={image} gif="/images/gif/343x270.gif" bora={"15px"} />
-                </div>
-                <div className="showCard__bottom">
-                    <div className="showCard__bottom-timeLocation txMain fz-12 purple upc normal">{`${time} • ${location}`}</div>
-                    <div className="txMain fz-18 overText2 showCard__title">{title}</div>
-                    <pre className="showCard__price txMain normal pink upc">
-                        Start at <strong style={{ fontFamily: "fm-b" }}>{price}</strong> • <p className="txMain normal upc blue">{`${ticket} TICKETS LEFT`}</p>
-                    </pre>
-                    <Button width="fullWidth">Get ticket now</Button>
-                </div>
-            </div>
+            <Link href="/upcoming-shows/123">
+                <a>
+                    <div className="showCard">
+                        <div>
+                            <ImageWrap src={image} gif="/images/gif/343x270.gif" bora={"15px"} />
+                        </div>
+                        <div className="showCard__bottom">
+                            <div className="showCard__bottom-timeLocation txMain fz-12 purple upc normal">{`${time} • ${location}`}</div>
+                            <div className="txMain fz-18 overText2 showCard__title">{title}</div>
+                            <pre className="showCard__price txMain normal pink upc">
+                                Start at <strong style={{ fontFamily: "fm-b" }}>{price}</strong> •{" "}
+                                <p className="txMain normal upc blue">{`${ticket} TICKETS LEFT`}</p>
+                            </pre>
+                            <Button width="fullWidth">Get ticket now</Button>
+                        </div>
+                    </div>
+                </a>
+            </Link>
             <style jsx>{`
                 .showCard {
                     cursor: pointer;
