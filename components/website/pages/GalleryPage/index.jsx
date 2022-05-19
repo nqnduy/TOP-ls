@@ -11,10 +11,16 @@ export default function GalleryPage() {
             </p>
             <style jsx global>{`
                 .FeatureShowList {
+                    padding-top: 200px;
                     margin-bottom: 70px;
                 }
                 .GalleryThumb {
                     margin-bottom: 50px;
+                }
+                @media (max-width: 1024px) {
+                    .FeatureShowList {
+                        padding-top: 100px;
+                    }
                 }
             `}</style>
         </>

@@ -97,6 +97,7 @@ const VariableStyle = () => {
                         --arrowSize: 38px;
                         --arrowRange: 45px;
                         --pdContainer: 45px;
+                        --cardRange: 0px;
                         --fzr30: 22px;
                     }
                     @media (max-width: 400px) {

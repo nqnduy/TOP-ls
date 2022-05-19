@@ -2,7 +2,7 @@ import asset from "plugins/assets/asset";
 import ButtonMain from "../Button/ButtonMain";
 import ButtonPlay from "../Button/ButtonPlay";
 
-function PreviousShowCard({ image, title, event, active }) {
+function PreviousShowCard({ image, title, event, active, color }) {
     return (
         <>
             <div className={`PreviousShowCard ${active}`}>
@@ -18,7 +18,7 @@ function PreviousShowCard({ image, title, event, active }) {
                         </div>
                         <div className="PreviousShowCard-btn">
                             <div className="watchNow">
-                                <ButtonMain>Watch now!</ButtonMain>
+                                <ButtonMain color={color}>Watch now!</ButtonMain>
                             </div>
                             <div className="play">
                                 <ButtonPlay />
@@ -38,11 +38,7 @@ function PreviousShowCard({ image, title, event, active }) {
                             opacity: 1;
                         }
                     }
-
-                    margin-right: 26px;
-                    @media (max-width: 500px) {
-                        margin-right: 0;
-                    }
+                    margin-right: var(--cardRange);
                     &-content {
                         position: relative;
                         .img {
