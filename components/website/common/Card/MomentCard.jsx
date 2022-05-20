@@ -1,3 +1,4 @@
+import asset from "@/plugins/assets/asset";
 import ButtonPlay from "@/website/common/Button/ButtonPlay";
 import React from "react";
 
@@ -6,7 +7,7 @@ export default function MomentCard({ image, title, type, ...props }) {
         <div className={`MomentCard ${type}`}>
             <div className="MomentCard-content" style={{ position: "relative" }}>
                 <div className="img">
-                    <img src={image} {...props} />
+                    <img src={asset(image)} {...props} />
                 </div>
                 <div className="layer"></div>
                 <div className="textWrapLayer flexSB">
@@ -69,7 +70,6 @@ export default function MomentCard({ image, title, type, ...props }) {
                         position: relative;
                         overflow: hidden;
                         border-radius: 15px;
-                        height: 501px;
                         img {
                             width: 100%;
                             height: 100%;

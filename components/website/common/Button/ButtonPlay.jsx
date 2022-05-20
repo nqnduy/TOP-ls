@@ -1,10 +1,11 @@
+import asset from "@/plugins/assets/asset";
 import React from "react";
 
 export default function ButtonPlay({ position = "" }) {
     return (
         <>
             <div className={`iconPlay ${position}`}>
-                <img src="/images/icons/play.svg" alt="" />
+                <img src={asset("/images/icons/play.svg")} alt="" />
             </div>
             <style jsx>{`
                 .iconPlay {

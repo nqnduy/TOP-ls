@@ -56,7 +56,6 @@ const VariableStyle = () => {
                         --lhr36: 40px;
                     }
                     @media (max-width: 1110px) {
-                        --fzr16: 15px;
                         --fzr36: 28px;
                         --lhr36: 38px;
                     }
@@ -86,8 +85,13 @@ const VariableStyle = () => {
                     @media (max-width: 830px) {
                         --fzr21: 16px;
                         --fzr18: 15px;
+                        --lhr18: 20px;
                         --fzr36: 22px;
                         --lhr36: 30px;
+                    }
+                    @media (max-width: 730px) {
+                        --fzr18: 14px;
+                        --lhr18: 20px;
                     }
                     @media (max-width: 550px) {
                         --fzr16: 14px;

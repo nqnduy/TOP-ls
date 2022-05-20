@@ -3,7 +3,7 @@ import ImageWrap from "@/website/common/ImageWrap";
 export default function Banner() {
     return (
         <div className="container flexCOL flexSB" style={{ marginBottom: 80 }}>
-            <h3 className="txMain bold fz-36" style={{ marginBottom: 40 }}>
+            <h3 className="txMain bold fz-36 textALC" style={{ marginBottom: 40 }}>
                 Distract by the readable content of a page
             </h3>
             <div style={{ width: "100%", position: "relative" }}>

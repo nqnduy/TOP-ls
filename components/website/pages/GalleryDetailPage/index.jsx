@@ -19,6 +19,11 @@ export default function GalleryDetailPage() {
                 .slick-list {
                     padding: 0 !important;
                 }
+                @media (max-width: 1024px) {
+                    .GalleryDetail {
+                        padding-top: 100px;
+                    }
+                }
             `}</style>
         </>
     );
