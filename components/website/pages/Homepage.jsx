@@ -1,11 +1,12 @@
-import AboutUs from "@/components/website/section/AboutUs";
-import FAQ from "@/components/website/section/FAQ";
-import HeroBanner from "@/components/website/section/HeroBanner/index";
-import Organizational from "@/components/website/section/Organizational";
-import OurTeam from "@/components/website/section/OurTeam";
-import ShowList from "@/components/website/section/ShowList";
-import Upcoming from "@/components/website/section/UpComing/index";
-import WhatNew from "@/components/website/section/WhatNew";
+import TextTitle from "@/website/common/TextTitle";
+import AboutUs from "@/website/section/AboutUs";
+import FAQ from "@/website/section/FAQ";
+import HeroBanner from "@/website/section/HeroBanner/index";
+import Organizational from "@/website/section/Organizational";
+import OurTeam from "@/website/section/OurTeam";
+import ShowList from "@/website/section/ShowList";
+import Upcoming from "@/website/section/UpComing/index";
+import WhatNew from "@/website/section/WhatNew";
 import React from "react";
 
 const Homepage = (props) => {
@@ -18,7 +19,7 @@ const Homepage = (props) => {
             <Organizational />
             <AboutUs />
             <OurTeam />
-            <WhatNew />
+            <WhatNew headline={<TextTitle small_text="what news?" big_text="News and promotions" />} />
             <style jsx global>{`
                 .Upcoming,
                 .FAQ {

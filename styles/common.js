@@ -4,7 +4,6 @@ const CommonStyle = () => {
     return (
         <>
             <style jsx global>{`
-
                 .hide {
                     opacity: 0;
                     pointer-events: none;
@@ -340,10 +339,21 @@ const CommonStyle = () => {
                             transition: ease-in 0.3s;
                         }
                     }
+                    @media (max-width: 1024px) {
+                          font-size: 15px;
+                    }
+                    @media (max-width: 720px) {
+                        height: 48px;
+                        font-size: 14px;
+                        padding-inline: 18px;
+                        &:placeholder-shown {
+                            padding-left: 18px;
+                        }
+                    }
                 }
+
                 .textAreaCommon {
                     width: 100%;
-                    // height: 210px;
                     outline: none;
                     border-radius: 15px;
                     border: 1px solid #6b656530;
@@ -362,6 +372,16 @@ const CommonStyle = () => {
                         &::placeholder {
                             opacity: 0;
                             transition: ease-in 0.3s;
+                        }
+                    }
+                    @media (max-width: 1024px){
+                          font-size: 15px;
+                    }
+                    @media (max-width: 720px) {
+                        font-size: 14px;
+                        padding-inline: 18px;
+                        &:placeholder-shown {
+                            padding-left: 18px;
                         }
                     }
                 }

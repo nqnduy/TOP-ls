@@ -1,11 +1,10 @@
 import NewsCard from "../../common/Card/NewsCard";
-import TextTitle from "../../common/TextTitle";
-function WhatNew({ hasViewMore = true }) {
+function WhatNew({ hasViewMore = true, headline }) {
     return (
         <>
             <div className="WhatNew">
-                <div className="PLMain" style={{ textAlign: "center", marginBottom: 50 }}>
-                    <TextTitle small_text="what news?" big_text="News and promotions" />
+                <div className="container" style={{ textAlign: "center", marginBottom: 50 }}>
+                    {headline}
                 </div>
                 <div className="NewGrid container flex">
                     <div className="NewGrid__MainCOL">

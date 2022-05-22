@@ -1,13 +1,28 @@
 import NewsCard from "@/website/common/Card/NewsCard";
 import SocialGroup from "@/website/common/SocialGroup";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function NewDetail() {
+    const [isTablet, setIsTablet] = useState(false);
+
+    useEffect(() => {
+        if (typeof window != "undefined") {
+            window.addEventListener("resize", checkTablet);
+        }
+    }, []);
+    const checkTablet = (event) => {
+        if (window.innerWidth < 1024) {
+            setIsTablet(true);
+        } else {
+            setIsTablet(false);
+        }
+    };
+
     return (
         <>
             <div className="NewDetail" style={{ marginBottom: 80 }}>
                 <div className="container flex" style={{ alignItems: "flex-start", justifyContent: "space-between", gap: 30 }}>
-                    <div className="w70" style={{ paddingBottom: 40, marginBottom: 20, borderBottom: "1px solid rgba(255, 255, 255, 0.07);" }}>
+                    <div className="Article w70" style={{ paddingBottom: 40, marginBottom: 20, borderBottom: "1px solid rgba(255, 255, 255, 0.07);" }}>
                         <div className="NewDetail__info txMain upc normal purple">
                             <p className="txMain pink">New</p>
                             <span>•</span>
@@ -70,36 +85,38 @@ export default function NewDetail() {
                             </ul>
                         </div>
                     </div>
-                    <div className="w30 flexCOL" style={{ gap: 20 }}>
-                        <p className="txMain blue normal upc lspacing-1">Trending post</p>
-                        <NewsCard
-                            image="/images/new4.png"
-                            column="right"
-                            category="Promotion"
-                            time="Feb 27, 2022"
-                            title="Various versions have evolved over the years, sometimes by accident"
-                        />
-                        <NewsCard
-                            image="/images/new5.png"
-                            column="right"
-                            category="Promotion"
-                            time="Feb 27, 2022"
-                            title="Various versions have evolved over the years, sometimes by accident"
-                        />
-                        <NewsCard
-                            image="/images/new6.png"
-                            column="right"
-                            category="Promotion"
-                            time="Feb 27, 2022"
-                            title="Various versions have evolved over the years, sometimes by accident"
-                        />
-                        <NewsCard
-                            image="/images/new7.png"
-                            column="right"
-                            category="Promotion"
-                            time="Feb 27, 2022"
-                            title="Various versions have evolved over the years, sometimes by accident"
-                        />
+                    <div className="TrendingPost w30">
+                        <p className="TrendingPost__title txMain blue normal upc lspacing-1">Trending post</p>
+                        <div className="TrendingPost__list flexCOL">
+                            <NewsCard
+                                image="/images/new4.png"
+                                column={isTablet ? "center" : "right"}
+                                category="Promotion"
+                                time="Feb 27, 2022"
+                                title="Various versions have evolved over the years, sometimes by accident"
+                            />
+                            <NewsCard
+                                image="/images/new5.png"
+                                column={isTablet ? "center" : "right"}
+                                category="Promotion"
+                                time="Feb 27, 2022"
+                                title="Various versions have evolved over the years, sometimes by accident"
+                            />
+                            <NewsCard
+                                image="/images/new6.png"
+                                column={isTablet ? "center" : "right"}
+                                category="Promotion"
+                                time="Feb 27, 2022"
+                                title="Various versions have evolved over the years, sometimes by accident"
+                            />
+                            <NewsCard
+                                image="/images/new7.png"
+                                column={isTablet ? "center" : "right"}
+                                category="Promotion"
+                                time="Feb 27, 2022"
+                                title="Various versions have evolved over the years, sometimes by accident"
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="flex PLMain" style={{ gap: 38 }}>
@@ -107,7 +124,7 @@ export default function NewDetail() {
                     <SocialGroup />
                 </div>
             </div>
-            <style jsx>{`
+            <style jsx global>{`
                 .NewDetail {
                     padding-top: 200px;
                     &__info,
@@ -145,6 +162,117 @@ export default function NewDetail() {
                                     object-fit: cover;
                                 }
                             }
+                        }
+                    }
+                    .TrendingPost {
+                        &__title {
+                            margin-bottom: 25px;
+                        }
+                        &__list {
+                            gap: 20px;
+                        }
+                    }
+                }
+                @media (max-width: 1150px) {
+                    .NewDetail {
+                        .TrendingPost {
+                            gap: 15px;
+                        }
+                    }
+                }
+                @media (max-width: 1024px) {
+                    .NewDetail {
+                        padding-top: 100px;
+                        .container {
+                            gap: 0px;
+                            flex-direction: column;
+                            margin-bottom: 50px;
+                            .Article,
+                            .w30 {
+                                width: 100%;
+                            }
+                            .TrendingPost__list {
+                                --newsCOL: 4;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+                                gap: var(--cardRange);
+                                .NewsCard {
+                                    width: calc((100% / var(--newsCOL)) - ((var(--cardRange) * (var(--newsCOL) - 1)) / var(--newsCOL)));
+                                }
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 1080px) {
+                    .NewDetail {
+                        --fzrMain: 12px;
+                    }
+                }
+                @media (max-width: 989px) {
+                    .NewDetail {
+                        .TrendingPost__list {
+                            --fzrMain: 11px;
+                            --cardRange: 24px;
+                        }
+                    }
+                }
+                @media (max-width: 950px) {
+                    .NewDetail {
+                        .TrendingPost__list {
+                            --cardRange: 20px;
+                        }
+                    }
+                }
+                @media (max-width: 890px) {
+                    .NewDetail {
+                        .TrendingPost__list {
+                            --cardRange: 18px;
+                        }
+                    }
+                }
+                @media (max-width: 820px) {
+                    .NewDetail {
+                        .TrendingPost__list {
+                            --newsCOL: 3 !important;
+                            --fzrMain: 12px;
+                            --cardRange: 20px;
+                        }
+                    }
+                }
+                @media (max-width: 720px) {
+                    .NewDetail {
+                        .TrendingPost__list {
+                            --fzrMain: 11px;
+                            --cardRange: 15px;
+                        }
+                    }
+                }
+                @media (max-width: 650px) {
+                    .NewDetail {
+                        &__content {
+                            .imgWrap {
+                                flex-direction: column;
+                                gap: 20px;
+                                .img {
+                                    height: auto;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .TrendingPost__list {
+                            --newsCOL: 2 !important;
+                            --fzr16: 14px;
+                            --fzrMain: 13px;
+                            --cardRange: 26px;
+                        }
+                    }
+                }
+                @media (max-width: 500px) {
+                    .NewDetail {
+                        .TrendingPost__list {
+                            --newsCOL: 1 !important;
+                            --fzr16: 15px;
+                            --fzrMain: 14px;
                         }
                     }
                 }

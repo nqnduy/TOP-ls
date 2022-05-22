@@ -9,7 +9,7 @@ function NewsCard({ image, column, category, title, content, time }) {
                 </div>
                 <div className="NewsCard__wrapText">
                     <div className="flex timeLocation">
-                        <p className="txMain fz pink upc normal">{category}</p>
+                        <p className="txMain pink upc normal">{category}</p>
                         <p className="txMain purple">•</p>
                         <p className="txMain purple upc normal">{time}</p>
                     </div>
