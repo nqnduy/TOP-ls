@@ -46,6 +46,8 @@ const VariableStyle = () => {
                     --fzr12: 12px;
 
                     --fzrMain: 14px;
+                    --lhrMain: 26px;
+
                     --cardRange: 26px;
 
                     --arrowSize: 40px;
@@ -60,34 +62,48 @@ const VariableStyle = () => {
                         --lhr36: 38px;
                     }
                     @media (max-width: 1220px) {
-                        font-size: 13px;
-                        line-height: 20px;
-                        --fzr16: 14px;
-                        --lhr16: 22px;
-                        --fzrMain: 13px;
                         --pdContainer: 60px;
+
+                        --fzr30: 28px;
+
+                        --fzr21: 19px;
+
                         --fzr18: 16px;
                         --lhr18: 24px;
-                        --fzr21: 19px;
-                        --fzr30: 28px;
+
+                        --fzr16: 14px;
+                        --lhr16: 22px;
+
+                        --fzrMain: 13px;
+                        --lhrMain: 20px;
+
+                        font-size: 13px;
+                        line-height: 20px;
                     }
                     @media (max-width: 1024px) {
+                        --pdContainer: 55px;
+
+                        --fzr30: 25px;
+
                         --fzr16: 13px;
                         --lhr16: 20px;
-                        --pdContainer: 55px;
-                        --fzr30: 25px;
+
                         --fzr21: 17px;
                     }
                     @media (max-width: 920px) {
                         --fzr36: 25px;
                         --lhr36: 35px;
+
+                        --fzr30: 23px;
                     }
                     @media (max-width: 830px) {
-                        --fzr21: 16px;
-                        --fzr18: 15px;
-                        --lhr18: 20px;
                         --fzr36: 22px;
                         --lhr36: 30px;
+
+                        --fzr21: 16px;
+
+                        --fzr18: 15px;
+                        --lhr18: 20px;
                     }
                     @media (max-width: 730px) {
                         --fzr18: 14px;
@@ -98,17 +114,22 @@ const VariableStyle = () => {
                     }
                     @media (max-width: 500px) {
                         font-size: 12px;
+
+                        --pdContainer: 45px;
+
+                        --fzr30: 22px;
+
+                        --cardRange: 0px;
+
                         --arrowSize: 38px;
                         --arrowRange: 45px;
-                        --pdContainer: 45px;
-                        --cardRange: 0px;
-                        --fzr30: 22px;
                     }
                     @media (max-width: 400px) {
                         --pdContainer: 25px;
                     }
                     @media (max-width: 350px) {
                         --pdContainer: 10px;
+
                         --cardRange: 5px;
                     }
                 }

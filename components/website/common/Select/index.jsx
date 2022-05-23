@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import SelectOption from "./SelectOption";
 
 export default function Select() {
     const [showOption, setShowOption] = useState(false);
     const [option, setOption] = useState();
+    const handleShowSelect = (ev) => {
+        setOption(ev.target.value);
+        setShowOption(!showOption);
+    };
     return (
         <div className="selectCommon">
             <div
@@ -15,45 +20,15 @@ export default function Select() {
             {showOption && (
                 <div className="selectCommon__checkboxes">
                     <div style={{ padding: "3px 0" }}>
-                        <div className="selectCommon__checkboxes-option">
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    onClick={(ev) => {
-                                        setOption(ev.target.value);
-                                        setShowOption(!showOption);
-                                    }}
-                                    value="Hà Nội"
-                                />{" "}
-                                Hà Nội
-                            </label>
-                        </div>
-                        <div className="selectCommon__checkboxes-option">
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    onClick={(ev) => {
-                                        setOption(ev.target.value);
-                                        setShowOption(!showOption);
-                                    }}
-                                    value="Hồ Chí Minh"
-                                />{" "}
-                                Hồ Chí Minh
-                            </label>
-                        </div>
-                        <div className="selectCommon__checkboxes-option">
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    onClick={(ev) => {
-                                        setOption(ev.target.value);
-                                        setShowOption(!showOption);
-                                    }}
-                                    value="Đà Nẵng"
-                                />{" "}
-                                Đà Nẵng
-                            </label>
-                        </div>
+                        <SelectOption onClick={handleShowSelect} value="Hà Nội">
+                            Hà Nội
+                        </SelectOption>
+                        <SelectOption onClick={handleShowSelect} value="Hồ Chí Minh">
+                            Hồ Chí Minh
+                        </SelectOption>
+                        <SelectOption onClick={handleShowSelect} value="Đà Nẵng">
+                            Đà Nẵng
+                        </SelectOption>
                     </div>
                 </div>
             )}

@@ -35,6 +35,15 @@ export default function InformationPage({ show }) {
                     }
                     &__fieldGroup {
                         gap: 26px;
+                        @media (max-width: 600px) {
+                            .w50 {
+                                width: 70%;
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 600px) {
+                    .PersonalInfo {
                     }
                 }
             `}</style>

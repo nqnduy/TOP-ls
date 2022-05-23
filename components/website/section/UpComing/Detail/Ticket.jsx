@@ -25,22 +25,36 @@ export default function Ticket({ ticket, title, price, children, unit = "$", pay
                 <div className="Ticket__gift txMain normal fz-16 main">{children}</div>
                 {payment && (
                     <div className="Ticket__quantity flexAC ">
+                        {/* Note: Decrease */}
+
                         <div className="Ticket__quantity-btn txMain purple normal fz-21" onClick={ticketBuy > 0 ? handleDecrease : disableChange}>
                             <div>-</div>
                         </div>
+
+                        {/* Note: Ticket */}
+
                         <div className="Ticket__quantity-btn value txMain bold pink fz-21">
                             <div>{ticketBuy < 10 ? `0${ticketBuy}` : ticketBuy}</div>
                         </div>
+
+                        {/* Note: Increase */}
+
                         <div className="Ticket__quantity-btn txMain purple normal fz-21" onClick={ticketBuy < ticket ? handleIncrease : disableChange}>
                             <div>+</div>
                         </div>
                     </div>
                 )}
+
+                {/* TODO: SOLD OUT */}
+
                 {!ticket || ticket === 0 ? (
                     <p className="Ticket__value txMain purple upc fz-12">sold out tickets</p>
                 ) : (
                     <p className="Ticket__value txMain blue upc fz-12">{`${_ticket} tickets left`}</p>
                 )}
+
+                {/* TODO: TOTAL PRICE */}
+
                 {payment && (
                     <div className={`Ticket__total ${!ticket || ticket === 0 ? "" : color}`}>
                         <p className="Ticket__total-price txMain bold fz-21">

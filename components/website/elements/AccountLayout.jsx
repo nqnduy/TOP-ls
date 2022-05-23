@@ -5,7 +5,7 @@ import React from "react";
 export default function AccountLayout({ children }) {
     return (
         <>
-            <div className="Account">
+            <div className="AccountLayout">
                 <div className="container flexSB">
                     <div className="w30">
                         <div className="SideBar">
@@ -39,10 +39,13 @@ export default function AccountLayout({ children }) {
                 </div>
             </div>
             <style jsx>{`
-                .Account {
+                .AccountLayout {
                     padding: {
                         top: 200px;
                         bottom: 70px;
+                    }
+                    @media (max-width: 1024px) {
+                        padding-top: 120px;
                     }
                     .container {
                         gap: 85px;
@@ -83,6 +86,43 @@ export default function AccountLayout({ children }) {
                         margin-bottom: 50px;
                         &-value {
                             margin-bottom: 13px;
+                        }
+                    }
+                    @media (max-width: 1100px) {
+                        &__statistic {
+                            flex-direction: column;
+                            padding: 0 25px;
+                            margin-bottom: 30px;
+                            .w50 {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                gap: 5px;
+                            }
+                            &-value {
+                                margin-bottom: 13px;
+                                width: 20%;
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 992px) {
+                    .AccountLayout {
+                        .container {
+                            flex-direction: column;
+                            .w30 {
+                                width: 100%;
+                                .SideBar {
+                                    &__statistic {
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                    }
+                                }
+                            }
+                            .w70 {
+                                width: 100%;
+                            }
                         }
                     }
                 }

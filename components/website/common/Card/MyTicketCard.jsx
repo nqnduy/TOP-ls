@@ -5,11 +5,11 @@ export default function MyTicketCard({ image, title, time, location, children, g
         <>
             <div className="MyTicketCard">
                 <div className="MyTicketCard__wrap flex">
-                    <div className="w20">
+                    <div className="MyTicketCard__wrap-img">
                         <ImageWrap src={image} gif="/images/gif/190x140.gif" bora={"15px"} />
                     </div>
-                    <div className="flexCOL w80" style={{ justifyContent: "space-between" }}>
-                        <p className="MyTicketCard__title txMain bold fz-18 overText2">{title}</p>
+                    <div className="MyTicketCard__wrap-text flexCOL" style={{ justifyContent: "space-between" }}>
+                        <p className="MyTicketCard__wrap-text-title txMain bold fz-18 overText2">{title}</p>
                         <p className="txMain fz-12 purple upc normal" style={{ marginBottom: 8 }}>
                             {`${time} • ${location}`}
                         </p>
@@ -23,12 +23,30 @@ export default function MyTicketCard({ image, title, time, location, children, g
                     border-radius: 15px;
                     background-color: rgba(255, 255, 255, 0.03);
                     cursor: pointer;
-                    &__title {
-                        height: calc(2.5em + 5px);
-                        width: 95%;
-                    }
+
                     &__wrap {
                         gap: ${gap}px;
+                        &-img {
+                            height: 102%;
+                        }
+                        &-text {
+                            width: 80%;
+                            &-title {
+                                height: calc(2.5em + 5px);
+                                width: 95%;
+                            }
+                        }
+                    }
+                    @media (max-width: 500px) {
+                        &__wrap {
+                            flex-direction: column;
+                            &-text {
+                                width: 100%;
+                                &-title {
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
                     }
                 }
             `}</style>

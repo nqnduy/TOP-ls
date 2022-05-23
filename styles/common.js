@@ -45,6 +45,7 @@ const CommonStyle = () => {
                     color: #fff;
                     font-weight: 500;
                     font-size: var(--fzrMain);
+                    line-height: var(--lhrMain);
                     font-family: fm-m;
                     &.fz-36 {
                         font-size: var(--fzr36);
@@ -251,6 +252,9 @@ const CommonStyle = () => {
                 .w20 {
                     width: 20%;
                 }
+                .w25 {
+                    width: 25%;
+                }
                 .w30 {
                     width: 30%;
                 }
@@ -340,7 +344,7 @@ const CommonStyle = () => {
                         }
                     }
                     @media (max-width: 1024px) {
-                          font-size: 15px;
+                        font-size: 15px;
                     }
                     @media (max-width: 720px) {
                         height: 48px;
@@ -374,8 +378,8 @@ const CommonStyle = () => {
                             transition: ease-in 0.3s;
                         }
                     }
-                    @media (max-width: 1024px){
-                          font-size: 15px;
+                    @media (max-width: 1024px) {
+                        font-size: 15px;
                     }
                     @media (max-width: 720px) {
                         font-size: 14px;
