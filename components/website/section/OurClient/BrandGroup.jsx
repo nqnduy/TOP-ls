@@ -1,31 +1,32 @@
+import asset from '@/plugins/assets/asset';
 import React from "react";
 
 export default function BrandGroup({ column = 3 }) {
     return (
         <div className="BrandGroup">
             <div>
-                <img src="/images/icons/insta.svg" alt="" />
+                <img src={asset("/images/icons/insta.svg")} alt="" />
             </div>
             <div>
-                <img src="/images/icons/webflow.svg" alt="" />
+                <img src={asset("/images/icons/webflow.svg")} alt="" />
             </div>
             <div>
-                <img src="/images/icons/intercom.svg" alt="" />
+                <img src={asset("/images/icons/intercom.svg")} alt="" />
             </div>
             <div>
-                <img src="/images/icons/evolved.svg" alt="" />
+                <img src={asset("/images/icons/evolved.svg")} alt="" />
             </div>
             <div>
-                <img src="/images/icons/classpass.svg" alt="" />
+                <img src={asset("/images/icons/classpass.svg")} alt="" />
             </div>
             <div>
-                <img src="/images/icons/cultureamp.svg" alt="" />
+                <img src={asset("/images/icons/cultureamp.svg")} alt="" />
             </div>
             <div>
-                <img src="/images/icons/discord.svg" alt="" />
+                <img src={asset("/images/icons/discord.svg")} alt="" />
             </div>
             <div>
-                <img src="/images/icons/wealthsimple.svg" alt="" />
+                <img src={asset("/images/icons/wealthsimple.svg")} alt="" />
             </div>
             <style jsx>{`
                 .BrandGroup {
