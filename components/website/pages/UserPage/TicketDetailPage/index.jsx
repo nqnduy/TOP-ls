@@ -1,5 +1,6 @@
 import Button from "@/common/Button/ButtonMain";
 import ShowPost from "@/pages/UserPage/TicketDetailPage/ShowPost";
+import asset from "@/plugins/assets/asset";
 import React from "react";
 
 export default function TicketDetailPage({ show }) {
@@ -21,7 +22,8 @@ export default function TicketDetailPage({ show }) {
                             <div className="txMain normal w75">
                                 <p>Wed, March 26, 2022 1:30 PM – 7:00 PM</p>
                                 <p className="flexAC" style={{ textAlign: "center", gap: 10 }}>
-                                    <img src="/images/icons/clock.svg" alt="" /> Event will start in <span className="txMain blue bold">00 : 03 : 27 : 49</span>
+                                    <img src={asset("/images/icons/clock.svg")} alt="" /> Event will start in{" "}
+                                    <span className="txMain blue bold">00 : 03 : 27 : 49</span>
                                 </p>
                             </div>
                         </div>
@@ -35,7 +37,7 @@ export default function TicketDetailPage({ show }) {
                     </div>
                     <div className="QRCode flexCOL flexAC">
                         <div className="img">
-                            <img src="/images/QRcode.png" alt="" />
+                            <img src={asset("/images/QRcode.png")} alt="" />
                         </div>
                         <Button>Save ticket to device</Button>
                     </div>

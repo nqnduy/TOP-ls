@@ -1,7 +1,7 @@
+import asset from "@/plugins/assets/asset";
 import NewsCard from "@/website/common/Card/NewsCard";
 import SocialGroup from "@/website/common/SocialGroup";
 import React, { useEffect, useState } from "react";
-
 export default function NewDetail() {
     const [isTablet, setIsTablet] = useState(false);
 
@@ -38,7 +38,7 @@ export default function NewDetail() {
                             tristique purus sit amet pretium volutpat.
                         </div>
                         <div className="NewDetail__img">
-                            <img src="/images/new3.png" alt="" />
+                            <img src={asset("/images/new3.png")} alt="" />
                         </div>
                         <div className="NewDetail__content txMain purple normal fz-16">
                             Donec urna felis, ultricies sit amet tristique at, elementum sit amet dui. Fusce efficitur euismod dui ac elementum. Aliquam dictum
@@ -64,13 +64,13 @@ export default function NewDetail() {
                             <br /> <br />
                             <div className="imgWrap">
                                 <div className="img">
-                                    <img src="/images/new1.png" alt="" />
+                                    <img src={asset("/images/new1.png")} alt="" />
                                 </div>
                                 <div className="img">
-                                    <img src="/images/gallery2.png" alt="" />
+                                    <img src={asset("/images/gallery2.png")} alt="" />
                                 </div>
                                 <div className="img">
-                                    <img src="/images/new4.png" alt="" />
+                                    <img src={asset("/images/new4.png")} alt="" />
                                 </div>
                             </div>
                             <br />
@@ -272,6 +272,7 @@ export default function NewDetail() {
                         .TrendingPost__list {
                             --newsCOL: 1 !important;
                             --fzr16: 15px;
+
                             --fzrMain: 14px;
                         }
                     }

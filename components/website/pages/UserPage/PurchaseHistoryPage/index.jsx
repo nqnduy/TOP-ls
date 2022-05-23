@@ -10,7 +10,7 @@ export default function PurchaseHistory() {
             <div className="PurchaseHistory">
                 <div className="PurchaseHistory__title flexSB">
                     <h2 className="txMain bold fz-18">Purchase history</h2>
-                    <div className="flexAC">
+                    <div className="PurchaseHistory__title-sort flexAC">
                         <p className="titleSort txMain purple normal">Sort by:</p>
                         <SortDropdown title="Relevance" />
                         <SortDropdown title="All categories" />
@@ -49,6 +49,17 @@ export default function PurchaseHistory() {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+                    }
+                    @media (max-width: 620px) {
+                        .PurchaseHistory {
+                            &__title {
+                                flex-direction: column;
+                                align-items: flex-start;
+                                gap: 15px;
+                                &-sort {
+                                }
+                            }
+                        }
                     }
                 }
             `}</style>

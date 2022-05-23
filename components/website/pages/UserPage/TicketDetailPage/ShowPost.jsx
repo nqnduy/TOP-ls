@@ -1,4 +1,5 @@
 import SocialGroup from "@/common/SocialGroup";
+import asset from "@/plugins/assets/asset";
 import React from "react";
 
 export default function ShowPost() {
@@ -7,7 +8,7 @@ export default function ShowPost() {
             <div className="TicketDetail__post">
                 <div className="TicketDetail__post-title txMain bold fz-36">France Rock Music Conference March 2022</div>
                 <div className="TicketDetail__post-img">
-                    <img src="/images/ticket-post.png" alt="" />
+                    <img src={asset("/images/ticket-post.png")} alt="" />
                 </div>
                 <div className="TicketDetail__post-content txMain purple normal fz-16">
                     Donec urna felis, ultricies sit amet tristique at, elementum sit amet dui. Fusce efficitur euismod dui ac elementum. Aliquam dictum
