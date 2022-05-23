@@ -74,9 +74,13 @@ function Header() {
                         <div className="action-search">
                             <Image src={asset("/images/icons/search.svg")} alt="search-icon" width={20} height={20} />
                         </div>
-                        <div className="action-user">
-                            <Image src={asset("/images/icons/user.svg")} alt="user-icon" width={16} height={20} />
-                        </div>
+                        <Link href="/user/DatPhan/information">
+                            <a>
+                                <div className="action-user">
+                                    <Image src={asset("/images/icons/user.svg")} alt="user-icon" width={16} height={20} />
+                                </div>
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </div>
