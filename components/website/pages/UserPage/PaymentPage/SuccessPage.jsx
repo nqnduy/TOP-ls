@@ -57,7 +57,6 @@ export default function SuccessPage({ transfer = true }) {
             <style jsx>{`
                 .SuccessPage {
                     padding: 200px 0 70px;
-                    padding-inline: 200px;
                     @media (max-width: 1024px) {
                         padding: 100px 0 70px;
                     }

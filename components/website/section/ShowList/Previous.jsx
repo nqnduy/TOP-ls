@@ -46,19 +46,12 @@ function PreviousShowList() {
                 breakpoint: 500,
                 settings: {
                     slidesToShow: 1,
-                },
-            },
-            {
-                breakpoint: 400,
-                settings: {
-                    slidesToShow: 1,
                     arrows: false,
                 },
             },
         ],
     };
-    // let currentSlide = document.querySelector(".PreviousShowList .slick-slider .slick-list .slick-track .slick-slide.slick-active.slick-current");
-    // console.log(currentSlide);
+
     return (
         <>
             <div className="PreviousShowList PLMain">
@@ -95,37 +88,14 @@ function PreviousShowList() {
                 @media (max-width: 630px) {
                     .PreviousShowList {
                         .slick-current {
-                            width: calc(100vw - (var(--pdContainer) * 2)) !important;
+                            width: calc(100vw - (var(--pdContainer) * 2) + (var(--cardRange) / 2)) !important;
                         }
                     }
                 }
                 @media (max-width: 500px) {
                     .PreviousShowList {
                         .slick-current {
-                            padding-right: var(--pdContainer);
-                        }
-                        & > div {
-                            padding-inline: 15px;
-                        }
-
-                        .slick-arrow {
-                            top: 52%;
-                            &.slick-next {
-                                right: -32px;
-                            }
-                            &.slick-prev {
-                                right: 0;
-                                left: -32px;
-                            }
-                        }
-                    }
-                }
-                @media (max-width: 400px) {
-                    .PreviousShowList {
-                        margin-left: 20px;
-                        padding-left: 0px;
-                        .slick-current {
-                            padding-right: calc(var(--pdContainer) + 15px);
+                            padding-right: 15px;
                         }
                     }
                 }

@@ -106,7 +106,7 @@ export default function Navigate() {
                                 text-align: right;
                                 li {
                                     text-transform: uppercase;
-                                    padding-block: 15px;
+                                    padding: 15px 0;
                                     display: list-item;
                                     will-change: transform;
                                     transform: matrix(1, 0, 0, 1, 480, 0);

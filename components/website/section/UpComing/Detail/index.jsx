@@ -11,7 +11,7 @@ export default function UpComingDetail() {
                 <div className="UpComingShowDetail__content flex">
                     <div
                         className="UpComingShowDetail__content-article w50"
-                        style={{ paddingBottom: 40, marginBottom: 20, borderBottom: "1px solid rgba(255, 255, 255, 0.07);" }}>
+                        style={{ paddingBottom: 40, marginBottom: 20, borderBottom: "1px solid rgba(255, 255, 255, 0.07)" }}>
                         <h2 className="txMain fz-36 bold" style={{ marginBottom: 40 }}>
                             France Rock Music Conference March 2022
                         </h2>

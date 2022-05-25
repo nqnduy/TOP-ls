@@ -53,7 +53,6 @@ export default function OurTeam({ type }) {
                             Nifty team is a diverse network of consultants and industry professionals with a global mindset & a collaborative culture. We work
                             to understand your issues
                         </p>
-                        {/* <NextPrev /> */}
                     </div>
                 </div>
                 <style jsx global>{`
@@ -147,7 +146,7 @@ export default function OurTeam({ type }) {
                                     width: 100%;
                                     padding: 0 var(--pdContainer);
                                     .MemberCard {
-                                        margin-inline: 10px;
+                                        margin: 0 10px;
                                     }
                                 }
                                 &-textWrap {
@@ -193,6 +192,9 @@ export default function OurTeam({ type }) {
                         .OurTeam {
                             --arrowPositionLeft: 0%;
                             --arrowPositionTop: 105%;
+                            .MemberCard {
+                                margin: 0;
+                            }
                         }
                     }
                 `}</style>

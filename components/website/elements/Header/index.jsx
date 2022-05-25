@@ -107,7 +107,7 @@ function Header() {
                             align-items: center;
                             justify-content: space-between;
                             height: 100%;
-                            padding-block: 1em;
+                            padding: 1em 0;
                         }
                         &-title {
                             strong {

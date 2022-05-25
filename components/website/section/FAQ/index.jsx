@@ -59,11 +59,12 @@ function FAQ() {
                         --fzr16: 15px;
                         --fzr21: 19px;
                         .container {
-                            gap: 100px;
+                            gap: 0;
                             flex-direction: column;
                         }
                         &__left {
                             width: 100%;
+                            margin-bottom: 100px;
                             &-text {
                                 width: 60%;
                             }

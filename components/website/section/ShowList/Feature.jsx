@@ -62,7 +62,7 @@ export default function FeatureShowList() {
                             margin: 0 auto;
                         }
                         .slick-slider {
-                            padding-inline: 15px;
+                            padding: 0 15px;
                         }
                         .slick-arrow {
                             top: 52%;

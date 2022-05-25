@@ -42,29 +42,31 @@ function SearchBar() {
                     &-filter {
                         display: flex;
                         align-items: center;
-                        gap: 150px;
+                        --spaceFlex: 150px;
+                        margin: calc(var(--spaceFlex) * -1) 0 0 calc(var(--spaceFlex) * -1);
                         cursor: pointer;
-                        @media (max-width: 1024px) {
-                            gap: 120px;
-                        }
-                        @media (max-width: 1000px) {
-                            gap: 90px;
-                        }
-                        @media (max-width: 900px) {
-                            gap: 60px;
-                        }
-                        @media (max-width: 800px) {
-                            gap: 40px;
-                        }
-                        @media (max-width: 758px) {
-                            gap: 70px;
-                        }
                         &__item {
                             color: #b8b7d0;
+                            margin: var(--spaceFlex) 0 0 var(--spaceFlex);
                             p {
                                 margin-bottom: 5px;
                                 font-family: fm-m;
                             }
+                        }
+                        @media (max-width: 1024px) {
+                            --spaceFlex: 120px;
+                        }
+                        @media (max-width: 1000px) {
+                            --spaceFlex: 90px;
+                        }
+                        @media (max-width: 900px) {
+                            --spaceFlex: 60px;
+                        }
+                        @media (max-width: 800px) {
+                            --spaceFlex: 40px;
+                        }
+                        @media (max-width: 758px) {
+                            --spaceFlex: 70px;
                         }
                     }
                 }
@@ -79,9 +81,9 @@ function SearchBar() {
                     .Search {
                         flex-direction: column;
                         &-filter {
+                            --spaceFlex: 40px;
                             flex-wrap: wrap;
-                            margin-bottom: 20px;
-                            gap: 40px;
+                            margin-bottom: 30px;
                             &__item {
                                 flex: auto;
                             }

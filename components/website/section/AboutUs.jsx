@@ -49,8 +49,12 @@ const AboutUs = (props) => {
                     --gapImg: 30px;
                 }
                 .statistic {
-                    margin-block: 36px;
-                    gap: 87px;
+                    margin: 36px 0;
+                    > div {
+                        &:not(:last-child) {
+                            margin-right: 87px;
+                        }
+                    }
                     .value {
                         display: flex;
                         font-size: var(--fzr30);
@@ -60,10 +64,11 @@ const AboutUs = (props) => {
                 .imgWrap {
                     display: flex;
                     width: 60%;
-                    gap: var(--gapImg);
+                    margin: var(--gapImg) 0 0 var(--gapImg);
                     justify-content: flex-end;
                     .img {
                         position: relative;
+                        margin: calc(var(--gapImg) * -1) 0 0 calc(var(--gapImg);
                         overflow: hidden;
                         img {
                             min-height: 100%;
@@ -77,7 +82,7 @@ const AboutUs = (props) => {
                         &.img1 {
                             width: calc(287px - (var(--sizeImg)));
                             aspect-ratio: 4/5;
-                            margin-bottom: var(--gapImg);
+                            margin-bottom: calc(var(--gapImg) * 2);
                             border-radius: 15px;
                         }
                         &.img2 {
@@ -118,7 +123,11 @@ const AboutUs = (props) => {
                     .AboutUs {
                         --sizeImg: 100px;
                         .statistic {
-                            gap: 40px;
+                            > div {
+                                &:not(:last-child) {
+                                    margin-right: 40px;
+                                }
+                            }
                             .value {
                                 margin-bottom: 8px;
                             }
@@ -147,17 +156,21 @@ const AboutUs = (props) => {
                         .container {
                             align-items: center;
                             flex-direction: column;
-
                             & > div {
                                 width: 100%;
                             }
                             .imgWrap {
                                 margin-top: 50px;
+                                margin-left: calc(var(--gapImg) * -1);
                                 width: 100%;
                                 justify-content: center;
                             }
                             .statistic {
-                                gap: 85px;
+                                > div {
+                                    &:not(:last-child) {
+                                        margin-right: 85px;
+                                    }
+                                }
                             }
                             .ViewMore {
                                 margin: 0 auto;
@@ -192,7 +205,11 @@ const AboutUs = (props) => {
                         --sizeImg: 100px;
                         --gapImg: 10px;
                         .statistic {
-                            gap: 10px !important;
+                            > div {
+                                &:not(:last-child) {
+                                    margin-right: 0 !important;
+                                }
+                            }
                             justify-content: space-between;
                         }
                     }

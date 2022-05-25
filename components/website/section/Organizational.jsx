@@ -18,7 +18,7 @@ function Organizational() {
             </div>
             <style jsx>{`
                 .Organizational {
-                    margin-block: 80px;
+                    margin: 80px 0;
                     &__wrapper {
                         padding: 36px 55px;
                         background-color: #060070;

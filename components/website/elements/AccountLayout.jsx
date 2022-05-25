@@ -68,7 +68,7 @@ export default function AccountLayout({ children }) {
                         &:before {
                             position: absolute;
                             content: "";
-                            background-color: #e71882;
+                            background-color: #E71882;
                             width: 107%;
                             height: 107%;
                             top: 50%;
@@ -82,7 +82,7 @@ export default function AccountLayout({ children }) {
                         margin-bottom: 24px;
                     }
                     &__statistic {
-                        padding-inline: 46px;
+                        padding: 0 46px;
                         margin-bottom: 50px;
                         &-value {
                             margin-bottom: 13px;

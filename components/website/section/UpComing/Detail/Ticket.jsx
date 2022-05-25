@@ -86,7 +86,7 @@ export default function Ticket({ ticket, title, price, children, unit = "$", pay
                     }
                     &__gift {
                         margin-bottom: 23px;
-                        padding-inline: 7px;
+                        padding: 0 7px;
                         height: calc(5rem);
                         overflow: hidden;
                     }
@@ -121,7 +121,7 @@ export default function Ticket({ ticket, title, price, children, unit = "$", pay
                     &__total {
                         width: 100%;
                         bottom: 0;
-                        padding-block: 20px;
+                        padding: 20px 0;
                         border-bottom-left-radius: 15px;
                         border-bottom-right-radius: 15px;
                         position: relative;

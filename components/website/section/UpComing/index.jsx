@@ -22,7 +22,6 @@ function Upcoming({ isList = true, haveTitle = true, pTop = 100 }) {
                         width: 100%;
                     }
                 }
-
                 @media (max-width: 500px) {
                     .Upcoming {
                         .container {

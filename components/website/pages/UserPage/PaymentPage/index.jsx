@@ -95,7 +95,7 @@ export default function PaymentPage() {
                         align-items: center;
                         justify-content: center;
                         position: relative;
-                        padding-inline: 10px;
+                        padding: 0 10px;
                         &:before {
                             content: "";
                             position: absolute;

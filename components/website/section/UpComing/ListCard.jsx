@@ -52,7 +52,7 @@ function ListCard() {
                 },
             },
             {
-                breakpoint: 400,
+                breakpoint: 500,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -92,6 +92,9 @@ function ListCard() {
                 .slick-list {
                     padding: 0 !important;
                 }
+                .slick-slide{
+                    border-radius: 15px;
+                }
                 .showCard {
                     margin-right: var(--cardRange);
                 }
@@ -100,31 +103,8 @@ function ListCard() {
                         padding-right: calc((var(--pdContainer)) - (var(--cardRange)));
                     }
                 }
-                @media (max-width: 500px) {
-                    .ListCard {
-                        & > div {
-                            padding-inline: 15px;
-                        }
 
-                        .slick-arrow {
-                            top: 52%;
-                            &.slick-next {
-                                right: -22px;
-                            }
-                            &.slick-prev {
-                                right: 0;
-                                left: -47px;
-                            }
-                        }
-                    }
-                }
-                @media (max-width: 400px) {
-                    .ListCard {
-                        & > div {
-                            padding-inline: 0px;
-                        }
-                    }
-                }
+
             `}</style>
         </div>
     );

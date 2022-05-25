@@ -22,7 +22,7 @@ function Input() {
                         color: #000;
                         outline: none;
                         border: none;
-                        padding-block: 10px;
+                        padding: 10px 0;
                         font-size: 16px;
                         width: 100%;
                         transition: ease 0.3s;

@@ -327,10 +327,10 @@ const CommonStyle = () => {
                     border-radius: 15px;
                     border: none;
                     background-color: #faf8f8;
-                    padding-block: 12.5px;
+                    padding: 12.5px 0;
                     font-family: fm-r;
                     font-size: 16px;
-                    padding-inline: 20px;
+                    padding: 0 20px;
                     outline: none;
                     transition: ease-in 0.3s;
                     &:placeholder-shown {
@@ -349,7 +349,7 @@ const CommonStyle = () => {
                     @media (max-width: 720px) {
                         height: 48px;
                         font-size: 14px;
-                        padding-inline: 18px;
+                        padding: 0 18px;
                         &:placeholder-shown {
                             padding-left: 18px;
                         }
@@ -363,8 +363,8 @@ const CommonStyle = () => {
                     border: 1px solid #6b656530;
                     font-family: fm-r;
                     font-size: 16px;
-                    padding-inline: 20px;
-                    padding-block: 15px;
+                    padding: 0 20px;
+                    padding: 15px 0;
                     resize: none;
                     &:placeholder-shown {
                         padding-left: 20px;
@@ -383,7 +383,7 @@ const CommonStyle = () => {
                     }
                     @media (max-width: 720px) {
                         font-size: 14px;
-                        padding-inline: 18px;
+                        padding: 0 18px;
                         &:placeholder-shown {
                             padding-left: 18px;
                         }
