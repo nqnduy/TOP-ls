@@ -1,32 +1,17 @@
 import Button from "@/website/common/Button/ButtonMain";
-import Image from "next/image";
+import SearchItem from './SearchItem';
 function SearchBar() {
     return (
         <>
             <div className="Search">
                 <div className="Search-filter">
-                    <div className="Search-filter__item">
-                        <p className="txMain upc">Category</p>
-                        <div className="txMain normal purple">
-                            Select a category <Image src="/images/icons/arrow-dropdown.svg" alt="" width={10} height={5} />
-                        </div>
-                    </div>
-                    <div className="Search-filter__item">
-                        <p className="txMain upc">When</p>
-                        <div className="txMain normal purple">
-                            Select a category <Image src="/images/icons/arrow-dropdown.svg" alt="" width={10} height={5} />
-                        </div>
-                    </div>
-                    <div className="Search-filter__item">
-                        <p className="txMain upc">Where</p>
-                        <div className="txMain normal purple">
-                            Select a category <Image src="/images/icons/arrow-dropdown.svg" alt="" width={10} height={5} />
-                        </div>
-                    </div>
+                    <SearchItem>Category</SearchItem>
+                    <SearchItem>When</SearchItem>
+                    <SearchItem>Where</SearchItem>
                 </div>
                 <Button>Search now</Button>
             </div>
-            <style jsx>{`
+            <style jsx global>{`
                 .Search {
                     background-color: #060070;
                     border-radius: 20px;
@@ -46,12 +31,7 @@ function SearchBar() {
                         margin: calc(var(--spaceFlex) * -1) 0 0 calc(var(--spaceFlex) * -1);
                         cursor: pointer;
                         &__item {
-                            color: #b8b7d0;
                             margin: var(--spaceFlex) 0 0 var(--spaceFlex);
-                            p {
-                                margin-bottom: 5px;
-                                font-family: fm-m;
-                            }
                         }
                         @media (max-width: 1024px) {
                             --spaceFlex: 120px;
@@ -73,8 +53,6 @@ function SearchBar() {
                 @media (max-width: 830px) {
                     .Search {
                         padding: 20px 30px;
-                        &-filter {
-                        }
                     }
                 }
                 @media (max-width: 758px) {
