@@ -12,6 +12,7 @@ function PreviousShowList() {
         slidesToShow: 5,
         slidesToScroll: 1,
         initialSlide: 0,
+        verticalSwiping: false,
         afterChange: (current) => {
             setIndex(current);
         },
@@ -94,7 +95,8 @@ function PreviousShowList() {
                 }
                 @media (max-width: 500px) {
                     .PreviousShowList {
-                        .slick-current {
+
+                        .slick-slide {
                             padding-right: 15px;
                         }
                     }

@@ -10,6 +10,7 @@ export default function OurTeam({ type }) {
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
+        verticalSwiping: false,
         nextArrow: <ArrowNext />,
         prevArrow: <ArrowPrev />,
         responsive: [
@@ -50,8 +51,7 @@ export default function OurTeam({ type }) {
                     <div className="OurTeam__wrapper-textWrap PRMain">
                         <TextTitle small_text={"Our teams"} big_text={"Many famous celebrities"} />
                         <p className="OurTeam__wrapper-textWrap--content txMain fz-16 purple normal">
-                            Nifty team is a diverse network of consultants and industry professionals with a global mindset & a collaborative culture. We work
-                            to understand your issues
+                            Nifty team is a diverse network of consultants and industry professionals with a global mindset & a collaborative culture. We work to understand your issues
                         </p>
                     </div>
                 </div>
@@ -59,7 +59,6 @@ export default function OurTeam({ type }) {
                     .OurTeam {
                         --arrowPositionTop: 70%;
                         --arrowPositionLeft: 600%;
-
                         &__wrapper {
                             gap: var(--pdContainer);
                             &-inSlider {
@@ -122,7 +121,6 @@ export default function OurTeam({ type }) {
                     @media (max-width: 1000px) {
                         .OurTeam {
                             --arrowPositionLeft: 370%;
-
                             &__wrapper {
                                 gap: calc((var(--pdContainer)) - 30px);
                             }

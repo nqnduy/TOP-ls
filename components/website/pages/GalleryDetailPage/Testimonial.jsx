@@ -13,6 +13,7 @@ export default function Testimonial() {
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
+        verticalSwiping: false,
         autoplaySpeed: 2000,
         initialSlide: 2,
         nextArrow: <ArrowNext />,

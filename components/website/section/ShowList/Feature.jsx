@@ -10,6 +10,7 @@ export default function FeatureShowList() {
         slidesToShow: 2,
         slidesToScroll: 1,
         initialSlide: 0,
+        verticalSwiping: false,
         nextArrow: <ArrowNext />,
         prevArrow: <ArrowPrev />,
         responsive: [

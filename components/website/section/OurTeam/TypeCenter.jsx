@@ -10,6 +10,7 @@ export default function TypeCenter() {
         centerPadding: "100px",
         slidesToShow: 4,
         slidesToScroll: 1,
+        verticalSwiping: false,
         autoplay: true,
         autoplaySpeed: 2000,
         initialSlide: 2,
