@@ -38,7 +38,6 @@ function HeroBanner({ searchBar }) {
                 .HeroBanner {
                     --widthCharacter: 670px;
                     width: 100%;
-                    padding-top: 50px;
                     width: 100%;
                     z-index: 9;
                     overflow: hidden;

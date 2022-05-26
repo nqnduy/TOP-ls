@@ -49,6 +49,7 @@ export default function FeatureShowList() {
             <style jsx global>{`
                 .slick-arrow {
                     top: -60px;
+                    --arrowPosition: var(--cardRange);
                 }
                 .slick-slider {
                     margin-right: calc(0px - (var(--cardRange))) !important;

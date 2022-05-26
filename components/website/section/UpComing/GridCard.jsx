@@ -2,6 +2,56 @@ import ShowCard from "@/website/common/Card/ShowCard";
 import SortDropdown from "@/website/common/SortDropDown";
 import React from "react";
 function GridCard() {
+    const upcomingShows = [
+        {
+            image: "/images/card1.png",
+            price: 10.5,
+            time: "Feb 27, 2022",
+            location: "Ho Chi Minh City",
+            title: "This is title of liveshow. Max long two line",
+            ticket: "25",
+        },
+        {
+            image: "/images/card2.png",
+            price: 10.5,
+            time: "Feb 27, 2022",
+            location: "Paris City",
+            title: "France Rock Music Conference March 2022",
+            ticket: "25",
+        },
+        {
+            image: "/images/card3.png",
+            price: 10.5,
+            time: "Mar 10, 2022",
+            location: "Ho Chi Minh City",
+            title: "Ho Chi Minh City Vietnam Web Submit 2022",
+            ticket: "25",
+        },
+        {
+            image: "/images/card4.png",
+            price: 10.5,
+            time: "Mar 10, 2022",
+            location: "Ho Chi Minh City",
+            title: "Tokyo Digital Conference ShakeUp",
+            ticket: "25",
+        },
+        {
+            image: "/images/card1.png",
+            price: 10.5,
+            time: "Feb 27, 2022",
+            location: "Ho Chi Minh City",
+            title: "This is title of liveshow. Max long two line",
+            ticket: "25",
+        },
+        {
+            image: "/images/card2.png",
+            price: 10.5,
+            time: "Feb 27, 2022",
+            location: "Paris City",
+            title: "France Rock Music Conference March 2022",
+            ticket: "25",
+        },
+    ];
     return (
         <>
             <div className="SortUpcomingShow flexAC PRMain">
@@ -10,30 +60,11 @@ function GridCard() {
                 <SortDropdown title="All categories" />
             </div>
             <div className="GridCard container">
-                <ShowCard
-                    image="/images/card1.png"
-                    time="Feb 27, 2022"
-                    location="Ho Chi Minh City"
-                    title="This is title of liveshow. Max long two line"
-                    ticket="25"
-                />
-                <ShowCard image="/images/card2.png" time="Feb 27, 2022" location="Paris City" title="France Rock Music Conference March 2022" ticket="25" />
-                <ShowCard
-                    image="/images/card3.png"
-                    time="Mar 10, 2022"
-                    location="Ho Chi Minh City"
-                    title="Ho Chi Minh City Vietnam Web Submit 2022"
-                    ticket="25"
-                />
-                <ShowCard image="/images/card4.png" time="Mar 10, 2022" location="Ho Chi Minh City" title="Tokyo Digital Conference ShakeUp" ticket="25" />
-                <ShowCard
-                    image="/images/card1.png"
-                    time="Feb 27, 2022"
-                    location="Ho Chi Minh City"
-                    title="This is title of liveshow. Max long two line"
-                    ticket="25"
-                />
-                <ShowCard image="/images/card2.png" time="Feb 27, 2022" location="Paris City" title="France Rock Music Conference March 2022" ticket="25" />
+                {upcomingShows.map((item, index) => {
+                    return (
+                        <ShowCard key={index} data={item} />
+                    )
+                })}
                 <style jsx global>{`
                     .GridCard {
                         --COL: 3;

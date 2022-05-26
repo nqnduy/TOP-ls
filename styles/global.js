@@ -10,7 +10,6 @@ const GlobalStyle = () => (
 		font-family: 'Lora', serif;
 		font-family: 'Playfair Display', serif;
 		*/
-
         @font-face {
             font-family: "ProximaNova";
             src: url(${asset("../public/fonts/ProximaNovaRegular.eot")});
@@ -57,13 +56,14 @@ const GlobalStyle = () => (
         body {
             padding: 0;
             margin: 0;
-            font-family: "CerebriSans";
             line-height: 1.3;
-            font-size: 14px;
             width: 100%;
             // max-width: {Variable.container.maxWidth};
         }
         main {
+            font-size: 14px;
+            line-height: 26px;
+            font-family: fm-r;
         }
         #__next {
             overflow-x: hidden;

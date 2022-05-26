@@ -23,7 +23,8 @@ const VariableStyle = () => {
         <>
             <style jsx global>{`
                 html,
-                body {
+                body,
+                main {
                     --pdContainer: 86px;
 
                     --fzr36: 36px;
@@ -62,6 +63,9 @@ const VariableStyle = () => {
                         --lhr36: 38px;
                     }
                     @media (max-width: 1220px) {
+                        font-size: 13px;
+                        line-height: 20px;
+
                         --pdContainer: 60px;
 
                         --fzr30: 28px;

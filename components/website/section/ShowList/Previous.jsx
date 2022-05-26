@@ -52,13 +52,44 @@ function PreviousShowList() {
             },
         ],
     };
+    const previousShows = [
+        {
+            image: "/images/prv1.png",
+            title: "Live show",
+            event: 2,
+        },
+        {
+            image: "/images/prv2.png",
+            title: "Conference",
+            event: 7,
+        },
+        {
+            image: "/images/prv3.png",
+            title: "Live show",
+            event: 4,
+        },
+        {
+            image: "/images/prv1.png",
+            title: "Fashion show",
+            event: 0,
+        },
+        {
+            image: "/images/prv2.png",
+            title: "Caremony",
+            event:2,
+        },
+    ];
 
     return (
         <>
             <div className="PreviousShowList PLMain">
                 <Slider {...settings}>
-                    {[...Array(6)].map((item, i) => (
-                        <PreviousShowCard key={i} active={index === i ? "active" : ""} image="/images/prv1.png" title="Live show" event="2"></PreviousShowCard>
+                    {previousShows.map((item, i) => (
+                        <PreviousShowCard
+                            key={i}
+                            active={index === i ? "active" : ""}
+                            data={item}>
+                        </PreviousShowCard>
                     ))}
                 </Slider>
             </div>
@@ -74,6 +105,15 @@ function PreviousShowList() {
                 @media (max-width: 1024px) {
                     .PreviousShowList {
                         padding-right: var(--pdContainer);
+                        .slick-arrow {
+                            --arrowPosition: 0;
+                            &.slick-prev {
+                                right: var(--arrowRange);
+                            }
+                            &.slick-next {
+                                right: 0;
+                            }
+                        }
                         .slick-current {
                             width: 12.25% !important;
                         }
@@ -95,7 +135,6 @@ function PreviousShowList() {
                 }
                 @media (max-width: 500px) {
                     .PreviousShowList {
-
                         .slick-slide {
                             padding-right: 15px;
                         }

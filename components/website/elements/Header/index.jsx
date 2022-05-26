@@ -1,9 +1,12 @@
+import AppLink from '@/diginext/link/AppLink';
 import asset from "@/plugins/assets/asset";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { variable } from "styles/variable";
 import Logo from "../../common/Logo";
 import SocialGroup from "../../common/SocialGroup";
+import TextUnderline from "../../common/Text/TextUnderline";
 function Header() {
     const [fixed, setFixed] = useState(false);
     useEffect(() => {
@@ -23,7 +26,7 @@ function Header() {
         <header className={fixed ? "active" : ""} onScroll={handleScroll}>
             <div className="HeaderCTA">
                 <div className="container">
-                    <div className="HeaderCTA-title txMain upc purple">
+                    <div className="HeaderCTA-title">
                         Have any Questions? Call Us <strong>028 6673 8686</strong>
                     </div>
                     <div className="HeaderCTA-button">
@@ -43,31 +46,39 @@ function Header() {
                     <Logo />
                     <ul className="menu">
                         <li>
-                            <Link href="/about-us">
-                                <a className="txMain fz-16 bold hoverText hoverText-pink" href="">
-                                    About Us
-                                </a>
-                            </Link>
+                            <AppLink href="/about-us">
+                                <TextUnderline color={variable.color.secondary}>
+                                    <span className="menu-link">About us</span>
+                                </TextUnderline>
+                            </AppLink>
                         </li>
                         <li>
-                            <Link href="/upcoming-shows">
-                                <a className="txMain fz-16 bold hoverText hoverText-pink">Upcoming Shows</a>
-                            </Link>
+                            <AppLink href="/upcoming-shows">
+                                <TextUnderline color={variable.color.secondary}>
+                                    <span className="menu-link">Upcoming Shows</span>
+                                </TextUnderline>
+                            </AppLink>
                         </li>
                         <li>
-                            <Link href="/gallery">
-                                <a className="txMain fz-16 bold hoverText hoverText-pink">Gallery</a>
-                            </Link>
+                            <AppLink href="/gallery">
+                                <TextUnderline color={variable.color.secondary}>
+                                    <span className="menu-link">Gallery</span>
+                                </TextUnderline>
+                            </AppLink>
                         </li>
                         <li>
-                            <Link href="/new-promotion">
-                                <a className="txMain fz-16 bold hoverText hoverText-pink">News & Promotions</a>
-                            </Link>
+                            <AppLink href="/new-promotion">
+                                <TextUnderline color={variable.color.secondary}>
+                                    <span className="menu-link">News & Promotions</span>
+                                </TextUnderline>
+                            </AppLink>
                         </li>
                         <li>
-                            <Link href="/contact">
-                                <a className="txMain fz-16 bold hoverText hoverText-pink">Contact</a>
-                            </Link>
+                            <AppLink href="/contact">
+                                <TextUnderline color={variable.color.secondary}>
+                                    <span className="menu-link">Contact</span>
+                                </TextUnderline>
+                            </AppLink>
                         </li>
                     </ul>
                     <div className="action">
@@ -101,15 +112,21 @@ function Header() {
                         display: flex;
                         z-index: 100;
                         align-items: center;
-                        background-color: #060070;
+                        background: linear-gradient(180deg, #060070 0%, rgba(196, 196, 196, 0) 100%);
+                        padding-bottom: 54px;
                         .container {
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
                             height: 100%;
-                            padding: 1em 0;
+                            padding-block: 1em;
                         }
                         &-title {
+                            font-family: fm-m;
+                            font-size: 14px;
+                            font-weight: 500px;
+                            color: ${variable.color.purple};
+                            text-transform: uppercase;
                             strong {
                                 color: white;
                             }
@@ -177,6 +194,12 @@ function Header() {
                             transform: translate(-50%);
                             li {
                                 width: max-content;
+                            }
+                            &-link {
+                                font-family: fm-m;
+                                line-height: 24px;
+                                font-size: 16px;
+                                font-weight: 700;
                             }
                         }
                         @media (max-width: 1200px) {

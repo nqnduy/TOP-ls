@@ -41,6 +41,35 @@ const CommonStyle = () => {
                     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
                 }
+                .headline {
+                    font-family: fm-b;
+                    font-size: 36px;
+                    line-height: 46px;
+
+                    color: #fff;
+
+                    /*  Responsive   */
+                    @media (max-width: 1310px) {
+                        font-size: 32px;
+                        line-height: 40px;
+                    }
+                    @media (max-width: 1110px) {
+                        font-size: 28px;
+                        line-height: 38px;
+                    }
+                    @media (max-width: 920px) {
+                        font-size: 25px;
+                        line-height: 35px;
+                    }
+                    @media (max-width: 820px){
+                        font-size: 30px;
+                        line-height: 40px;
+                    }
+                    @media (max-width: 580px){
+                        font-size: 28px;
+                        line-height: 38px;
+                    }
+                }
                 .txMain {
                     color: #fff;
                     font-weight: 500;
@@ -118,10 +147,8 @@ const CommonStyle = () => {
                         text-align: center;
                     }
                 }
-
                 .flex {
                     display: flex;
-
                     &.jc-sb {
                         justify-content: space-between;
                     }
@@ -239,7 +266,7 @@ const CommonStyle = () => {
                     &.slick-next:before {
                         display: none;
                     }
-                    --arrowPosition: calc((var(--pdContainer)) - (var(--cardRange)));
+                    --arrowPosition: var(--pdContainer);
                     &.slick-next {
                         right: var(--arrowPosition);
                     }

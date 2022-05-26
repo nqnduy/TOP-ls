@@ -2,7 +2,7 @@ export default function Button({ children, width, color }) {
     return (
         <>
             <button className={`Button ${width} ${color}`}>
-                <div className="txMain fz-16">{children}</div>
+                <span>{children}</span>
             </button>
             <style jsx>{`
                 .Button {
@@ -15,20 +15,38 @@ export default function Button({ children, width, color }) {
                     padding: 0;
                     margin: 0;
                     width: max-content;
-                    div {
-                        background-color: #e71882;
-                        padding: 14px 28px 17px 28px;
-                        border-radius: 15px;
+                    span {
                         font-family: fm-b;
+                        font-size: 16px;
                         color: #fff;
+                        background-color: #e71882;
+
                         position: relative;
                         z-index: 3;
+                        border-radius: 15px;
+                        padding: 14px 28px 17px 28px;
+
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         gap: 10px;
+                        @media (max-width: 1310px) {
+                            font-size: 15px;
+                        }
+                        @media (max-width: 1220px) {
+                            font-size: 14px;
+                            line-height: 22px;
+                        }
+                        @media (max-width: 1024px) {
+                            font-size: 13px;
+                            line-height: 20px;
+                        }
                         @media (max-width: 830px) {
                             padding: 10px 22px 14px 22px;
+                        }
+                        @media (max-width: 550px) {
+                            font-size: 14px;
+                            line-height: 22px;
                         }
                     }
                     &::before {

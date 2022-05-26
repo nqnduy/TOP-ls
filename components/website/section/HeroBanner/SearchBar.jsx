@@ -27,43 +27,64 @@ function SearchBar() {
                     &-filter {
                         display: flex;
                         align-items: center;
-                        --spaceFlex: 150px;
-                        margin: calc(var(--spaceFlex) * -1) 0 0 calc(var(--spaceFlex) * -1);
+                        justify-content: space-between;
                         cursor: pointer;
+                        width: 85%;
                         &__item {
-                            margin: var(--spaceFlex) 0 0 var(--spaceFlex);
+                            flex-basis: auto;
+                            padding-right: 10%;
                         }
-                        @media (max-width: 1024px) {
-                            --spaceFlex: 120px;
-                        }
-                        @media (max-width: 1000px) {
-                            --spaceFlex: 90px;
-                        }
-                        @media (max-width: 900px) {
-                            --spaceFlex: 60px;
-                        }
-                        @media (max-width: 800px) {
-                            --spaceFlex: 40px;
-                        }
-                        @media (max-width: 758px) {
-                            --spaceFlex: 70px;
+                        @media (max-width: 1140px) {
+                            width: 80%;
                         }
                     }
                 }
-                @media (max-width: 830px) {
+
+                @media (max-width: 890px) {
                     .Search {
                         padding: 20px 30px;
+                        flex-direction: column;
+                        &-filter {
+                            width: 100%;
+                            margin-bottom: 40px;
+                        }
                     }
                 }
                 @media (max-width: 758px) {
                     .Search {
-                        flex-direction: column;
+                        flex-direction: row;
                         &-filter {
-                            --spaceFlex: 40px;
                             flex-wrap: wrap;
+                            width: 70%;
+                            margin-bottom: 0;
+                            &__item {
+                                padding: 15px 10% 15px 0;
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 580px) {
+                    .Search {
+                        &-filter {
+                            width: 50%;
+                        }
+                    }
+                }
+                @media (max-width: 500px) {
+                    .Search {
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin: -55px 15% 0 15%;
+                        padding: 20px 30px 40px 30px;
+                        width: fit-content;
+                        &-filter {
+                            width: 100%;
                             margin-bottom: 30px;
                             &__item {
-                                flex: auto;
+                                padding: 15px 0;
+                                text-align: center;
+                                flex-basis: 100%;
                             }
                         }
                     }

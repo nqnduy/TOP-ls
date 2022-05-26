@@ -1,8 +1,10 @@
 import asset from "plugins/assets/asset";
+import { variable } from 'styles/variable';
 import ButtonMain from "../Button/ButtonMain";
 import ButtonPlay from "../Button/ButtonPlay";
 
-function PreviousShowCard({ image, title, event, active, color }) {
+function PreviousShowCard({ data, active }) {
+    const { image, title, event, color } = data;
     return (
         <>
             <div className={`PreviousShowCard ${active}`}>
@@ -13,8 +15,8 @@ function PreviousShowCard({ image, title, event, active, color }) {
                     <div className="layer"></div>
                     <div className="textWrapLayer flexSB">
                         <div>
-                            <p className="txMain">{title}</p>
-                            <p className="txMain normal purple">{event} events</p>
+                            <p className="title">{title}</p>
+                            <p className="event">{event} events</p>
                         </div>
                         <div className="PreviousShowCard-btn">
                             <div className="watchNow">
@@ -55,6 +57,14 @@ function PreviousShowCard({ image, title, event, active, color }) {
                                 left: 50%;
                                 transform: translate(-50%, -50%);
                                 object-fit: cover;
+                            }
+                        }
+                        .textWrapLayer{
+                            .title{
+                                font-family: fm-m;
+                            }
+                            .event{
+                                color: ${variable.color.purple};
                             }
                         }
                     }

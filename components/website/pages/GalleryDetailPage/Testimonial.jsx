@@ -112,13 +112,15 @@ export default function Testimonial() {
                 }
                 @media (max-width: 820px) {
                     .Testimonial {
-                        .txMain.fz-36 {
-                            font-size: var(--fzr36) !important;
-                            line-height: var(--lhr36) !important;
-                        }
-                        .txMain.blue {
-                            font-size: var(--fzrMain) !important;
-                            line-height: var(--lhrMain) !important;
+                        .TextTitle {
+                            h3 {
+                                font-size: 13px !important;
+                                line-height: 20px !important;
+                            }
+                            h4 {
+                                font-size: 22px !important;
+                                line-height: 36px !important;
+                            }
                         }
                         .w50 {
                             width: 70%;
