@@ -8,10 +8,10 @@ function PreviousShowList() {
     const [index, setIndex] = useState(0);
 
     const settings = {
-        centerPadding: "0",
         slidesToShow: 5,
         slidesToScroll: 1,
         initialSlide: 0,
+        infinite: true,
         verticalSwiping: false,
         afterChange: (current) => {
             setIndex(current);
@@ -76,7 +76,17 @@ function PreviousShowList() {
         {
             image: "/images/prv2.png",
             title: "Caremony",
-            event:2,
+            event: 2,
+        },
+        {
+            image: "/images/prv1.png",
+            title: "Fashion show",
+            event: 0,
+        },
+        {
+            image: "/images/prv2.png",
+            title: "Caremony",
+            event: 2,
         },
     ];
 

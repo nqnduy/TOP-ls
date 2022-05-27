@@ -1,14 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import asset from "plugins/assets/asset";
 import React from "react";
+import { variable } from 'styles/variable';
 function Organizational() {
     return (
         <div className="Organizational container">
             <div className="Organizational__wrapper">
-                <h3 className="txMain blue normal upc" style={{ textAlign: "center", marginBottom: 30 }}>
-                    Organizational units
-                </h3>
-                <div className="Organizational__brands flexSB">
+                <h3 className="headlineSmall">Organizational units</h3>
+                <div className="Organizational__brands">
                     <img src={asset("/images/icons/snapit.svg")} alt="" />
                     <img src={asset("/images/icons/digitop.svg")} alt="" />
                     <img src={asset("/images/icons/topgroup.svg")} alt="" />
@@ -23,9 +22,18 @@ function Organizational() {
                         padding: 36px 55px;
                         background-color: #060070;
                         box-shadow: 3px 23px 133px rgba(0, 0, 0, 0.2);
-                        border-radius: 15;
+                        border-radius: 15px;
+                        h3 {
+                            text-align: center;
+                            margin-bottom: 30px;
+                            font-family: fm-r;
+                            color: ${variable.color.blue};
+                        }
                     }
                     &__brands {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
                     }
                 }
                 @media (max-width: 1320px) {
@@ -92,7 +100,6 @@ function Organizational() {
                         &__wrapper {
                             padding: 30px 0px;
                         }
-
                         &__brands {
                             grid-template-columns: repeat(1, 1fr);
                             gap: 40px;

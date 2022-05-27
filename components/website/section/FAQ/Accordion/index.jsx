@@ -5,8 +5,8 @@ function Accordion({ title, content, open, ...e }) {
         <>
             <div className={`Accordion flexSB ${open ? "open" : ""}`} {...e}>
                 <div>
-                    <div className="txMain title fz-21 purple">{title}</div>
-                    <div className="txMain purple normal fz-16 content">{content}</div>
+                    <div className="headline">{title}</div>
+                    <div className="content">{content}</div>
                 </div>
                 <div>
                     <div className="icon">
@@ -24,10 +24,25 @@ function Accordion({ title, content, open, ...e }) {
                     padding: 35px 0 24px 0;
                     transition: 0.4s ease-out;
                     cursor: pointer;
-                    .title {
+                    .headline {
+                        font-size: 21px;
+                        line-height: 32px;
+                        color: ${variable.color.purple};
                         transition: 0.2s ease-out;
+                        @media (max-width: 1220px) {
+                            font-size: 19px;
+                            line-height: 28px;
+                        }
+                        @media (max-width: 1024px) {
+                            font-size: 17px;
+                            line-height: 26px;
+                        }
+                        @media (max-width: 830px) {
+                            font-size: 16px;
+                            line-height: 26px;
+                        }
                     }
-                    .fz-16 {
+                    .content {
                         margin-top: 13px;
                         opacity: 0;
                         max-height: 0;
@@ -62,7 +77,7 @@ function Accordion({ title, content, open, ...e }) {
                         }
                     }
                     &:hover {
-                        .title {
+                        .headline {
                             color: #fff;
                             transition: 0.2s ease-out;
                         }
@@ -76,7 +91,7 @@ function Accordion({ title, content, open, ...e }) {
                         width: 100%;
 
                         transition: 0.4s ease-out;
-                        .title {
+                        .headline {
                             color: #fff;
                             transition: 0.2s ease-out;
                         }

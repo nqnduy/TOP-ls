@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function TextUnderline({children, color}) {
+export default function TextUnderline({ children, color, className="", type="" }) {
     return (
         <>
-            <div className="TextUnderline">{children}</div>
+            <div className={`TextUnderline ${type} ${className}`}>{children}</div>
             <style jsx>{`
                 .TextUnderline {
                     position: relative;
@@ -20,14 +20,16 @@ export default function TextUnderline({children, color}) {
                         background-color: #fff;
                         transition: 0.3s ease-out;
                     }
-                    &-small {
-                        padding-bottom: 3px;
+                    &.small {
                         &:after {
-                            height: 1px;
+                            bottom: -3px;
                         }
                     }
                     &:hover {
                         color: ${color};
+                        > {
+                            color: ${color};
+                        }
                         &:after {
                             background-color: ${color};
                             width: 100%;

@@ -1,5 +1,5 @@
 
-import { variable } from "./variable";
+import { variable } from "styles/variable";
 const CommonStyle = () => {
     return (
         <>
@@ -42,7 +42,8 @@ const CommonStyle = () => {
                                   supported by Chrome, Edge, Opera and Firefox */
                 }
                 .headline {
-                    font-family: fm-b;
+                    font-family: fm-m;
+                    font-weight: 700;
                     font-size: 36px;
                     line-height: 46px;
 
@@ -61,14 +62,64 @@ const CommonStyle = () => {
                         font-size: 25px;
                         line-height: 35px;
                     }
-                    @media (max-width: 820px){
+                    @media (max-width: 820px) {
                         font-size: 30px;
                         line-height: 40px;
                     }
-                    @media (max-width: 580px){
+                    @media (max-width: 580px) {
                         font-size: 28px;
                         line-height: 38px;
                     }
+                }
+                .headlineSmall {
+                    font-family: fm-t;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    @media (max-width: 1220px) {
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+                }
+                .viewMore {
+                    font-family: fm-m;
+                    font-weight: 700;
+                }
+                .content {
+                    font-family: fm-r;
+                    font-weight: 400;
+                    font-size: 16px;
+
+                    color: ${variable.color.purple};
+                    @media (max-width: 1319px) {
+                        font-size: 15px;
+                        line-height: 24px;
+                    }
+                    @media (max-width: 1220px) {
+                        font-size: 14px;
+                        line-height: 22px;
+                    }
+                    @media (max-width: 1024px) {
+                        font-size: 13px;
+                        line-height: 20px;
+                    }
+                    @media (max-width: 820px) {
+                        font-size: 15px;
+                        line-height: 24px;
+                    }
+                    @media (max-width: 500px) {
+                        font-size: 14px;
+                        line-height: 22px;
+                    }
+                }
+                .title {
+                }
+                .overText2 {
+                    display: -webkit-inline-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
                 }
                 .txMain {
                     color: #fff;
@@ -114,16 +165,8 @@ const CommonStyle = () => {
                         font-family: fm-t;
                         font-weight: 300;
                     }
-
                     &.lspacing-1 {
                         letter-spacing: 0.1em;
-                    }
-                    &.overText2 {
-                        display: -webkit-inline-box;
-                        -webkit-line-clamp: 2;
-                        -webkit-box-orient: vertical;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
                     }
                     &.upc {
                         text-transform: uppercase;

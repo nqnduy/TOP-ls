@@ -34,24 +34,55 @@ export default function OurTeam({ type }) {
             },
         ],
     };
+
+    const member = [
+        {
+            image: "/images/about1.png",
+            name: "Anthony Nguyen",
+            role: "Designer",
+        },
+        {
+            image: "/images/about2.png",
+            name: "Lam Kha Nhu",
+            role: "Marketing",
+        },
+        {
+            image: "/images/about3.png",
+            name: "Tony Pham",
+            role: "Founder & CEO",
+        },
+        {
+            image: "/images/about1.png",
+            name: "Anthony Nguyen",
+            role: "Designer",
+        },
+        {
+            image: "/images/about2.png",
+            name: "Lam Kha Nhu",
+            role: "Marketing",
+        },
+        {
+            image: "/images/about3.png",
+            name: "Tony Pham",
+            role: "Founder & CEO",
+        },
+    ];
     return (
         <>
             <div className="OurTeam">
                 <div className="OurTeam__wrapper flexSB">
                     <div className="OurTeam__wrapper-inSlider">
                         <Slider {...settings}>
-                            <MemberCard image="/images/about1.png" name="Anthony Nguyen" role="Designer" />
-                            <MemberCard image="/images/about2.png" name="Lam Kha Nhu" role="Marketing" />
-                            <MemberCard image="/images/about3.png" name="Tony Pham" role="Founder & CEO" />
-                            <MemberCard image="/images/about1.png" name="Anthony Nguyen" role="Designer" />
-                            <MemberCard image="/images/about2.png" name="Lam Kha Nhu" role="Marketing" />
-                            <MemberCard image="/images/about3.png" name="Tony Pham" role="Founder & CEO" />
+                            {member.map((item, index) => (
+                                <MemberCard key={index} data={item} />
+                            ))}
                         </Slider>
                     </div>
                     <div className="OurTeam__wrapper-textWrap PRMain">
                         <TextTitle small_text={"Our teams"} big_text={"Many famous celebrities"} />
-                        <p className="OurTeam__wrapper-textWrap--content txMain fz-16 purple normal">
-                            Nifty team is a diverse network of consultants and industry professionals with a global mindset & a collaborative culture. We work to understand your issues
+                        <p className="content">
+                            Nifty team is a diverse network of consultants and industry professionals with a global mindset & a collaborative culture. We work
+                            to understand your issues
                         </p>
                     </div>
                 </div>
@@ -66,7 +97,7 @@ export default function OurTeam({ type }) {
                             }
                             &-textWrap {
                                 width: 40%;
-                                &--content {
+                                .content {
                                     margin-bottom: 60px;
                                     width: 80%;
                                     text-align: justify;
@@ -74,6 +105,7 @@ export default function OurTeam({ type }) {
                             }
                         }
                         .slick-arrow {
+                            --arrowPosition: 60px;
                             top: var(--arrowPositionTop);
                             transform: translate(var(--arrowPositionLeft));
                         }
@@ -100,7 +132,7 @@ export default function OurTeam({ type }) {
                             --arrowPositionTop: 75%;
                             &__wrapper {
                                 &-textWrap {
-                                    &--content {
+                                    .content {
                                         width: 100%;
                                     }
                                 }
@@ -116,6 +148,9 @@ export default function OurTeam({ type }) {
                         .OurTeam {
                             --arrowPositionTop: 75%;
                             --arrowPositionLeft: 460%;
+                            .slick-arrow {
+                                --arrowPosition: var(--cardRange);
+                            }
                         }
                     }
                     @media (max-width: 1000px) {
@@ -133,9 +168,6 @@ export default function OurTeam({ type }) {
                     }
                     @media (max-width: 820px) {
                         .OurTeam {
-                            --fzr18: 18px;
-                            --fzr16: 15px;
-                            --fzr21: 19px;
                             --arrowPositionLeft: 50%;
                             --arrowPositionTop: 110%;
                             &__wrapper {
@@ -150,12 +182,12 @@ export default function OurTeam({ type }) {
                                 &-textWrap {
                                     width: 100%;
                                     padding: 0 var(--pdContainer);
-                                    &--content,
+                                    .content,
                                     .TextTitle {
                                         margin: 0 auto;
                                         text-align: center;
                                     }
-                                    &--content {
+                                    .content {
                                         width: 80%;
                                         margin-bottom: 30px;
                                     }

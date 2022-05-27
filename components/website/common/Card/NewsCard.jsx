@@ -1,4 +1,5 @@
 import React from "react";
+import { variable } from 'styles/variable';
 import ImageWrap from "../ImageWrap";
 function NewsCard({ image, column, category, title, content, time }) {
     return (
@@ -8,24 +9,40 @@ function NewsCard({ image, column, category, title, content, time }) {
                     <ImageWrap src={image} gif="/images/gif/495x314.gif" bora={"15px"} />
                 </div>
                 <div className="NewsCard__wrapText">
-                    <div className="flex timeLocation">
-                        <p className="txMain pink upc normal">{category}</p>
-                        <p className="txMain purple">•</p>
-                        <p className="txMain purple upc normal">{time}</p>
+                    <div className="timeLocation">
+                        <p className="headlineSmall">{category}</p>
+                        <span>•</span>
+                        <p className="headlineSmall time">{time}</p>
                     </div>
-                    <p className="txMain fz-28 overText2 NewsCard__wrapText-title">{title}</p>
-                    <p className="txMain overText2 purple normal NewsCard__wrapText-content">{content}</p>
+                    {!column ? (
+                        <p className="NewsCard__wrapText-title headline overText2">{title}</p>
+                    ) : (
+                        <p className="NewsCard__wrapText-title content overText2">{title}</p>
+                    )}
+                    <p className="NewsCard__wrapText-content content overText2">{content}</p>
                 </div>
             </div>
-            <style jsx>{`
+            <style jsx global>{`
                 .NewsCard {
                     cursor: pointer;
                     .timeLocation {
+                        display: flex;
                         width: max-content;
                         flex: auto;
                         margin: 10px 0;
-                        gap: 5px;
                         overflow: hidden;
+                        span {
+                            margin: 0 5px;
+                            color: ${variable.color.purple};
+                        }
+                        .headlineSmall {
+                            font-family: fm-r;
+                            letter-spacing: 0;
+                            color: ${variable.color.secondary};
+                        }
+                        .headlineSmall.time {
+                            color: ${variable.color.purple};
+                        }
                     }
                     &__img {
                         border-radius: 15px;
@@ -33,9 +50,20 @@ function NewsCard({ image, column, category, title, content, time }) {
                     &__wrapText {
                         &-title {
                             height: calc(3em + 1vw);
+                            &.headline {
+                                font-size: 28px;
+                                line-height: 40px;
+                                width: 95%;
+                            }
+                            &.content {
+                                font-family: fm-m;
+                                font-weight: 700px;
+                                color: #fff;
+                            }
                         }
                         &-content {
                             -webkit-line-clamp: 3;
+                            width: 95%;
                         }
                     }
                     &.center,
@@ -46,8 +74,6 @@ function NewsCard({ image, column, category, title, content, time }) {
                                     margin-bottom: 0;
                                 }
                                 &-title {
-                                    font-size: var(--fzr16);
-                                    line-height: var(--lhr16);
                                     height: calc(2.5em + 1vw);
                                 }
                                 &-content {

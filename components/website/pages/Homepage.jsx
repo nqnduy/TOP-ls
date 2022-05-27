@@ -19,7 +19,7 @@ const Homepage = (props) => {
             <Organizational />
             <AboutUs />
             <OurTeam />
-            <WhatNew headline={<TextTitle small_text="what news?" big_text="News and promotions" />} />
+            <WhatNew headline={<TextTitle small_text="what news?" big_text="News and promotions" textAlign="center"/>} />
             <style jsx global>{`
                 .Upcoming,
                 .FAQ {

@@ -3,16 +3,14 @@ function TextTitle({ small_text, big_text, textAlign = "initial" }) {
     return (
         <>
             <div className="TextTitle">
-                <h3>{small_text}</h3>
+                <h3 className='headlineSmall'>{small_text}</h3>
                 <h4 className='headline'>{big_text}</h4>
             </div>
             <style jsx>{`
                 .TextTitle {
                     text-align: ${textAlign};
                     h3 {
-                        text-transform: uppercase;
-                        letter-spacing: 0.1em;
-
+                        font-family: fm-r;
                         color: ${variable.color.blue};
                         margin-bottom: 10px;
                     }

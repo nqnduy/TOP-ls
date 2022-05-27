@@ -10,6 +10,7 @@ function ListCard() {
         centerMode: true,
         centerPadding: "100px",
         slidesToShow: 3,
+        infinite: true,
         verticalSwiping: false,
         slidesToScroll: 1,
         // beforeChange: (oldIndex, newIndex) => {

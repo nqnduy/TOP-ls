@@ -1,4 +1,6 @@
-import NewsCard from "../../common/Card/NewsCard";
+import NewsCard from "@/common/Card/NewsCard";
+import TextUnderline from '@/common/Text/TextUnderline';
+import { variable } from "styles/variable";
 function WhatNew({ hasViewMore = true, headline }) {
     return (
         <>
@@ -79,141 +81,146 @@ function WhatNew({ hasViewMore = true, headline }) {
                         </div>
                     </div>
                 </div>
-                {hasViewMore && (
-                    <div className="flexCT" style={{ marginTop: 40 }}>
-                        <p className="txMain pink bold hoverText hoverText-pink hoverText-small">View More</p>
-                    </div>
-                )}
-                <style jsx>{`
+                <div style={{ position: "relative" }}>
+                    <TextUnderline type="small" color={variable.color.secondary} className="viewMore">
+                        View more
+                    </TextUnderline>
+                </div>
+            </div>
+            <style jsx global>{`
+                .WhatNew {
+                    .NewGrid {
+                        display: flex;
+                        gap: 40px;
+                        justify-content: space-between;
+                        margin: 0 auto;
+                        &__MainCOL {
+                            width: 45%;
+                            height: 100%;
+                        }
+                        &__CenterCOL {
+                            width: 23%;
+                            flex-grow: 1;
+                        }
+                        &__LastCOL {
+                            width: 27%;
+                            flex-grow: 1;
+                            .NewsCard__img {
+                                height: 100%;
+                                .ImageWrap {
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .flexCOL {
+                    justify-content: space-between;
+                }
+                @media (max-width: 1450px) {
                     .WhatNew {
                         .NewGrid {
-                            display: flex;
-                            gap: 40px;
-                            justify-content: space-between;
-                            margin: 0 auto;
+                            gap: 30px;
+                        }
+                    }
+                }
+                @media (max-width: 1300px) {
+                    .WhatNew {
+                        .NewGrid {
+                            gap: 20px;
+                        }
+                    }
+                }
+                @media (max-width: 1100px) {
+                    .WhatNew {
+                        .NewGrid {
+                            gap: 15px;
+                        }
+                    }
+                }
+                @media (max-width: 1024px) {
+                    .WhatNew {
+                        .NewGrid {
+                            gap: 30px;
                             &__MainCOL {
-                                width: 45%;
-                                height: 100%;
+                                width: 75%;
                             }
                             &__CenterCOL {
-                                width: 23%;
-                                flex-grow: 1;
+                                width: 40%;
+                                height: 100%;
+                                .flexCOL {
+                                    gap: 30px;
+                                }
                             }
                             &__LastCOL {
-                                width: 27%;
-                                flex-grow: 1;
+                                display: none;
                             }
                         }
                     }
-                    .flexCOL {
-                        justify-content: space-between;
-                    }
-                    @media (max-width: 1450px) {
-                        .WhatNew {
-                            .NewGrid {
-                                gap: 30px;
-                            }
-                        }
-                    }
-                    @media (max-width: 1300px) {
-                        .WhatNew {
-                            .NewGrid {
-                                gap: 20px;
-                            }
-                        }
-                    }
-                    @media (max-width: 1100px) {
-                        .WhatNew {
-                            .NewGrid {
-                                gap: 15px;
-                            }
-                        }
-                    }
-                    @media (max-width: 1024px) {
-                        .WhatNew {
-                            .NewGrid {
-                                gap: 30px;
-                                &__MainCOL {
-                                    width: 75%;
-                                }
-                                &__CenterCOL {
-                                    width: 40%;
-                                    height: 100%;
-                                    .flexCOL {
-                                        gap: 30px;
-                                    }
-                                }
-                                &__LastCOL {
-                                    display: none;
-                                }
-                            }
-                        }
-                    }
-                    @media (max-width: 850px) {
-                        .WhatNew {
-                            --fzr28: 26px;
-                            --lhr28: 35px;
+                }
+                @media (max-width: 850px) {
+                    .WhatNew {
+                        --fzr28: 26px;
+                        --lhr28: 35px;
 
-                            .NewGrid {
-                                gap: 20px;
-                                &__MainCOL {
-                                    width: 73%;
-                                }
-                                &__CenterCOL {
-                                    .flexCOL {
-                                        gap: 20px;
-                                    }
+                        .NewGrid {
+                            gap: 20px;
+                            &__MainCOL {
+                                width: 73%;
+                            }
+                            &__CenterCOL {
+                                .flexCOL {
+                                    gap: 20px;
                                 }
                             }
                         }
                     }
-                    @media (max-width: 660px) {
-                        .WhatNew {
-                            --fzr28: 23px;
-                            --lhr28: 30px;
-                            .NewGrid {
-                                gap: 15px;
-                                &__MainCOL {
+                }
+                @media (max-width: 660px) {
+                    .WhatNew {
+                        --fzr28: 23px;
+                        --lhr28: 30px;
+                        .NewGrid {
+                            gap: 15px;
+                            &__MainCOL {
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 650px) {
+                    .WhatNew {
+                        .NewGrid {
+                            gap: 30px;
+                            flex-direction: column;
+                            &__MainCOL {
+                                width: 100%;
+                            }
+                            &__CenterCOL {
+                                width: 100%;
+                                & > div {
+                                    gap: 30px !important;
+                                    flex-direction: row;
+                                }
+                                &-item {
+                                    width: calc((100% - 20px) / 2);
                                 }
                             }
                         }
                     }
-                    @media (max-width: 650px) {
-                        .WhatNew {
-                            .NewGrid {
-                                gap: 30px;
-                                flex-direction: column;
-                                &__MainCOL {
-                                    width: 100%;
-                                }
-                                &__CenterCOL {
-                                    width: 100%;
-
-                                    & > div {
-                                        gap: 30px !important;
-                                        flex-direction: row;
-                                    }
-                                    &-item {
-                                        width: calc((100% - 20px) / 2);
-                                    }
+                }
+                @media (max-width: 480px) {
+                    .WhatNew {
+                        .NewGrid {
+                            gap: 20px !important;
+                            &__CenterCOL {
+                                .flexCOL {
+                                    gap: 20px !important;
                                 }
                             }
                         }
                     }
-                    @media (max-width: 480px) {
-                        .WhatNew {
-                            .NewGrid {
-                                gap: 20px !important;
-                                &__CenterCOL {
-                                    .flexCOL {
-                                        gap: 20px !important;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                `}</style>
-            </div>
+                }
+            `}</style>
         </>
     );
 }
