@@ -17,45 +17,77 @@ export default function FeatureShowList() {
             {
                 breakpoint: 630,
                 settings: {
+                    fade: true,
                     slidesToShow: 1,
                 },
             },
             {
                 breakpoint: 400,
                 settings: {
+                    fade: true,
                     slidesToShow: 1,
                     arrows: false,
                 },
             },
         ],
     };
+    const shows = [
+        {
+            image: "/images/prv1.png",
+            title: "Live show",
+            event: 2,
+        },
+        {
+            image: "/images/prv2.png",
+            title: "Conference",
+            event: 7,
+        },
+        {
+            image: "/images/prv3.png",
+            title: "Fashion show",
+            event: 4,
+        },
+        {
+            image: "/images/prv2.png",
+            title: "Fashion show",
+            event: 0,
+        },
+        {
+            image: "/images/prv3.png",
+            title: "Caremony",
+            event: 3,
+        },
+        {
+            image: "/images/prv3.png",
+            title: "Live show",
+            event: 3,
+        },
+    ];
     return (
         <>
             <div className="FeatureShowList">
                 <div className="container">
-                    <div className="flexSB">
-                        <TextTitle small_text="Watch it again" big_text="Feature shows" />
-                    </div>
+                    <TextTitle small_text="Watch it again" big_text="Feature shows" />
+
                     <Slider className="PreviousShowList PLMain" {...settings}>
-                        <PreviousShowCard image="/images/prv1.png" title="Live show" event="2" active="active" color="white" />
-                        <PreviousShowCard image="/images/prv2.png" title="Conference" event="7" active="active" color="white" />
-                        <PreviousShowCard image="/images/prv3.png" title="Fashion show" event="4" active="active" color="white" />
-                        <PreviousShowCard image="/images/prv2.png" title="Caremony" event="0" active="active" color="white" />
-                        <PreviousShowCard image="/images/prv3.png" title="Caremony" event="3" active="active" color="white" />
-                        <PreviousShowCard image="/images/prv3.png" title="Caremony" event="3" active="active" color="white" />
+                        {shows.map((show, index) => (
+                            <PreviousShowCard key={index} data={show} active="active" color={"white"} />
+                        ))}
                     </Slider>
                 </div>
             </div>
             <style jsx global>{`
-                .slick-arrow {
-                    top: -60px;
-                    --arrowPosition: var(--cardRange);
-                }
-                .slick-slider {
-                    margin-right: calc(0px - (var(--cardRange))) !important;
-                }
-                .slick-list {
-                    padding: 0 !important;
+                .FeatureShowList {
+                    .slick-arrow {
+                        top: -60px;
+                        --arrowPosition: var(--cardRange);
+                    }
+                    .slick-slider {
+                        margin-right: calc(0px - (var(--cardRange))) !important;
+                    }
+                    .slick-list {
+                        padding: 0 !important;
+                    }
                 }
                 @media (max-width: 500px) {
                     .FeatureShowList {

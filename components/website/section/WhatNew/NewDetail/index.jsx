@@ -2,6 +2,7 @@ import asset from "@/plugins/assets/asset";
 import NewsCard from "@/website/common/Card/NewsCard";
 import SocialGroup from "@/website/common/SocialGroup";
 import React, { useEffect, useState } from "react";
+import { variable } from "styles/variable";
 export default function NewDetail() {
     const [isTablet, setIsTablet] = useState(false);
 
@@ -17,14 +18,39 @@ export default function NewDetail() {
             setIsTablet(false);
         }
     };
-
+    const news = [
+        {
+            image: "/images/new4.png",
+            category: "Promotion",
+            time: "Feb 27, 2022",
+            title: "Various versions have evolved over the years, sometimes by accident",
+        },
+        {
+            image: "/images/new5.png",
+            category: "Promotion",
+            time: "Feb 27, 2022",
+            title: "Various versions have evolved over the years, sometimes by accident",
+        },
+        {
+            image: "/images/new6.png",
+            category: "Promotion",
+            time: "Feb 27, 2022",
+            title: "Various versions have evolved over the years, sometimes by accident",
+        },
+        {
+            image: "/images/new7.png",
+            category: "Promotion",
+            time: "Feb 27, 2022",
+            title: "Various versions have evolved over the years, sometimes by accident",
+        },
+    ];
     return (
         <>
             <div className="NewDetail" style={{ marginBottom: 80 }}>
                 <div className="container flex" style={{ alignItems: "flex-start", justifyContent: "space-between", gap: 30 }}>
                     <div className="Article w70" style={{ paddingBottom: 40, marginBottom: 20, borderBottom: "1px solid rgba(255, 255, 255, 0.07);" }}>
-                        <div className="NewDetail__info txMain upc normal purple">
-                            <p className="txMain pink">New</p>
+                        <div className="headlineSmall">
+                            <p className="type">New</p>
                             <span>•</span>
                             <p>Feb 27, 2022</p>
                             <span>•</span>
@@ -32,15 +58,15 @@ export default function NewDetail() {
                             <span>•</span>
                             <p>123 views</p>
                         </div>
-                        <div className="NewDetail__title txMain bold fz-36">Distract by the readable content of a page</div>
-                        <div className="NewDetail__shortDesc txMain blue normal fz-16">
+                        <div className="headline">Distract by the readable content of a page</div>
+                        <div className="content blue">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quam urna, vestibulum a gravida eu, porttitor at magna. Vivamus
                             tristique purus sit amet pretium volutpat.
                         </div>
-                        <div className="NewDetail__img">
+                        <div className="img">
                             <img src={asset("/images/new3.png")} alt="" />
                         </div>
-                        <div className="NewDetail__content txMain purple normal fz-16">
+                        <div className="content">
                             Donec urna felis, ultricies sit amet tristique at, elementum sit amet dui. Fusce efficitur euismod dui ac elementum. Aliquam dictum
                             vestibulum velit, id dignissim tortor viverra ut. Cras tristique sapien vel metus imperdiet efficitur. Proin molestie vel augue sed
                             dictum. Nulla facilisi. Vestibulum sed scelerisque neque. Nullam lorem libero, iaculis in nisl eu, imperdiet consectetur ipsum. Duis
@@ -52,7 +78,7 @@ export default function NewDetail() {
                             turpis ligula. Etiam urna urna, fermentum ut diam ac, commodo tempus mauris. Proin ac gravida nisi. Vivamus vitae placerat lacus,
                             nec convallis orci. Aenean pulvinar ut tortor id ullamcorper. Donec egestas mi purus, bibendum ornare massa feugiat ac.
                             <br /> <br />
-                            <p className="txMain bold blue">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p className="link">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             <br />
                             <ul className="list-style-auto" style={{ marginLeft: 15 }}>
                                 <li>Dolor, nulla pellentesque felis ultricies.</li>
@@ -74,7 +100,7 @@ export default function NewDetail() {
                                 </div>
                             </div>
                             <br />
-                            <p className="txMain bold blue">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p className="link">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             <br />
                             <ul className="list-style-auto" style={{ marginLeft: 15 }}>
                                 <li>Dolor, nulla pellentesque felis ultricies.</li>
@@ -86,86 +112,82 @@ export default function NewDetail() {
                         </div>
                     </div>
                     <div className="TrendingPost w30">
-                        <p className="TrendingPost__title txMain blue normal upc lspacing-1">Trending post</p>
+                        <p className="headlineSmall">Trending post</p>
                         <div className="TrendingPost__list flexCOL">
-                            <NewsCard
-                                image="/images/new4.png"
-                                column={isTablet ? "center" : "right"}
-                                category="Promotion"
-                                time="Feb 27, 2022"
-                                title="Various versions have evolved over the years, sometimes by accident"
-                            />
-                            <NewsCard
-                                image="/images/new5.png"
-                                column={isTablet ? "center" : "right"}
-                                category="Promotion"
-                                time="Feb 27, 2022"
-                                title="Various versions have evolved over the years, sometimes by accident"
-                            />
-                            <NewsCard
-                                image="/images/new6.png"
-                                column={isTablet ? "center" : "right"}
-                                category="Promotion"
-                                time="Feb 27, 2022"
-                                title="Various versions have evolved over the years, sometimes by accident"
-                            />
-                            <NewsCard
-                                image="/images/new7.png"
-                                column={isTablet ? "center" : "right"}
-                                category="Promotion"
-                                time="Feb 27, 2022"
-                                title="Various versions have evolved over the years, sometimes by accident"
-                            />
+                            {news.map((item, index) => (
+                                <NewsCard key={index} data={item} column={isTablet ? "center" : "right"} />
+                            ))}
                         </div>
                     </div>
                 </div>
-                <div className="flex PLMain" style={{ gap: 38 }}>
-                    <p className="txMain purple">Share on</p>
+                <div className="shareOn PLMain">
+                    <p>Share on</p>
                     <SocialGroup />
                 </div>
             </div>
             <style jsx global>{`
                 .NewDetail {
                     padding-top: 200px;
-                    &__info,
-                    &__title,
-                    &__shortDesc,
-                    &__img {
-                        margin-bottom: 20px;
-                    }
-                    &__info {
-                        display: flex;
-                        gap: 10px;
-                    }
-                    &__img {
-                        overflow: hidden;
-                        position: relative;
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
+                    .Article {
+                        .headlineSmall,
+                        .headline,
+                        .content,
+                        .img {
+                            margin-bottom: 20px;
                         }
-                    }
-                    &__content {
-                        .imgWrap {
+                        .headlineSmall {
                             display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            .img {
-                                width: calc(100% / 3 - (66px / 3));
-                                height: 208px;
-                                overflow: hidden;
-                                border-radius: 15px;
-                                img {
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
+                            margin-right: -10px;
+                            > * {
+                                margin-right: 10px;
+                            }
+                        }
+                        .img {
+                            overflow: hidden;
+                            position: relative;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .headlineSmall {
+                            letter-spacing: 0px;
+                            color: ${variable.color.purple};
+                            .type {
+                                font-weight: 700;
+                                color: ${variable.color.secondary};
+                            }
+                        }
+                        .content {
+                            &.blue {
+                                color: ${variable.color.blue};
+                            }
+                            .link {
+                                font-family: fm-m;
+                                color: ${variable.color.blue};
+                            }
+                            .imgWrap {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .img {
+                                    width: calc(100% / 3 - (66px / 3));
+                                    height: 208px;
+                                    overflow: hidden;
+                                    border-radius: 15px;
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
                                 }
                             }
                         }
                     }
                     .TrendingPost {
-                        &__title {
+                        > .headlineSmall {
+                            color: ${variable.color.blue};
                             margin-bottom: 25px;
                         }
                         &__list {
@@ -205,14 +227,21 @@ export default function NewDetail() {
                 }
                 @media (max-width: 1080px) {
                     .NewDetail {
-                        --fzrMain: 12px;
+                        .TrendingPost__list {
+                            .headlineSmall {
+                                font-size: 12px;
+                            }
+                        }
                     }
                 }
                 @media (max-width: 989px) {
                     .NewDetail {
                         .TrendingPost__list {
-                            --fzrMain: 11px;
                             --cardRange: 24px;
+
+                            .headlineSmall {
+                                font-size: 11px;
+                            }
                         }
                     }
                 }
@@ -234,36 +263,50 @@ export default function NewDetail() {
                     .NewDetail {
                         .TrendingPost__list {
                             --newsCOL: 3 !important;
-                            --fzrMain: 12px;
                             --cardRange: 20px;
+
+                            .headlineSmall {
+                                font-size: 12px;
+                            }
                         }
                     }
                 }
                 @media (max-width: 720px) {
                     .NewDetail {
                         .TrendingPost__list {
-                            --fzrMain: 11px;
                             --cardRange: 15px;
+
+                            .headlineSmall {
+                                font-size: 11px;
+                            }
                         }
                     }
                 }
                 @media (max-width: 650px) {
                     .NewDetail {
-                        &__content {
-                            .imgWrap {
-                                flex-direction: column;
-                                gap: 20px;
-                                .img {
-                                    height: auto;
-                                    width: 100%;
+                        .Article {
+                            .content {
+                                .imgWrap {
+                                    flex-direction: column;
+                                    gap: 20px;
+                                    .img {
+                                        height: auto;
+                                        width: 100%;
+                                    }
                                 }
                             }
                         }
+
                         .TrendingPost__list {
                             --newsCOL: 2 !important;
-                            --fzr16: 14px;
-                            --fzrMain: 13px;
                             --cardRange: 26px;
+
+                            .headlineSmall {
+                                font-size: 13px;
+                            }
+                            .content {
+                                font-size: 14px;
+                            }
                         }
                     }
                 }
@@ -273,7 +316,12 @@ export default function NewDetail() {
                             --newsCOL: 1 !important;
                             --fzr16: 15px;
 
-                            --fzrMain: 14px;
+                            .headlineSmall {
+                                font-size: 14px;
+                            }
+                            .content {
+                                font-size: 15px;
+                            }
                         }
                     }
                 }

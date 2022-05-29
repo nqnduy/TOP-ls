@@ -3,8 +3,8 @@ function TextTitle({ small_text, big_text, textAlign = "initial" }) {
     return (
         <>
             <div className="TextTitle">
-                <h3 className='headlineSmall'>{small_text}</h3>
-                <h4 className='headline'>{big_text}</h4>
+                <h3 className="headlineSmall">{small_text}</h3>
+                <h4 className="headline">{big_text}</h4>
             </div>
             <style jsx>{`
                 .TextTitle {
@@ -24,6 +24,8 @@ function TextTitle({ small_text, big_text, textAlign = "initial" }) {
                             margin-bottom: 8px;
                         }
                         h4 {
+                            font-size: 30px;
+                            line-height: 40px;
                             margin-bottom: 24px;
                         }
                     }
@@ -33,6 +35,8 @@ function TextTitle({ small_text, big_text, textAlign = "initial" }) {
                             margin-bottom: 0;
                         }
                         h4 {
+                            font-size: 28px;
+                            line-height: 38px;
                             margin-bottom: 19px;
                         }
                     }

@@ -22,6 +22,7 @@ export default function TextUnderline({ children, color, className="", type="" }
                     }
                     &.small {
                         &:after {
+                            height: 1px;
                             bottom: -3px;
                         }
                     }

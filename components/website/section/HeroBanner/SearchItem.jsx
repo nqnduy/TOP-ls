@@ -1,5 +1,4 @@
-import asset from '@/plugins/assets/asset';
-import Image from "next/image";
+import SortDropdown from '@/website/common/SortDropDown';
 import React from 'react';
 import { variable } from 'styles/variable';
 
@@ -8,9 +7,7 @@ export default function SearchItem({ children }) {
         <>
             <div className="Search-filter__item">
                 <p className="title">{children}</p>
-                <div>
-                    Select a category <Image src={asset("/images/icons/arrow-dropdown.svg")} alt="" width={10} height={5} />
-                </div>
+                <SortDropdown>Select a category</SortDropdown>
             </div>
             <style jsx>{`
                 .Search-filter__item {

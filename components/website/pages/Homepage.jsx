@@ -19,7 +19,7 @@ const Homepage = (props) => {
             <Organizational />
             <AboutUs />
             <OurTeam />
-            <WhatNew headline={<TextTitle small_text="what news?" big_text="News and promotions" textAlign="center"/>} />
+            <WhatNew headline={<TextTitle small_text="what news?" big_text="News and promotions" textAlign="center" />} />
             <style jsx global>{`
                 .Upcoming,
                 .FAQ {
@@ -27,8 +27,11 @@ const Homepage = (props) => {
                 }
                 .PreviousShow,
                 .AboutUs,
-                .OurTeam {
+                .OurTeam{
                     margin-bottom: 100px;
+                }
+                .WhatNew {
+                    margin-bottom: 50px;
                 }
                 @media (max-width: 820px) {
                     .OurTeam {

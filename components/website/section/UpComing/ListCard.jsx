@@ -67,6 +67,7 @@ function ListCard() {
             {
                 breakpoint: 630,
                 settings: {
+                    fade: true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     centerPadding: "0px",
@@ -75,6 +76,7 @@ function ListCard() {
             {
                 breakpoint: 500,
                 settings: {
+                    fade: true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     centerPadding: "0px",

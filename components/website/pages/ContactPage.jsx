@@ -1,32 +1,40 @@
 import Button from "@/website/common/Button/ButtonMain";
 import Input from "@/website/common/Input";
 import React from "react";
+import TextTitle from "../common/TextTitle";
 export default function ContactPage() {
     return (
         <>
             <div className="Contact">
-                <div className="Contact__content flexCT flexCOL">
-                    <p className="txMain bold fz-36">Get in touch</p>
-                    <p className="txMain blue normal upc lspacing-1" style={{ marginBottom: 30 }}>
-                        If you have any questions, feel Free Contact With Us!
-                    </p>
+                <div className="Contact__content">
+                    <TextTitle big_text={"Get in touch"} small_text={"If you have any questions, feel Free Contact With Us!"} textAlign="center" />
                     <Input type="text" placeholder="Enter your name here..." />
                     <Input type="text" placeholder="Email address..." />
                     <Input.TextArea type="text" placeholder="Your message..." rows="3" />
                     <Button>Search now</Button>
                 </div>
             </div>
-            <style jsx>{`
+            <style jsx global>{`
                 .Contact {
                     padding: {
                         top: 200px;
                         bottom: 70px;
                     }
                     &__content {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+
                         width: 40vw;
                         text-align: center;
                         margin: 0 auto;
                         gap: 20px;
+                        .TextTitle {
+                            display: flex;
+                            flex-direction: column-reverse;
+                            margin-bottom: 20px;
+                        }
                     }
                 }
                 @media (max-width: 1100px) {

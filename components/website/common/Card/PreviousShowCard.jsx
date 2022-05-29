@@ -3,8 +3,8 @@ import { variable } from 'styles/variable';
 import ButtonMain from "../Button/ButtonMain";
 import ButtonPlay from "../Button/ButtonPlay";
 
-function PreviousShowCard({ data, active }) {
-    const { image, title, event, color } = data;
+function PreviousShowCard({ data, active, color }) {
+    const { image, title, event } = data;
     return (
         <>
             <div className={`PreviousShowCard ${active}`}>
@@ -59,11 +59,11 @@ function PreviousShowCard({ data, active }) {
                                 object-fit: cover;
                             }
                         }
-                        .textWrapLayer{
-                            .title{
+                        .textWrapLayer {
+                            .title {
                                 font-family: fm-m;
                             }
-                            .event{
+                            .event {
                                 color: ${variable.color.purple};
                             }
                         }

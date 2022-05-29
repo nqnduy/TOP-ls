@@ -1,7 +1,7 @@
 import ImageWrap from "../ImageWrap";
 
 function MemberCard({ data }) {
-    const { image, name, role } = data
+    const { image, name, role } = data;
     return (
         <>
             <div className="MemberCard">
@@ -16,7 +16,8 @@ function MemberCard({ data }) {
                     .headline {
                         font-size: 21px;
                         line-height: 32px;
-                        transition: 0.2s ease-out;
+
+                        /*  Responsive   */
                         @media (max-width: 1220px) {
                             font-size: 19px;
                             line-height: 28px;

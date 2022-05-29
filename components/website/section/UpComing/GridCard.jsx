@@ -1,8 +1,9 @@
 import ShowCard from "@/website/common/Card/ShowCard";
 import SortDropdown from "@/website/common/SortDropDown";
 import React from "react";
+import { variable } from 'styles/variable';
 function GridCard() {
-    const upcomingShows = [
+    const upcomingCards = [
         {
             image: "/images/card1.png",
             price: 10.5,
@@ -54,16 +55,14 @@ function GridCard() {
     ];
     return (
         <>
-            <div className="SortUpcomingShow flexAC PRMain">
-                <p className="titleSort txMain purple normal">Sort by:</p>
-                <SortDropdown title="Relevance" />
-                <SortDropdown title="All categories" />
+            <div className="SortUpcomingShow PRMain">
+                <p>Sort by:</p>
+                <SortDropdown>Relevance</SortDropdown>
+                <SortDropdown>All categories</SortDropdown>
             </div>
             <div className="GridCard container">
-                {upcomingShows.map((item, index) => {
-                    return (
-                        <ShowCard key={index} data={item} />
-                    )
+                {upcomingCards.map((card, index) => {
+                    return <ShowCard key={index} data={card} />;
                 })}
                 <style jsx global>{`
                     .GridCard {
@@ -79,11 +78,17 @@ function GridCard() {
                         position: absolute;
                         top: calc(12% - 1vw);
                         right: 0;
-                        .titleSort {
+                        display: flex;
+                        align-items: center;
+                        p {
+                            color: ${variable.color.purple};
                             margin-right: 10px;
                         }
+                        .typeSort{
+                            font-family: fm-m;
+                        }
                         .typeSort:last-child {
-                            margin-right: 0;
+                            margin-left: 45px;
                         }
                     }
                     @media (max-width: 920px) {

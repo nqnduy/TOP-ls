@@ -64,7 +64,7 @@ export default function Testimonial() {
                 breakpoint: 400,
                 settings: {
                     slidesToShow: 1,
-                    centerPadding: "5px",
+                    centerPadding: "0px",
                 },
             },
         ],
@@ -76,7 +76,7 @@ export default function Testimonial() {
                     <TextTitle small_text="TESTIMONIALS" big_text="Take a look at our past customers success stories" />
                 </div>
             </div>
-            <div className="PLMain">
+            <div className="Testimonial__slider PLMain">
                 <Slider {...settings}>
                     <TestimonialCard />
                     <TestimonialCard />
@@ -142,6 +142,13 @@ export default function Testimonial() {
                     .Testimonial {
                         .w50 {
                             width: 100%;
+                        }
+                    }
+                }
+                @media (max-width: 400px) {
+                    .Testimonial {
+                        &__slider{
+                            padding-right: var(--pdContainer);
                         }
                     }
                 }

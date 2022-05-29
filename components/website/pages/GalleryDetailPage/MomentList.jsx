@@ -1,34 +1,126 @@
+import TextUnderline from '@/common/Text/TextUnderline';
 import MomentCard from "@/website/common/Card/MomentCard";
 import React from "react";
+import { variable } from 'styles/variable';
 
 export default function MomentList() {
+    const moments = [
+        {
+            image: "/images/gallery1.png",
+            title: "It is a long established fact",
+            type: "video"
+        },
+        {
+            image: "/images/gallery2.png",
+            title: "It is a long established fact",
+            type: "video"
+        },
+        {
+            image: "/images/gallery3.png",
+            title: "It is a long established fact",
+            type: "image"
+        },
+        {
+            image: "/images/gallery4.png",
+            title: "It is a long established fact",
+            type: "video"
+        },
+        {
+            image: "/images/gallery5.png",
+            title: "It is a long established fact",
+            type: "image"
+        },
+        {
+            image: "/images/gallery6.png",
+            title: "It is a long established fact",
+            type: "image"
+        },
+        {
+            image: "/images/gallery7.png",
+            title: "It is a long established fact",
+            type: "video"
+        },
+        {
+            image: "/images/gallery1.png",
+            title: "It is a long established fact",
+            type: "image"
+        },
+        {
+            image: "/images/gallery2.png",
+            title: "It is a long established fact",
+            type: "image"
+        },
+        {
+            image: "/images/gallery3.png",
+            title: "It is a long established fact",
+            type: "image"
+        },
+
+    ]
     return (
         <>
             <div className="MomentList">
-                <div className="container flexCOL flexAC">
-                    <h3 className="MomentList__title txMain bold fz-36 textALC w50" style={{ marginBottom: 40 }}>
-                        Let's take a look back at the great moments in our gallery
-                    </h3>
-                    <div className="MomentList__content">
-                        <MomentCard image="/images/gallery1.png" title="It is a long established fact" type="video" />
-                        <MomentCard image="/images/gallery2.png" title="It is a long established fact" type="video" />
-                        <MomentCard image="/images/gallery3.png" title="It is a long established fact" type="image" />
-                        <MomentCard image="/images/gallery4.png" title="It is a long established fact" type="video" />
-                        <MomentCard image="/images/gallery5.png" title="It is a long established fact" type="image" />
-                        <MomentCard image="/images/gallery6.png" title="It is a long established fact" type="image" />
-                        <MomentCard image="/images/gallery7.png" title="It is a long established fact" type="video" />
-                        <MomentCard image="/images/gallery1.png" title="It is a long established fact" type="image" />
-                        <MomentCard image="/images/gallery2.png" title="It is a long established fact" type="image" />
-                        <MomentCard image="/images/gallery3.png" title="It is a long established fact" type="image" />
+                <div className="container">
+                    <h3 className="MomentList__title headline">Let's take a look back at the great moments in our gallery</h3>
+                    <div className="MomentList__list">
+                        {moments.map((moment, index) => (
+                            <MomentCard key={index} data={moment} />
+                        ))}
                     </div>
-                    <div className="txMain pink bold hoverText hoverText-pink hoverText-small">Load More</div>
+                    <div className="centerVM">
+                        <TextUnderline type="small" color={variable.color.secondary} className="viewMore">
+                            Load More
+                        </TextUnderline>
+                    </div>
                 </div>
             </div>
             <style jsx global>{`
                 .MomentList {
                     margin-bottom: 100px;
                     --imgHeight: 500px;
-                    &__content {
+                    .container {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        .centerVM{
+                            margin-top: 10px;
+                        }
+                    }
+                    &__title {
+                        width: 50%;
+                        text-align: center;
+                        margin-bottom: 40px;
+
+                        /*  Responsive   */
+                        @media (max-width: 950px) {
+                            width: 55%;
+                        }
+                        @media (max-width: 920px) {
+                            width: 52%;
+                        }
+                        @media (max-width: 828px) {
+                            width: 54%;
+                        }
+                        @media (max-width: 720px) {
+                            width: 60%;
+                        }
+                        @media (max-width: 665px) {
+                            width: 65%;
+                        }
+                        @media (max-width: 620px) {
+                            width: 76%;
+                        }
+                        @media (max-width: 550px) {
+                            width: 88%;
+                        }
+                        @media (max-width: 470px) {
+                            width: 80%;
+                        }
+                        @media (max-width: 340px) {
+                            width: 95%;
+                        }
+                    }
+                    &__list {
                         width: 100%;
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
@@ -49,69 +141,56 @@ export default function MomentList() {
                             }
                         }
                     }
-                }
-                @media (max-width: 1300px) {
-                    .MomentList {
+
+                    /*  Responsive   */
+                    @media (max-width: 1300px) {
                         --imgHeight: 450px;
                     }
-                }
-                @media (max-width: 1200px) {
-                    .MomentList {
+                    @media (max-width: 1200px) {
                         --imgHeight: 400px;
                     }
-                }
-                @media (max-width: 1100px) {
-                    .MomentList {
+                    @media (max-width: 1100px) {
                         --imgHeight: 380px;
                     }
-                }
-                @media (max-width: 1024px) {
-                    .MomentList {
+                    @media (max-width: 1024px) {
                         --imgHeight: 350px;
                     }
-                }
-                @media (max-width: 950px) {
-                    .MomentList {
+                    @media (max-width: 950px) {
                         &__title {
                             width: 60%;
                         }
                     }
-                }
-                @media (max-width: 920px) {
-                    .MomentList {
+                    @media (max-width: 920px) {
                         --imgHeight: 300px;
 
-                        &__content {
+                        &__list {
                             gap: 20px;
                         }
                     }
-                }
-                @media (max-width: 820px) {
-                    .MomentList {
+                    @media (max-width: 820px) {
                         --imgHeight: 260px;
-                        &__content {
+
+                        &__list {
                             gap: 18px;
                         }
                     }
-                }
-                @media (max-width: 720px) {
-                    .MomentList {
+                    @media (max-width: 720px) {
                         --imgHeight: 210px;
+
                         &__title {
                             width: 70%;
                         }
-                        &__content {
+                        &__list {
                             gap: 18px;
                         }
                     }
-                }
-                @media (max-width: 620px) {
-                    .MomentList {
+                    @media (max-width: 620px) {
                         --imgHeight: 350px;
+
                         &__title {
                             width: 80%;
                         }
-                        &__content {
+                        &__list {
                             gap: 18px;
                             grid-template-columns: repeat(2, 1fr);
                             grid-template-rows: repeat(3, 1fr);
@@ -129,9 +208,7 @@ export default function MomentList() {
                             }
                         }
                     }
-                }
-                @media (max-width: 530px) {
-                    .MomentList {
+                    @media (max-width: 530px) {
                         --imgHeight: 250px;
 
                         &__title {

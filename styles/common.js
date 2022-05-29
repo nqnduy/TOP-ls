@@ -46,7 +46,6 @@ const CommonStyle = () => {
                     font-weight: 700;
                     font-size: 36px;
                     line-height: 46px;
-
                     color: #fff;
 
                     /*  Responsive   */
@@ -63,12 +62,8 @@ const CommonStyle = () => {
                         line-height: 35px;
                     }
                     @media (max-width: 820px) {
-                        font-size: 30px;
-                        line-height: 40px;
-                    }
-                    @media (max-width: 580px) {
-                        font-size: 28px;
-                        line-height: 38px;
+                        font-size: 22px;
+                        line-height: 30px;
                     }
                 }
                 .headlineSmall {
@@ -85,12 +80,37 @@ const CommonStyle = () => {
                     font-family: fm-m;
                     font-weight: 700;
                 }
+                .centerVM {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    margin-top: 40px;
+                    .viewMore {
+                        text-align: center;
+                        margin: 0 auto;
+                    }
+                }
+                .shareOn {
+                    display: flex;
+                    margin-right: -38px;
+                    > * {
+                        margin-right: 38px;
+                    }
+                    p {
+                        font-family: fm-m;
+                        color: ${variable.color.purple};
+                    }
+                }
                 .content {
                     font-family: fm-r;
-                    font-weight: 400;
                     font-size: 16px;
+                    font-weight: 400;
 
+                    line-height: 26px;
                     color: ${variable.color.purple};
+
+                    /*  Responsive   */
                     @media (max-width: 1319px) {
                         font-size: 15px;
                         line-height: 24px;
@@ -111,8 +131,6 @@ const CommonStyle = () => {
                         font-size: 14px;
                         line-height: 22px;
                     }
-                }
-                .title {
                 }
                 .overText2 {
                     display: -webkit-inline-box;
@@ -154,7 +172,7 @@ const CommonStyle = () => {
                         font-size: var(--fzr12);
                     }
                     &.bold {
-                        font-weight: fm-b;
+                        font-family: fm-b;
                         font-weight: 700;
                     }
                     &.normal {
@@ -421,7 +439,7 @@ const CommonStyle = () => {
                         font-size: 14px;
                         padding: 0 18px;
                         &:placeholder-shown {
-                            padding-left: 18px;
+                            padding: 0 18px;
                         }
                     }
                 }
@@ -453,9 +471,9 @@ const CommonStyle = () => {
                     }
                     @media (max-width: 720px) {
                         font-size: 14px;
-                        padding: 0 18px;
+                        padding: 10px 18px;
                         &:placeholder-shown {
-                            padding-left: 18px;
+                            padding: 10px 18px;
                         }
                     }
                 }

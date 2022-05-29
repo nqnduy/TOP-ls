@@ -2,20 +2,65 @@ import GalleryCard from "@/website/common/Card/GalleryCard";
 import React from "react";
 
 export default function GalleryThumb() {
+    const moments = [
+        {
+            image: "/images/prv1.png",
+            title: "XinChao Da Lat",
+            time: "feb 27, 2022",
+            type: "liveshow",
+        },
+        {
+            image: "/images/prv3.png",
+            title: "XinChao Da Lat",
+            time: "feb 27, 2022",
+            type: "liveshow",
+        },
+        {
+            image: "/images/prv2.png",
+            title: "XinChao Da Lat",
+            time: "feb 27, 2022",
+            type: "liveshow",
+        },
+        {
+            image: "/images/prv1.png",
+            title: "XinChao Da Lat",
+            time: "feb 27, 2022",
+            type: "liveshow",
+        },
+        {
+            image: "/images/prv3.png",
+            title: "XinChao Da Lat",
+            time: "feb 27, 2022",
+            type: "liveshow",
+        },
+        {
+            image: "/images/prv1.png",
+            title: "XinChao Da Lat",
+            time: "feb 27, 2022",
+            type: "liveshow",
+        },
+        {
+            image: "/images/prv2.png",
+            title: "XinChao Da Lat",
+            time: "feb 27, 2022",
+            type: "liveshow",
+        },
+        {
+            image: "/images/prv3.png",
+            title: "XinChao Da Lat",
+            time: "feb 27, 2022",
+            type: "liveshow",
+        },
+    ];
     return (
         <>
             <div className="GalleryThumb">
                 <div className="container">
-                    <div className="GalleryThumb__title txMain bold fz-21">Let's take a look back at the great moments in our gallery</div>
+                    <div className="GalleryThumb__title">Let's take a look back at the great moments in our gallery</div>
                     <div className="GalleryThumb__grid">
-                        <GalleryCard image="/images/prv1.png" title="XinChao Da Lat" time="feb 27, 2022" />
-                        <GalleryCard image="/images/prv3.png" title="XinChao Da Lat" time="feb 27, 2022" />
-                        <GalleryCard image="/images/prv2.png" title="XinChao Da Lat" time="feb 27, 2022" />
-                        <GalleryCard image="/images/prv1.png" title="XinChao Da Lat" time="feb 27, 2022" />
-                        <GalleryCard image="/images/prv3.png" title="XinChao Da Lat" time="feb 27, 2022" />
-                        <GalleryCard image="/images/prv1.png" title="XinChao Da Lat" time="feb 27, 2022" />
-                        <GalleryCard image="/images/prv2.png" title="XinChao Da Lat" time="feb 27, 2022" />
-                        <GalleryCard image="/images/prv3.png" title="XinChao Da Lat" time="feb 27, 2022" />
+                        {moments.map((moment, index) => (
+                            <GalleryCard key={index} data={moment} />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -24,7 +69,29 @@ export default function GalleryThumb() {
                 {`
                     .GalleryThumb {
                         &__title {
+                            font-family: fm-m;
+                            font-size: 21px;
+                            font-weight: 700;
+
+                            line-height: 32px;
+                            color: #fff;
+
+                            padding-right: 100px;
                             margin-bottom: 35px;
+
+                            /*  Responsive   */
+                            @media (max-width: 1220px) {
+                                font-size: 19px;
+                                line-height: 28px;
+                            }
+                            @media (max-width: 1024px) {
+                                font-size: 17px;
+                                line-height: 26px;
+                            }
+                            @media (max-width: 830px) {
+                                font-size: 16px;
+                                line-height: 26px;
+                            }
                         }
                         &__grid {
                             display: grid;
@@ -51,7 +118,7 @@ export default function GalleryThumb() {
                                             &__title {
                                                 margin-bottom: 3px !important;
                                             }
-                                            .flexAC {
+                                            &__desc {
                                                 flex-direction: column;
                                                 align-items: flex-start;
                                                 gap: 0px !important;
@@ -75,7 +142,7 @@ export default function GalleryThumb() {
                                             &__title {
                                                 margin-bottom: 6px !important;
                                             }
-                                            .flexAC {
+                                            &__desc {
                                                 flex-direction: row;
                                                 gap: 4px !important;
                                             }
@@ -98,10 +165,9 @@ export default function GalleryThumb() {
                                             &__title {
                                                 margin-bottom: 6px !important;
                                             }
-                                            .flexAC {
+                                            &__desc {
                                                 flex-direction: column;
                                                 gap: 0px !important;
-                                                align-items: flex-start;
                                             }
                                         }
                                     }

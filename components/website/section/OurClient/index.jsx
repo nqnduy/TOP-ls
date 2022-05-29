@@ -1,22 +1,26 @@
+import TextUnderline from '@/common/Text/TextUnderline';
 import TextTitle from "@/components/website/common/TextTitle";
 import BrandGroup from "@/components/website/section/OurClient/BrandGroup";
 import React from "react";
+import { variable } from 'styles/variable';
 
 export default function OurClient() {
     return (
         <div className="OurClient">
-            <div className="container flex">
+            <div className="container">
                 <div className="w50">
                     <TextTitle
                         small_text="Our Clients"
-                        big_text="Many units when working
-with us have referred
-their friends to us"
-                    />
-                    <p className="txMain bold hoverText hoverText-pink hoverText-small">View More</p>
+                        big_text="Many units when working with us have referred their friends to us"/>
+                    <TextUnderline
+                        type="small"
+                        color={variable.color.secondary}
+                        className="viewMore">
+                        View More
+                    </TextUnderline>
                 </div>
                 <div className="w50">
-                    <p className="OurClient__description txMain purple normal">
+                    <p className="OurClient__description content">
                         Our clients describe us as a product team which creates amazing UI/UX experiences, by dedication at work, always innovating to deliver
                         top-notch user experiences to them!
                     </p>
@@ -27,6 +31,9 @@ their friends to us"
                 .OurClient {
                     background-color: #05005d;
                     padding: 90px 0;
+                    .container{
+                        display: flex;
+                    }
                     .TextTitle {
                         width: 64%;
                     }

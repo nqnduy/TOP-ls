@@ -40,12 +40,14 @@ function PreviousShowList() {
             {
                 breakpoint: 630,
                 settings: {
+                    fade: true,
                     slidesToShow: 1,
                 },
             },
             {
                 breakpoint: 500,
                 settings: {
+                    fade: true,
                     slidesToShow: 1,
                     arrows: false,
                 },

@@ -1,21 +1,18 @@
 import asset from '@/plugins/assets/asset';
+import Image from 'next/image';
 import React from "react";
+import { variable } from 'styles/variable';
 
-export default function SortDropdown({ title }) {
+export default function SortDropdown({ children }) {
     return (
         <>
-            <div className="typeSort txMain purple flexAC">
-                {title} <img src={asset("/images/icons/arrow-dropdown.svg")} alt="" className="arrowSort" />
+            <div className="typeSort">
+                {children} <Image src={asset("/images/icons/arrow-dropdown.svg")} alt="" width={10} height={5} />
             </div>
             <style jsx>{`
                 .typeSort {
-                    margin-right: 45px;
-                    gap: 6px;
                     cursor: pointer;
-                }
-                .arrowSort {
-                    width: 9.5px;
-                    height: 5.5px;
+                    color: ${variable.color.purple};
                 }
             `}</style>
         </>

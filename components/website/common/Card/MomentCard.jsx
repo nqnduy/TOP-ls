@@ -2,18 +2,19 @@ import asset from "@/plugins/assets/asset";
 import ButtonPlay from "@/website/common/Button/ButtonPlay";
 import React from "react";
 
-export default function MomentCard({ image, title, type, ...props }) {
+export default function MomentCard({ data }) {
+    const { image, title, type } = data;
     return (
         <div className={`MomentCard ${type}`}>
             <div className="MomentCard-content" style={{ position: "relative" }}>
                 <div className="img">
-                    <img src={asset(image)} {...props} />
+                    <img src={asset(image)} />
                 </div>
                 <div className="layer"></div>
                 <div className="textWrapLayer flexSB">
                     <div>
-                        <p className="txMain fz-18">{title}</p>
-                        <p className="txMain purple upc normal fz-12">{type}</p>
+                        <p className="headline">{title}</p>
+                        <p className="headlineSmall">{type}</p>
                     </div>
                 </div>
                 {type === "video" && <ButtonPlay position="center" />}
@@ -65,6 +66,30 @@ export default function MomentCard({ image, title, type, ...props }) {
                     &-content {
                         position: relative;
                         border-radius: 15px;
+                    }
+                    .headline {
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-weight: 500;
+                        margin-bottom: 5px;
+
+                        /*  Responsive   */
+                        @media (max-width: 1220px) {
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                        @media (max-width: 830px) {
+                            font-size: 15px;
+                            line-height: 20px;
+                        }
+                        @media (max-width: 730px) {
+                            font-size: 14px;
+                        }
+                    }
+                    .headlineSmall{
+                        font-size: 12px;
+                        line-height: 16px;
+                        letter-spacing: 0px;
                     }
                     .img {
                         position: relative;

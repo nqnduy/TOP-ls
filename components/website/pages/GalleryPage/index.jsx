@@ -1,25 +1,33 @@
+import TextUnderline from "@/common/Text/TextUnderline";
 import GalleryThumb from "@/website/pages/GalleryPage/GalleryThumb";
 import FeatureShowList from "@/website/section/ShowList/Feature";
 import React from "react";
+import { variable } from "styles/variable";
 export default function GalleryPage() {
     return (
         <>
-            <FeatureShowList />
-            <GalleryThumb />
-            <p className="txMain bold pink textALC hoverText hoverText-pink hoverText-small" style={{ margin: "0 auto" }}>
-                View More
-            </p>
+            <div className="GalleryPage">
+                <FeatureShowList />
+                <GalleryThumb />
+                <div className="centerVM">
+                    <TextUnderline type="small" color={variable.color.secondary} className="viewMore">
+                        View More
+                    </TextUnderline>
+                </div>
+            </div>
+
             <style jsx global>{`
-                .FeatureShowList {
+                .GalleryPage {
                     padding-top: 200px;
-                    margin-bottom: 70px;
-                }
-                .GalleryThumb {
-                    margin-bottom: 50px;
-                }
-                @media (max-width: 1024px) {
+                    padding-bottom: 40px;
                     .FeatureShowList {
-                        padding-top: 100px;
+                        margin-bottom: 70px;
+                    }
+                    .GalleryThumb {
+                        margin-bottom: 50px;
+                    }
+                    @media (max-width: 1024px) {
+                        padding-top: 80px;
                     }
                 }
             `}</style>

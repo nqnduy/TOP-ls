@@ -4,19 +4,18 @@ import Upcoming from "@/website/section/UpComing";
 import GetTicket from "@/website/section/UpComing/Detail/GetTicket";
 import Ticket from "@/website/section/UpComing/Detail/Ticket";
 import React from "react";
+import { variable } from 'styles/variable';
 export default function UpComingDetail() {
     return (
         <div className="UpComingShowDetail">
             <div className="container" style={{ marginBottom: 80 }}>
                 <div className="UpComingShowDetail__content flex">
-                    <div
-                        className="UpComingShowDetail__content-article w50"
-                        style={{ paddingBottom: 40, marginBottom: 20, borderBottom: "1px solid rgba(255, 255, 255, 0.07)" }}>
-                        <h2 className="txMain fz-36 bold" style={{ marginBottom: 40 }}>
+                    <div className="w50" style={{ paddingBottom: 40, marginBottom: 20, borderBottom: "1px solid rgba(255, 255, 255, 0.07)" }}>
+                        <h2 className="headline" style={{ marginBottom: 40 }}>
                             France Rock Music Conference March 2022
                         </h2>
-                        <div className="txMain purple normal fz-16">
-                            <p className="txMain blue bold">About this event</p>
+                        <div className="content">
+                            <p className="link">About this event</p>
                             <br />
                             Rock en Seine is one of France's most famous music festivals, held over three days in late summer each year in the country's capital
                             Paris. <br />
@@ -30,7 +29,7 @@ export default function UpComingDetail() {
                             <br />
                             <br />
                             <br />
-                            <p className="txMain blue bold">Ticket price of the event</p>
+                            <p className="link">Ticket price of the event</p>
                             <br />
                             Pellentesque massa erat adipiscing lorem molestie amet augue. Lorem ipsum amet vitae ipsum at a sagittis cras arcu interdum
                         </div>
@@ -51,14 +50,14 @@ export default function UpComingDetail() {
                                 <p>Combo Gift</p>
                             </Ticket>
                         </div>
-                        <div className="txMain normal purple">
-                            <p className="txMain blue bold fz-21">Sponsors of event</p>
+                        <div className="content">
+                            <p className="headline">Sponsors of event</p>
                             <br />
                             <br />
                             <BrandGroup column={4} />
                             <br />
                             <br />
-                            <p className="txMain blue bold fz-21">Very important to note</p>
+                            <p className="headline">Very important to note</p>
                             <br />
                             <br />
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisl diam phasellus lacus id orci viverra duis in. Suspendisse
@@ -85,13 +84,13 @@ export default function UpComingDetail() {
                         <GetTicket />
                     </div>
                 </div>
-                <div className="flex" style={{ gap: 38 }}>
-                    <p className="txMain purple">Share on</p>
+                <div className="shareOn">
+                    <p>Share on</p>
                     <SocialGroup />
                 </div>
             </div>
             <div className="container">
-                <p className="sliderTitle txMain bold fz-21">Looking for an upcoming show? You can explore by categories, location, and date start... Ready?</p>
+                <p className="sliderTitle">Looking for an upcoming show? You can explore by categories, location, and date start... Ready?</p>
             </div>
             <Upcoming haveTitle={false} pTop={50} />
 
@@ -100,6 +99,32 @@ export default function UpComingDetail() {
                     &__content {
                         gap: 85px;
                         justify-content: space-between;
+                        .link {
+                            font-family: fm-m;
+                            font-weight: 700;
+                            color: ${variable.color.blue};
+                        }
+                        .content {
+                            .headline {
+                                font-size: 21px;
+                                line-height: 32px;
+                                color: ${variable.color.blue};
+
+                                /*  Responsive   */
+                                @media (max-width: 1220px) {
+                                    font-size: 19px;
+                                    line-height: 28px;
+                                }
+                                @media (max-width: 1024px) {
+                                    font-size: 17px;
+                                    line-height: 26px;
+                                }
+                                @media (max-width: 830px) {
+                                    font-size: 16px;
+                                    line-height: 26px;
+                                }
+                            }
+                        }
                         ul {
                             li {
                                 margin-left: 1em;
@@ -110,12 +135,37 @@ export default function UpComingDetail() {
                         width: 30%;
                     }
                     .sliderTitle {
+                        font-family: fm-m;
+                        font-size: 21px;
+                        font-weight: 700;
+
+                        line-height: 32px;
+                        color: #fff;
+
                         padding-right: 100px;
+
+                        /*  Responsive   */
+                        @media (max-width: 1220px) {
+                            font-size: 19px;
+                            line-height: 28px;
+                        }
+                        @media (max-width: 1024px) {
+                            font-size: 17px;
+                            line-height: 26px;
+                        }
+                        @media (max-width: 830px) {
+                            font-size: 16px;
+                            line-height: 26px;
+                        }
                     }
                 }
                 .Ticket {
                     width: calc((100% / 3) - (40px / 3));
                 }
+                .slick-arrow {
+                    top: -75px;
+                }
+                /*  Responsive   */
                 @media (max-width: 1350px) {
                     .UpComingShowDetail {
                         .getTicket {
@@ -126,15 +176,13 @@ export default function UpComingDetail() {
                 @media (max-width: 1290px) {
                     .UpComingShowDetail {
                         &__content {
-                            &-article {
-                                .TicketList {
-                                    width: 100%;
-                                    flex-direction: column;
-                                    gap: 20px;
-                                    .Ticket {
-                                        margin: 0 auto;
-                                        width: 80%;
-                                    }
+                            .TicketList {
+                                width: 100%;
+                                flex-direction: column;
+                                gap: 20px;
+                                .Ticket {
+                                    margin: 0 auto;
+                                    width: 80%;
                                 }
                             }
                         }
@@ -169,14 +217,12 @@ export default function UpComingDetail() {
                                     }
                                 }
                             }
-                            &-article {
-                                .TicketList {
-                                    width: 100%;
-                                    gap: 20px;
-                                    flex-direction: row;
-                                    .Ticket {
-                                        width: calc((100% / 3) - (40px / 3));
-                                    }
+                            .TicketList {
+                                width: 100%;
+                                gap: 20px;
+                                flex-direction: row;
+                                .Ticket {
+                                    width: calc((100% / 3) - (40px / 3));
                                 }
                             }
                         }
@@ -190,14 +236,12 @@ export default function UpComingDetail() {
                             .getTicket {
                                 width: 100%;
                             }
-                            &-article {
-                                .TicketList {
-                                    flex-direction: column;
-                                    gap: 20px;
-                                    .Ticket {
-                                        margin: 0 auto;
-                                        width: 70%;
-                                    }
+                            .TicketList {
+                                flex-direction: column;
+                                gap: 20px;
+                                .Ticket {
+                                    margin: 0 auto;
+                                    width: 70%;
                                 }
                             }
                         }
@@ -209,8 +253,14 @@ export default function UpComingDetail() {
                             text-align: right;
                             font-size: 21px;
                             line-height: 30px;
-                            margin-bottom: 50px;
+                            margin-bottom: 75px;
                             padding-right: 0;
+                        }
+                        .Upcoming {
+                            padding-top: 10px;
+                        }
+                        .slick-arrow {
+                            top: -50px;
                         }
                     }
                 }
@@ -220,18 +270,16 @@ export default function UpComingDetail() {
                             text-align: center;
                             font-size: 15px;
                             line-height: 28px;
-                            margin-bottom: 0;
+                            margin-bottom: 30px;
                         }
                     }
                 }
                 @media (max-width: 400px) {
                     .UpComingShowDetail {
                         &__content {
-                            &-article {
-                                .TicketList {
-                                    .Ticket {
-                                        width: 90%;
-                                    }
+                            .TicketList {
+                                .Ticket {
+                                    width: 90%;
                                 }
                             }
                         }

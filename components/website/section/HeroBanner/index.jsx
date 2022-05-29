@@ -129,9 +129,6 @@ function HeroBanner({ searchBar }) {
                             &-title {
                                 width: 50%;
                             }
-
-                            .erik-name {
-                            }
                         }
                     }
                 }

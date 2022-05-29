@@ -1,4 +1,4 @@
-export default function Button({ children, width, color }) {
+export default function Button({ children, width="", color }) {
     return (
         <>
             <button className={`Button ${width} ${color}`}>
@@ -64,14 +64,14 @@ export default function Button({ children, width, color }) {
                         width: 100%;
                     }
                     &.white {
-                        div {
+                        span {
                             background-color: #fff;
                             color: #060070;
                         }
                     }
                     &.primary {
                         border: 1px solid #fff;
-                        div {
+                        span {
                             background-color: #060070;
                             color: #fff;
                         }

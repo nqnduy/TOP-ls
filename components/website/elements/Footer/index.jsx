@@ -10,10 +10,8 @@ function Footer() {
                 <div className="container">
                     <div className="backBannerFooter">
                         <div className="backBannerFooter__textArea">
-                            <p className="txMain bold fz-36" style={{ marginBottom: 6 }}>
-                                Sign up to our newsletter
-                            </p>
-                            <p className="txMain normal fz-16">Don’t miss our future updates!</p>
+                            <p className="headline">Sign up to our newsletter</p>
+                            <p className="content">Don’t miss our future updates!</p>
                         </div>
                         <div className="backBannerFooter__inputArea">
                             <Input />
@@ -24,25 +22,28 @@ function Footer() {
                             <Logo />
                         </div>
                         <ul className="menu flex" style={{ gap: 40 }}>
-                            <li className="txMain normal fz-16">
+                            <li className="content">
                                 <a href="">About Us</a>
                             </li>
-                            <li className="txMain normal fz-16">
+                            <li className="content">
                                 <a href="">Upcoming Shows</a>
                             </li>
-                            <li className="txMain normal fz-16">
+                            <li className="content">
                                 <a href="">Gallery</a>
                             </li>
-                            <li className="txMain normal fz-16">
+                            <li className="content">
                                 <a href="">News & Promotions</a>
                             </li>
-                            <li className="txMain normal fz-16">
+                            <li className="content">
                                 <a href="">Contact</a>
                             </li>
                         </ul>
                     </div>
-                    <div className="Footer__bottom flexSB">
-                        <p className="txMain purple normal">©2022 Top Live Show. All rights reserved.</p>
+                    <div className="Footer__bottom">
+                        <div>
+                            <p className="content">© 2022 Top Live Show.</p>
+                            <p className="content">All rights reserved.</p>
+                        </div>
                         <SocialGroup />
                     </div>
                 </div>
@@ -58,6 +59,12 @@ function Footer() {
                     gap: 30px;
                     &__textArea {
                         width: 53%;
+                        .headline {
+                            margin-bottom: 6px;
+                        }
+                        .content {
+                            color: #fff;
+                        }
                     }
                     &__inputArea {
                         width: 48%;
@@ -91,12 +98,30 @@ function Footer() {
                                         transition: ease 0.3s;
                                     }
                                 }
+                                @media (max-width: 820px) {
+                                    font-size: 13px;
+                                    line-height: 20px;
+                                }
                             }
                         }
                     }
                     &__bottom {
                         padding-bottom: 30px;
-
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        > div:first-child {
+                            display: flex;
+                            > .content:last-child {
+                                margin-left: 5px;
+                            }
+                        }
+                        .content {
+                            @media (max-width: 820px) {
+                                font-size: 13px;
+                                line-height: 20px;
+                            }
+                        }
                         .icon {
                             cursor: pointer;
                         }
@@ -175,6 +200,15 @@ function Footer() {
                             .menu {
                                 gap: 20px !important;
                                 grid-template-columns: repeat(1, 1fr);
+                            }
+                        }
+                        &__bottom {
+                            > div:first-child {
+                                display: flex;
+                                flex-direction: column;
+                                > .content:last-child {
+                                    margin-left: 15px;
+                                }
                             }
                         }
                     }

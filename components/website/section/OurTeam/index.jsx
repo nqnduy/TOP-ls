@@ -26,6 +26,7 @@ export default function OurTeam({ type }) {
             {
                 breakpoint: 450,
                 settings: {
+                    fade: true,
                     centerPadding: "0",
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -35,7 +36,7 @@ export default function OurTeam({ type }) {
         ],
     };
 
-    const member = [
+    const members = [
         {
             image: "/images/about1.png",
             name: "Anthony Nguyen",
@@ -73,8 +74,8 @@ export default function OurTeam({ type }) {
                 <div className="OurTeam__wrapper flexSB">
                     <div className="OurTeam__wrapper-inSlider">
                         <Slider {...settings}>
-                            {member.map((item, index) => (
-                                <MemberCard key={index} data={item} />
+                            {members.map((member, index) => (
+                                <MemberCard key={index} data={member} />
                             ))}
                         </Slider>
                     </div>

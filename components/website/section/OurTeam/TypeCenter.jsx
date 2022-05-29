@@ -115,40 +115,85 @@ export default function TypeCenter() {
                     autoplaySpeed: 2000,
                     initialSlide: 2,
                     arrows: false,
+                    fade: true,
                 },
             },
         ],
     };
+    const members = [
+        {
+            image: "/images/about2.png",
+            name: "Lam Kha Nhu",
+            role: "Marketing",
+        },
+        {
+            image: "/images/about1.png",
+            name: "Anthony Nguyen",
+            role: "Designer",
+        },
+        {
+            image: "/images/about3.png",
+            name: "Tony Pham",
+            role: "Founder & CEO",
+        },
+        {
+            image: "/images/about2.png",
+            name: "Lam Kha Nhu",
+            role: "Marketing",
+        },
+        {
+            image: "/images/about1.png",
+            name: "Anthony Nguyen",
+            role: "Designer",
+        },
+        {
+            image: "/images/about3.png",
+            name: "Tony Pham",
+            role: "Founder & CEO",
+        },
+        {
+            image: "/images/about2.png",
+            name: "Lam Kha Nhu",
+            role: "Marketing",
+        },
+        {
+            image: "/images/about1.png",
+            name: "Anthony Nguyen",
+            role: "Designer",
+        },
+        {
+            image: "/images/about3.png",
+            name: "Tony Pham",
+            role: "Founder & CEO",
+        },
+    ];
     return (
         <>
             <div className="OurTeam">
-                <div className="textWrap flexAC flexCOL">
+                <div className="textWrap">
                     <TextTitle small_text={"Our teams"} big_text={"Many famous celebrities"} textAlign="center" />
-                    <p className="textWrap__desc txMain fz-16 purple normal">
+                    <p className="content">
                         Nifty team is a diverse network of consultants and industry professionals with a global mindset & a collaborative culture. We work to
                         understand your issues
                     </p>
                 </div>
                 <div className="PLMain">
                     <Slider {...settings}>
-                        <MemberCard image="/images/about2.png" name="Anthony Nguyen" role="Designer" />
-                        <MemberCard image="/images/about1.png" name="Anthony Nguyen" role="Designer" />
-                        <MemberCard image="/images/about3.png" name="Anthony Nguyen" role="Designer" />
-                        <MemberCard image="/images/about2.png" name="Anthony Nguyen" role="Designer" />
-                        <MemberCard image="/images/about1.png" name="Anthony Nguyen" role="Designer" />
-                        <MemberCard image="/images/about3.png" name="Anthony Nguyen" role="Designer" />
-                        <MemberCard image="/images/about2.png" name="Anthony Nguyen" role="Designer" />
-                        <MemberCard image="/images/about1.png" name="Anthony Nguyen" role="Designer" />
-                        <MemberCard image="/images/about3.png" name="Anthony Nguyen" role="Designer" />
+                        {members.map((member, index) => (
+                            <MemberCard key={index} data={member} />
+                        ))}
                     </Slider>
                 </div>
             </div>
             <style jsx global>{`
                 .OurTeam {
                     .textWrap {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
                         width: 100%;
                         text-align: center;
-                        &__desc {
+                        .content {
                             width: 40%;
                             margin-bottom: 60px;
                             text-align: center;
@@ -182,7 +227,7 @@ export default function TypeCenter() {
                 @media (max-width: 950px) {
                     .OurTeam {
                         .textWrap {
-                            &__desc {
+                            .content {
                                 width: 45%;
                             }
                         }
@@ -190,11 +235,8 @@ export default function TypeCenter() {
                 }
                 @media (max-width: 835px) {
                     .OurTeam {
-                        --fzr18: 18px;
-                        --fzr16: 15px;
-                        --fzr21: 19px;
                         .textWrap {
-                            &__desc {
+                            .content {
                                 width: 50%;
                             }
                         }
@@ -203,7 +245,7 @@ export default function TypeCenter() {
                 @media (max-width: 750px) {
                     .OurTeam {
                         .textWrap {
-                            &__desc {
+                            .content {
                                 width: 55%;
                             }
                         }
@@ -225,7 +267,7 @@ export default function TypeCenter() {
                             }
                         }
                         .textWrap {
-                            &__desc {
+                            .content {
                                 width: 70%;
                             }
                         }
@@ -243,7 +285,7 @@ export default function TypeCenter() {
                 @media (max-width: 400px) {
                     .OurTeam {
                         .textWrap {
-                            &__desc {
+                            .content {
                                 width: 85%;
                             }
                         }

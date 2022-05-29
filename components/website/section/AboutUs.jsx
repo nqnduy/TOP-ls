@@ -1,3 +1,4 @@
+import TextUnderline from "@/common/Text/TextUnderline";
 import asset from "@/plugins/assets/asset";
 import React from "react";
 import { variable } from "styles/variable";
@@ -28,9 +29,9 @@ const AboutUs = (props) => {
                             <div className="headlineSmall">Tickets Sold</div>
                         </div>
                     </div>
-                    {/* <TextUnderline type="small" color={variable.color.secondary} className="viewMore">
+                    <TextUnderline type="small" color={variable.color.secondary} className="viewMore">
                         View more
-                    </TextUnderline> */}
+                    </TextUnderline>
                 </div>
                 <div className="imgWrap">
                     <div className="flex" style={{ flexDirection: "column", alignItems: "flex-end" }}>
@@ -182,6 +183,7 @@ const AboutUs = (props) => {
                                 &:not(:last-child) {
                                     margin-right: 0 !important;
                                 }
+
 
                             }
                             justify-content: space-between;

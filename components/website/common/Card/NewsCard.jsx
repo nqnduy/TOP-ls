@@ -1,7 +1,8 @@
 import React from "react";
-import { variable } from 'styles/variable';
+import { variable } from "styles/variable";
 import ImageWrap from "../ImageWrap";
-function NewsCard({ image, column, category, title, content, time }) {
+function NewsCard({ data, column }) {
+    const { image, category, title, content, time } = data;
     return (
         <>
             <div className={`NewsCard ${column}`}>
@@ -54,6 +55,18 @@ function NewsCard({ image, column, category, title, content, time }) {
                                 font-size: 28px;
                                 line-height: 40px;
                                 width: 95%;
+                                /*  Responsive   */
+                                @media (max-width: 850px) {
+                                    font-size: 26px;
+                                    line-height: 35px;
+                                }
+                                @media (max-width: 660px) {
+                                    font-size: 23px;
+                                    line-height: 30px;
+                                }
+                                @media (max-width: 650px) {
+                                    width: 100%;
+                                }
                             }
                             &.content {
                                 font-family: fm-m;
@@ -64,6 +77,9 @@ function NewsCard({ image, column, category, title, content, time }) {
                         &-content {
                             -webkit-line-clamp: 3;
                             width: 95%;
+                            @media (max-width: 650px) {
+                                width: 100%;
+                            }
                         }
                     }
                     &.center,
@@ -75,6 +91,9 @@ function NewsCard({ image, column, category, title, content, time }) {
                                 }
                                 &-title {
                                     height: calc(2.5em + 1vw);
+                                    @media (max-width: 650px) {
+                                        width: 95%;
+                                    }
                                 }
                                 &-content {
                                     display: none;
@@ -85,7 +104,6 @@ function NewsCard({ image, column, category, title, content, time }) {
                     &.right {
                         display: flex;
                         align-items: flex-start;
-                        height: 100%;
                         .NewsCard {
                             &__img {
                                 width: 50%;
