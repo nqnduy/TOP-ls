@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-export default function Ticket({ ticket, title, price, children, unit = "$", payment = false, color }) {
+import { variable } from "styles/variable";
+export default function Ticket({ data, children, payment = false }) {
+    const { ticket, title, price, unit = "$", color } = data;
     const [ticketBuy, setTicketBuy] = useState(0);
-    // const [ticketPrice, setTicketPrice] = useState();
     const [_ticket, _setTicket] = useState(ticket);
     const ticketPrice = price * ticketBuy;
     const handleIncrease = () => {
@@ -13,49 +14,47 @@ export default function Ticket({ ticket, title, price, children, unit = "$", pay
         _setTicket(_ticket + 1);
     };
     const disableChange = () => {};
+    const soldOut = () => {
+        if (!ticket || ticket === 0) {
+            return true;
+        }
+        return false;
+    };
     return (
         <>
-            <div className="Ticket noselect">
-                <p className="Ticket__title txMain upc bold">{title}</p>
-                <p className="Ticket__price txMain pink bold">
+            <div className={`Ticket ${soldOut() ? "soldOut" : ""} noselect`}>
+                <p className="Ticket__title">{title}</p>
+                <p className="Ticket__price">
                     {`${unit} ${price ? price : ""}`}
-                    <span className="txMain pink bold">/ticket</span>
+                    <span>/ticket</span>
                 </p>
                 <div className="Ticket__line"></div>
-                <div className="Ticket__gift txMain normal fz-16 main">{children}</div>
+                <div className="Ticket__gift content">{children}</div>
                 {payment && (
-                    <div className="Ticket__quantity flexAC ">
-
+                    <div className="Ticket__quantity">
                         {/* Note: Decrease */}
-                        <div className="Ticket__quantity-btn txMain purple normal fz-21"
-                            onClick={ticketBuy > 0 ? handleDecrease : disableChange}>
+                        <div className="Ticket__quantity-btn" onClick={ticketBuy > 0 ? handleDecrease : disableChange}>
                             <div>-</div>
                         </div>
 
                         {/* Note: Ticket */}
-                        <div className="Ticket__quantity-btn value txMain bold pink fz-21">
+                        <div className="Ticket__quantity-btn value">
                             <div>{ticketBuy < 10 ? `0${ticketBuy}` : ticketBuy}</div>
                         </div>
 
                         {/* Note: Increase */}
-                        <div className="Ticket__quantity-btn txMain purple normal fz-21"
-                            onClick={ticketBuy < ticket ? handleIncrease : disableChange}>
+                        <div className="Ticket__quantity-btn" onClick={ticketBuy < ticket ? handleIncrease : disableChange}>
                             <div>+</div>
                         </div>
-
                     </div>
                 )}
 
                 {/* TODO: SOLD OUT */}
-                {!ticket || ticket === 0 ? (
-                    <p className="Ticket__value txMain purple upc fz-12">sold out tickets</p>
-                ) : (
-                    <p className="Ticket__value txMain blue upc fz-12">{`${_ticket} tickets left`}</p>
-                )}
+                {soldOut() ? <p className="Ticket__value soldOut">sold out tickets</p> : <p className="Ticket__value">{`${_ticket} tickets left`}</p>}
 
                 {/* TODO: TOTAL PRICE */}
                 {payment && (
-                    <div className={`Ticket__total ${!ticket || ticket === 0 ? "" : color}`}>
+                    <div className={`Ticket__total ${soldOut() ? "" : color}`}>
                         <p className="Ticket__total-price txMain bold fz-21">
                             {`${unit} ${price ? ticketPrice : ""}`}
                             <span className="txMain bold">/{ticketBuy} ticket</span>
@@ -74,26 +73,57 @@ export default function Ticket({ ticket, title, price, children, unit = "$", pay
                     padding-top: 20px;
                     cursor: pointer;
                     &__title {
-                        color: #060070;
-                        background-color: rgba(6, 0, 112, 0.07);
-                        padding: 6px 16px;
+                        font-family: fm-m;
+                        font-weight: 700;
+                        color: ${variable.color.primary};
+                        text-transform: uppercase;
+
                         border-radius: 50px;
+                        padding: 6px 16px;
                         margin-bottom: 17px;
+                        background-color: rgba(6, 0, 112, 0.07);
                     }
                     &__price {
+                        font-family: fm-m;
                         font-size: 21px;
+                        line-height: 32px;
+                        font-weight: 700;
+
                         margin-bottom: 17px;
+                        color: ${variable.color.secondary};
+
+                        /*  Responsive   */
+                        @media (max-width: 1220px) {
+                            font-size: 19px;
+                            line-height: 28px;
+                        }
+                        @media (max-width: 1024px) {
+                            font-size: 17px;
+                            line-height: 26px;
+                        }
+                        @media (max-width: 820px) {
+                            font-size: 21px;
+                            line-height: 32px;
+                        }
+                        @media (max-width: 350px) {
+                            font-size: 17px;
+                            line-height: 26px;
+                        }
                     }
                     &__gift {
-                        margin-bottom: 23px;
-                        padding: 0 7px;
                         height: calc(5rem);
                         overflow: hidden;
+                        color: ${variable.color.primary};
+                        margin-bottom: 23px;
+                        padding: 0 7px;
                     }
                     &__quantity {
-                        margin-top: 20px;
-                        gap: 8px;
+                        display: flex;
+                        align-items: center;
 
+                        gap: 8px;
+                        margin-top: 20px;
+                        cursor: pointer;
                         &-btn {
                             --value: 40px;
 
@@ -101,6 +131,12 @@ export default function Ticket({ ticket, title, price, children, unit = "$", pay
                             height: var(--value);
                             border: 1px solid #121212;
                             border-radius: 12px;
+                            font-family: fm-t;
+                            font-size: 21px;
+                            line-height: 32px;
+                            color: ${variable.color.purple};
+                            transition: 0.3s ease-in-out;
+                            transition-delay: 100ms;
                             div {
                                 display: flex;
                                 align-items: center;
@@ -110,13 +146,47 @@ export default function Ticket({ ticket, title, price, children, unit = "$", pay
                                 pointer-events: none;
                             }
                             &.value {
+                                font-family: fm-m;
+                                pointer-events: none;
                                 width: calc(2 * var(--value));
+                                color: ${variable.color.secondary};
+                            }
+                            &:hover {
+                                color: #fff;
+                                border: 1px solid ${variable.color.secondary};
+                                background-color: ${variable.color.secondary};
+                                transition: 0.3s ease-in-out;
+                            }
+
+                            /*  Responsive   */
+                            @media (max-width: 1220px) {
+                                font-size: 19px;
+                                line-height: 28px;
+                            }
+                            @media (max-width: 1024px) {
+                                font-size: 17px;
+                                line-height: 26px;
+                            }
+                            @media (max-width: 820px) {
+                                font-size: 21px;
+                                line-height: 32px;
+                            }
+                            @media (max-width: 350px) {
+                                font-size: 17px;
+                                line-height: 26px;
                             }
                         }
                     }
                     &__value {
                         margin-top: 5px;
                         margin-bottom: 30px;
+                        font-size: 12px;
+                        font-family: fm-m;
+                        text-transform: uppercase;
+                        color: ${variable.color.blue};
+                        &.soldOut {
+                            color: ${variable.color.purple};
+                        }
                     }
                     &__total {
                         width: 100%;
@@ -183,6 +253,11 @@ export default function Ticket({ ticket, title, price, children, unit = "$", pay
                             right: -11px;
                             top: 50%;
                             transform: translateY(-50%);
+                        }
+                    }
+                    &.soldOut {
+                        .value {
+                            color: ${variable.color.purple};
                         }
                     }
                 }

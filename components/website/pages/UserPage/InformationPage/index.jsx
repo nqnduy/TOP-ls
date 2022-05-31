@@ -8,42 +8,70 @@ export default function InformationPage({ show }) {
         <>
             <div className={`InformationContent ${show}`}>
                 <div className="PersonalInfo">
-                    <h2 className="PersonalInfo__headline txMain bold fz-21">Personal information</h2>
-                    <div className="PersonalInfo__fieldGroup flexCOL">
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "26px 13px" }}>
+                    <h2 className="headline">Personal information</h2>
+                    <div className="fieldGroup">
+                        <div>
                             <Input type="text" placeholder="Phan Văn Tất Đạt" />
                             <Input type="email" placeholder="datphan@abc.com" />
                             <Input type="tel" placeholder="Phone number" />
                             <Input type="date" placeholder="Date of birth" />
                         </div>
                         <Input type="text" placeholder="Address" />
-                        <div className="flex" style={{ gap: 13 }}>
+                        <div>
                             <Input type="text" placeholder="City" />
-                            <div className="w50">
-                                <Select />
-                            </div>
+                            <Select />
                         </div>
                     </div>
                 </div>
                 <MyTicket />
             </div>
-            <style jsx>{`
+            <style jsx global>{`
                 .PersonalInfo {
                     margin-bottom: 65px;
-                    &__headline {
+                    .headline {
+                        font-size: 21px;
+                        line-height: 32px;
                         margin-bottom: 28px;
+
+                        /*  Responsive   */
+                        @media (max-width: 1220px) {
+                            font-size: 19px;
+                            line-height: 28px;
+                        }
+                        @media (max-width: 1024px) {
+                            font-size: 17px;
+                            line-height: 26px;
+                        }
+                        @media (max-width: 830px) {
+                            font-size: 16px;
+                            line-height: 26px;
+                        }
                     }
-                    &__fieldGroup {
+                    .fieldGroup {
+                        display: flex;
+                        flex-direction: column;
+
                         gap: 26px;
+                        > div:first-child {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            gap: 26px 13px;
+                        }
+                        > div:last-child {
+                            display: flex;
+                            margin-right: -13px;
+                            > * {
+                                margin-right: 13px;
+                            }
+                            .selectCommon {
+                                width: 50%;
+                            }
+                        }
                         @media (max-width: 600px) {
-                            .w50 {
+                            .selectCommon {
                                 width: 70%;
                             }
                         }
-                    }
-                }
-                @media (max-width: 600px) {
-                    .PersonalInfo {
                     }
                 }
             `}</style>

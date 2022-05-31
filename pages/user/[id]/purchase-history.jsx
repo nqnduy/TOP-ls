@@ -4,7 +4,7 @@ import MasterPageBasic from "@/website/master/MasterPageBasic";
 export default function PaymentMethods(props) {
     return (
         <MasterPageBasic pageName={"Information"}>
-            <AccountLayout>
+            <AccountLayout tab={2}>
                 <PurchaseHistoryPage />
             </AccountLayout>
         </MasterPageBasic>
