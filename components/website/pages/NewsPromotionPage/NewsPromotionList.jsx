@@ -1,4 +1,4 @@
-import SortDropdown from "@/components/website/common/SortDropDown/SortDropDownortDropDown/SortDropDown";
+import SortDropdown from "@/components/website/common/SortDropdown";
 import NewsCard from "@/website/common/Card/NewsCard";
 import Paginate from "@/website/common/Paginate";
 import TextTitle from "@/website/common/TextTitle";

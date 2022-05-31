@@ -1,4 +1,4 @@
-import SortDropdown from "@/components/website/common/SortDropDown/SortDropDownortDropDown/SortDropDown";
+import SortDropdown from "@/components/website/common/SortDropDown";
 import React from "react";
 import { variable } from "styles/variable";
 
