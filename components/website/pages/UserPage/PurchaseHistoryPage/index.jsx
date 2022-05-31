@@ -2,7 +2,7 @@
 import Button from "@/common/Button/ButtonMain";
 import MyTicketCard from "@/common/Card/MyTicketCard";
 import Paginate from "@/common/Paginate";
-import SortDropdown from "@/common/SortDropDown";
+import SortDropdown from "@/components/website/common/SortDropDown/SortDropDowncommon/SortDropDown/SortDropDown";
 import React from "react";
 import { variable } from "styles/variable";
 

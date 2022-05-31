@@ -1,6 +1,6 @@
-import SortDropdown from '@/website/common/SortDropDown';
-import React from 'react';
-import { variable } from 'styles/variable';
+import SortDropdown from "@/components/website/common/SortDropDown/SortDropDownortDropDown/SortDropDown";
+import React from "react";
+import { variable } from "styles/variable";
 
 export default function SearchItem({ children }) {
     return (

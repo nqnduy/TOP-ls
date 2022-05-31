@@ -1,9 +1,10 @@
 import Input from "@/common/Input";
-import Select from "@/common/Select";
 import MyTicket from "@/pages/UserPage/InformationPage/MyTicket";
+import Select from "@/website/common/Select";
 import React from "react";
 
 export default function InformationPage({ show }) {
+    const province = ["Hà Nội", "Hồ Chí Minh", "Đà Nẵng"];
     return (
         <>
             <div className={`InformationContent ${show}`}>
@@ -19,7 +20,7 @@ export default function InformationPage({ show }) {
                         <Input type="text" placeholder="Address" />
                         <div>
                             <Input type="text" placeholder="City" />
-                            <Select />
+                            <Select data={province} />
                         </div>
                     </div>
                 </div>

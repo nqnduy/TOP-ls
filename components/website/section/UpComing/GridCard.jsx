@@ -1,7 +1,7 @@
+import SortDropdown from "@/components/website/common/SortDropDown/SortDropDownortDropDown/SortDropDown";
 import ShowCard from "@/website/common/Card/ShowCard";
-import SortDropdown from "@/website/common/SortDropDown";
 import React from "react";
-import { variable } from 'styles/variable';
+import { variable } from "styles/variable";
 function GridCard() {
     const upcomingCards = [
         {
@@ -84,7 +84,7 @@ function GridCard() {
                             color: ${variable.color.purple};
                             margin-right: 10px;
                         }
-                        .typeSort{
+                        .typeSort {
                             font-family: fm-m;
                         }
                         .typeSort:last-child {

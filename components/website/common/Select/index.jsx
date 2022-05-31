@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import SelectOption from "./SelectOption";
 
-export default function Select() {
+export default function Select({ data }) {
     const [showOption, setShowOption] = useState(false);
-    const [option, setOption] = useState();
+    const [option, setOption] = useState("Province/region");
     const handleShowSelect = (ev) => {
         setOption(ev.target.value);
         setShowOption(!showOption);
@@ -15,20 +15,16 @@ export default function Select() {
                 onClick={() => {
                     setShowOption(!showOption);
                 }}>
-                <input className="inputCommon" value={option === undefined ? "Province/region" : option} readOnly />
+                <input className="inputCommon" value={option} readOnly />
             </div>
             {showOption && (
                 <div className="selectCommon__checkboxes">
                     <div style={{ padding: "3px 0" }}>
-                        <SelectOption onClick={handleShowSelect} value="Hà Nội">
-                            Hà Nội
-                        </SelectOption>
-                        <SelectOption onClick={handleShowSelect} value="Hồ Chí Minh">
-                            Hồ Chí Minh
-                        </SelectOption>
-                        <SelectOption onClick={handleShowSelect} value="Đà Nẵng">
-                            Đà Nẵng
-                        </SelectOption>
+                        {data.map((item, index) => (
+                            <SelectOption key={index} onClick={handleShowSelect} value={item}>
+                                {item}
+                            </SelectOption>
+                        ))}
                     </div>
                 </div>
             )}

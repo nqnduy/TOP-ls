@@ -1,6 +1,6 @@
+import SortDropdown from "@/components/website/common/SortDropDown/SortDropDownortDropDown/SortDropDown";
 import NewsCard from "@/website/common/Card/NewsCard";
 import Paginate from "@/website/common/Paginate";
-import SortDropdown from "@/website/common/SortDropDown";
 import TextTitle from "@/website/common/TextTitle";
 import React from "react";
 

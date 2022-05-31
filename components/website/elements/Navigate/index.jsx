@@ -1,24 +1,31 @@
 import ImageWrap from "@/common/ImageWrap";
 import Logo from "@/common/Logo";
 import SocialGroup from "@/common/SocialGroup";
+import TextUnderline from '@/common/Text/TextUnderline';
+import AppLink from '@/diginext/link/AppLink';
 import Hamburger from "@/website/elements/Navigate/Hamburger";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
+import { variable } from 'styles/variable';
 import Input from "../../common/Input";
 
 export default function Navigate() {
     const [isOpen, setIsOpen] = useState(false);
+    const [language, setLanguage] = useState(true);
+    const [selected, setSelected] = useState(false);
     const handleOpenNavigate = () => {
         setIsOpen(!isOpen);
     };
+    const handleSelectLanguage = () => {
+        setSelected(!selected);
+    }
     return (
         <>
             <Hamburger open={isOpen} onClick={() => setIsOpen(!isOpen)} />
             <div className={`Navigate ${isOpen ? "open" : ""}`}>
                 <div>
                     <div className="Navigate__content">
-                        <div className="flexSB w100">
+                        <div className="header">
                             <Logo />
                             <div className="action-user">
                                 <div className="avt">
@@ -28,46 +35,54 @@ export default function Navigate() {
                         </div>
                         <ul className="menu">
                             <li>
-                                <Link href="/about-us">
-                                    <a className="txMain bold hoverText hoverText-pink" href="">
-                                        About Us
-                                    </a>
-                                </Link>
+                                <AppLink href="/about-us">
+                                    <TextUnderline color={variable.color.secondary} className="headline">
+                                        About us
+                                    </TextUnderline>
+                                </AppLink>
                             </li>
                             <li>
-                                <Link href="/upcoming-shows">
-                                    <a className="txMain bold hoverText hoverText-pink">Upcoming Shows</a>
-                                </Link>
+                                <AppLink href="/upcoming-shows">
+                                    <TextUnderline color={variable.color.secondary} className="headline">
+                                        Upcoming Shows
+                                    </TextUnderline>
+                                </AppLink>
                             </li>
                             <li>
-                                <Link href="/gallery">
-                                    <a className="txMain bold hoverText hoverText-pink">Gallery</a>
-                                </Link>
+                                <AppLink href="/gallery">
+                                    <TextUnderline color={variable.color.secondary} className="headline">
+                                        Gallery
+                                    </TextUnderline>
+                                </AppLink>
                             </li>
                             <li>
-                                <Link href="/new-promotion">
-                                    <a className="txMain bold hoverText hoverText-pink">News & Promotions</a>
-                                </Link>
+                                <AppLink href="/new-promotion">
+                                    <TextUnderline color={variable.color.secondary} className="headline">
+                                        News & Promotions
+                                    </TextUnderline>
+                                </AppLink>
                             </li>
                             <li>
-                                <Link href="/contact">
-                                    <a className="txMain fz-36 bold hoverText hoverText-pink">Contact</a>
-                                </Link>
+                                <AppLink href="/contact">
+                                    <TextUnderline color={variable.color.secondary} className="headline">
+                                        Contact
+                                    </TextUnderline>
+                                </AppLink>
                             </li>
                         </ul>
                         <div className="CTA">
                             <Input placeholder="Search..." />
-                            <div className="CTA-title txMain upc">
+                            <div className="CTA-title content">
                                 Have any Questions? Call Us <strong>028 6673 8686</strong>
                             </div>
-                            <div className="CTA-button flexSB">
+                            <div className="CTA-button">
                                 <SocialGroup />
-                                <div className="language txMain bold">
-                                    <div className="language-current flexAC">
-                                        English
+                                <div className="language content">
+                                    <div className="language-current" onClick={handleSelectLanguage}>
+                                        <span>English</span>
                                         <Image src="/images/icons/lang-arrow.svg" alt="lang-arrow" width={9.5} height={5.5} />
                                     </div>
-                                    <div className="language-select hide">Việt Nam</div>
+                                    <div className={`language-select ${selected ? "" : "hide"}`}>Việt Nam</div>
                                 </div>
                             </div>
                         </div>
@@ -97,9 +112,16 @@ export default function Navigate() {
                             width: 100%;
                             margin: 0 auto;
                             padding: 120px 0;
-                            .logo {
-                                text-align: center;
-                                width: 100px;
+                            .header {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                width: 100%;
+                                .logo {
+                                    text-align: center;
+                                    width: 100px;
+                                }
                             }
                             .menu {
                                 margin-top: 50px;
@@ -110,10 +132,6 @@ export default function Navigate() {
                                     display: list-item;
                                     will-change: transform;
                                     transform: matrix(1, 0, 0, 1, 480, 0);
-                                    a {
-                                        font-size: 36px;
-                                        line-height: 46px;
-                                    }
                                     &:nth-child(1) {
                                         transition: ease-out 900ms;
                                     }
@@ -129,6 +147,16 @@ export default function Navigate() {
                                     &:nth-child(5) {
                                         transition: ease-out 100ms;
                                     }
+                                    .headline {
+                                        @media (max-width: 920px) {
+                                            font-size: 28px;
+                                            line-height: 38px;
+                                        }
+                                        @media (max-width: 450px) {
+                                            font-size: 20px;
+                                            line-height: 28px;
+                                        }
+                                    }
                                 }
                             }
                             .CTA {
@@ -139,13 +167,30 @@ export default function Navigate() {
                                 .inputCommon {
                                     margin-bottom: 20px;
                                 }
+                                .content {
+                                    font-family: fm-m;
+                                    color: #fff;
+                                }
                                 &-title {
-                                    font-size: 16px;
+                                    text-transform: uppercase;
                                     margin-bottom: 10px;
+                                }
+                                &-button {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+
+                                    cursor: pointer;
                                 }
                                 .language {
                                     &-current {
-                                        gap: 10px;
+                                        display: flex;
+                                        align-items: center;
+
+                                        margin-right: -10px;
+                                        > * {
+                                            margin-right: 10px;
+                                        }
                                     }
                                 }
                             }

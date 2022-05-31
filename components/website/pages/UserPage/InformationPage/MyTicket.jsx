@@ -1,6 +1,6 @@
 import Button from "@/common/Button/ButtonMain";
 import MyTicketCard from "@/common/Card/MyTicketCard";
-import SortDropdown from "@/common/SortDropDown";
+import SortDropdown from "@/components/website/common/SortDropDown";
 import React from "react";
 
 export default function MyTicket() {
@@ -21,7 +21,7 @@ export default function MyTicket() {
     return (
         <>
             <div className="MyTicket">
-                <div className="flexSB" style={{ marginBottom: 40 }}>
+                <div className="MyTicket__header">
                     <h3 className="headline">My ticket</h3>
                     <SortDropdown>All Categories</SortDropdown>
                 </div>
@@ -38,10 +38,17 @@ export default function MyTicket() {
                     .typeSort {
                         font-family: fm-m;
                     }
+                    &__header {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 40px;
+                        .SortDropdown {
+                            margin-top: -10px;
+                        }
+                    }
                     .headline {
                         font-size: 21px;
                         line-height: 32px;
-                        margin-bottom: 28px;
 
                         /*  Responsive   */
                         @media (max-width: 1220px) {

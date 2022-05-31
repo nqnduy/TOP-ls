@@ -19,7 +19,7 @@ export default function PaymentPage() {
             price: "1124000",
             ticket: 49,
             color: "pink",
-            children: "<p>Coupon đồ ăn & thức uống</p><p>Combo quà Xin Chào Goods</p>",
+            content: "<p>Coupon đồ ăn & thức uống</p><p>Combo quà Xin Chào Goods</p>",
         },
         {
             title: "vé hoa",
@@ -27,7 +27,7 @@ export default function PaymentPage() {
             price: "854000",
             ticket: 0,
             color: "pink",
-            children: "<p>Coupon đồ ăn & thức uống</p><p>Túi vải</p>",
+            content: "<p>Coupon đồ ăn & thức uống</p><p>Túi vải</p>",
         },
         {
             title: "vé đồi",
@@ -35,7 +35,7 @@ export default function PaymentPage() {
             price: "495000",
             ticket: 7,
             color: "blue",
-            children: "<p>Coupon đồ uống</p>",
+            content: "<p>Coupon đồ uống</p>",
         },
     ];
     return (
@@ -48,7 +48,7 @@ export default function PaymentPage() {
                         <div className="PaymentInfo__ticket">
                             {tickets.map((ticket, index) => (
                                 <Ticket data={ticket} payment={true} key={index}>
-                                    {renderHTML(ticket.children)}
+                                    {renderHTML(ticket.content)}
                                 </Ticket>
                             ))}
                         </div>

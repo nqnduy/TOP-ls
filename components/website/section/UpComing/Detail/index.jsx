@@ -4,12 +4,34 @@ import Upcoming from "@/website/section/UpComing";
 import GetTicket from "@/website/section/UpComing/Detail/GetTicket";
 import Ticket from "@/website/section/UpComing/Detail/Ticket";
 import React from "react";
+import renderHTML from "react-render-html";
 import { variable } from 'styles/variable';
+
 export default function UpComingDetail() {
+    const tickets = [
+        {
+            title: "Economy ticket",
+            price: 0.99,
+            ticket: 49,
+            content: "<p>Entrance card</p><p>Drinking water</p><p>-</p>",
+        },
+        {
+            title: "Standard ticket",
+            price: 0.99,
+            ticket: 0,
+            content: "<p>Entrance card Silk Bag</p><p>Drinks and fresh fruit</p><p>Silk Bag</p>",
+        },
+        {
+            title: "Vip ticket",
+            price: 39.5,
+            ticket: 7,
+            content: " <p>Entrance card Silk Bag</p><p>Drinks and fresh fruit</p><p>Combo Gift</p>",
+        },
+    ];
     return (
         <div className="UpComingShowDetail">
             <div className="container" style={{ marginBottom: 80 }}>
-                <div className="UpComingShowDetail__content flex">
+                <div className="UpComingShowDetail__content">
                     <div className="w50" style={{ paddingBottom: 40, marginBottom: 20, borderBottom: "1px solid rgba(255, 255, 255, 0.07)" }}>
                         <h2 className="headline" style={{ marginBottom: 40 }}>
                             France Rock Music Conference March 2022
@@ -33,22 +55,12 @@ export default function UpComingDetail() {
                             <br />
                             Pellentesque massa erat adipiscing lorem molestie amet augue. Lorem ipsum amet vitae ipsum at a sagittis cras arcu interdum
                         </div>
-                        <div className="TicketList flex" style={{ justifyContent: "space-between", marginBlock: 30 }}>
-                            <Ticket title="Economy ticket" price="0.99" ticket="49">
-                                <p>Entrance card </p>
-                                <p>Drinking water</p>
-                                <p>-</p>
-                            </Ticket>
-                            <Ticket title="Standard ticket" price="0.99">
-                                <p>Entrance card Silk Bag</p>
-                                <p>Drinks and fresh fruit</p>
-                                <p>Silk Bag</p>
-                            </Ticket>
-                            <Ticket title="Vip ticket" price="39.50" ticket="7">
-                                <p>Entrance card Silk Bag</p>
-                                <p>Drinks and fresh fruit</p>
-                                <p>Combo Gift</p>
-                            </Ticket>
+                        <div className="TicketList">
+                            {tickets.map((ticket, index) => (
+                                <Ticket data={ticket} key={index}>
+                                    {renderHTML(ticket.content)}
+                                </Ticket>
+                            ))}
                         </div>
                         <div className="content">
                             <p className="headline">Sponsors of event</p>
@@ -97,8 +109,9 @@ export default function UpComingDetail() {
             <style jsx global>{`
                 .UpComingShowDetail {
                     &__content {
-                        gap: 85px;
+                        display: flex;
                         justify-content: space-between;
+                        gap: 85px;
                         .link {
                             font-family: fm-m;
                             font-weight: 700;
@@ -124,6 +137,11 @@ export default function UpComingDetail() {
                                     line-height: 26px;
                                 }
                             }
+                        }
+                        .TicketList {
+                            display: flex;
+                            justify-content: space-between;
+                            margin: 30px 0;
                         }
                         ul {
                             li {
