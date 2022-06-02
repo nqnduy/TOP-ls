@@ -4,6 +4,9 @@ const CommonStyle = () => {
     return (
         <>
             <style jsx global>{`
+                .lg-backdrop {
+                    background-color:#060070ce;
+                }
                 .hide {
                     opacity: 0;
                     pointer-events: none;

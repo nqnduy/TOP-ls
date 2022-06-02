@@ -58,9 +58,9 @@ export default function GalleryThumb() {
                 <div className="container">
                     <div className="GalleryThumb__title">Let's take a look back at the great moments in our gallery</div>
                     <div className="GalleryThumb__grid">
-                        {moments.map((moment, index) => (
-                            <GalleryCard key={index} data={moment} />
-                        ))}
+                            {moments.map((moment, index) => (
+                                <GalleryCard key={index} data={moment} />
+                            ))}
                     </div>
                 </div>
             </div>

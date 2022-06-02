@@ -57,89 +57,119 @@ function GridCard() {
         <>
             <div className="SortUpcomingShow PRMain">
                 <p>Sort by:</p>
-                <SortDropdown>Relevance</SortDropdown>
-                <SortDropdown>All categories</SortDropdown>
+                <div className="sortGroup">
+                    <SortDropdown>Relevance</SortDropdown>
+                    <SortDropdown>All categories</SortDropdown>
+                </div>
             </div>
             <div className="GridCard container">
                 {upcomingCards.map((card, index) => {
                     return <ShowCard key={index} data={card} />;
                 })}
-                <style jsx global>{`
-                    .GridCard {
-                        --COL: 3;
-                        --gap: 26px;
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(calc((100% / var(--COL)) - ((var(--gap) * 2) / var(--COL))), 1fr));
-                        gap: var(--gap);
-                        position: relative;
-                        width: 100%;
-                    }
-                    .SortUpcomingShow {
-                        position: absolute;
-                        top: calc(12% - 1vw);
-                        right: 0;
+            </div>
+            <style jsx global>{`
+                .GridCard {
+                    --COL: 3;
+                    --gap: 26px;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(calc((100% / var(--COL)) - ((var(--gap) * 2) / var(--COL))), 1fr));
+                    gap: var(--gap);
+                    position: relative;
+                    width: 100%;
+                }
+                .SortUpcomingShow {
+                    position: absolute;
+                    z-index: 100;
+                    top: calc(12% - 1vw);
+                    right: 0;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    .sortGroup {
                         display: flex;
                         align-items: center;
-                        p {
-                            color: ${variable.color.purple};
-                            margin-right: 10px;
-                        }
-                        .typeSort {
-                            font-family: fm-m;
-                        }
-                        .typeSort:last-child {
-                            margin-left: 45px;
+                    }
+                    p {
+                        color: ${variable.color.purple};
+                        margin-right: 10px;
+                    }
+                    .typeSort {
+                        font-family: fm-m;
+                    }
+                    .typeSort:last-child {
+                        margin-left: 45px;
+                    }
+                }
+                @media (max-width: 920px) {
+                    .GridCard {
+                        --COL: 2;
+                    }
+                    .SortUpcomingShow {
+                        top: calc(8% - 1vw);
+                    }
+                }
+                @media (max-width: 820px) {
+                    .GridCard {
+                        margin-top: 50px;
+                    }
+                    .SortUpcomingShow {
+                        top: calc(9% - 1vw);
+
+                        margin-top: 50px;
+                        top: 8%;
+                        transform: translateY(-9%);
+                        left: var(--pdContainer);
+                        right: var(--pdContainer);
+                    }
+                }
+                @media (max-width: 630px) {
+                    .GridCard {
+                        --COL: 1;
+                        margin-top: 50px;
+                    }
+                    .SortUpcomingShow {
+                        margin-top: 40px;
+                        top: 4%;
+                        transform: translateY(-4%);
+                    }
+                }
+                @media (max-width: 590px) {
+                    .GridCard {
+                        margin-top: 80px;
+                    }
+                    .SortUpcomingShow {
+                        margin-top: 40px;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        right: 0;
+                        .sortGroup {
+                            margin-top: 5px;
                         }
                     }
-                    @media (max-width: 920px) {
-                        .GridCard {
-                            --COL: 2;
-                        }
-                        .SortUpcomingShow {
-                            top: calc(8% - 1vw);
+                }
+                @media (max-width: 500px) {
+                    .SortUpcomingShow {
+                        justify-content: center;
+                        padding-right: 0px;
+                    }
+                }
+                @media (max-width: 440px) {
+                    .GridCard {
+                        margin-top: 110px;
+                    }
+                    .SortUpcomingShow {
+                        margin-top: 55px;
+                        .sortGroup {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            margin-bottom: -8px;
+                            > * {
+                                margin-bottom: 8px;
+                            }
                         }
                     }
-                    @media (max-width: 770px) {
-                        .SortUpcomingShow {
-                            top: calc(9% - 1vw);
-                        }
-                    }
-                    @media (max-width: 700px) {
-                        .GridCard {
-                            margin-top: 40px;
-                        }
-                        .SortUpcomingShow {
-                            margin-top: 50px;
-                            top: 9%;
-                            transform: translateY(-9%);
-                            left: var(--pdContainer);
-                            right: var(--pdContainer);
-                        }
-                    }
-                    @media (max-width: 630px) {
-                        .GridCard {
-                            --COL: 1;
-                            margin-top: 50px;
-                        }
-                        .SortUpcomingShow {
-                            margin-top: 40px;
-                            top: 4%;
-                            transform: translateY(-4%);
-                        }
-                    }
-                    @media (max-width: 500px) {
-                        .SortUpcomingShow {
-                            justify-content: center;
-                            padding-right: 0px;
-                        }
-                    }
-                    @media (max-width: 440px) {
-                        .SortUpcomingShow {
-                            margin-top: 55px;
-                        }
-                    }
-                `}</style>
-            </div>
+                }
+            `}</style>
         </>
     );
 }

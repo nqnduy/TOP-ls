@@ -11,6 +11,10 @@ export default function ButtonPlay({ position = "" }) {
                 .iconPlay {
                     transition: 0.3s;
                     z-index: 3;
+                    img {
+                        width: 70px;
+                        height: auto;
+                    }
                     &.center {
                         position: absolute;
                         top: 50%;

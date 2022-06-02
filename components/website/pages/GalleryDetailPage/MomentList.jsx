@@ -1,62 +1,62 @@
-import TextUnderline from '@/common/Text/TextUnderline';
+import TextUnderline from "@/common/Text/TextUnderline";
 import MomentCard from "@/website/common/Card/MomentCard";
 import React from "react";
-import { variable } from 'styles/variable';
+import { variable } from "styles/variable";
 
 export default function MomentList() {
     const moments = [
         {
-            image: "/images/gallery1.png",
+            src: "https://www.youtube.com/embed/65stoh12sbc",
             title: "It is a long established fact",
-            type: "video"
+            type: "video",
         },
         {
-            image: "/images/gallery2.png",
+            src: "https://www.youtube.com/embed/VYq8yE3Qr6o",
             title: "It is a long established fact",
-            type: "video"
-        },
-        {
-            image: "/images/gallery3.png",
-            title: "It is a long established fact",
-            type: "image"
-        },
-        {
-            image: "/images/gallery4.png",
-            title: "It is a long established fact",
-            type: "video"
-        },
-        {
-            image: "/images/gallery5.png",
-            title: "It is a long established fact",
-            type: "image"
-        },
-        {
-            image: "/images/gallery6.png",
-            title: "It is a long established fact",
-            type: "image"
-        },
-        {
-            image: "/images/gallery7.png",
-            title: "It is a long established fact",
-            type: "video"
-        },
-        {
-            image: "/images/gallery1.png",
-            title: "It is a long established fact",
-            type: "image"
-        },
-        {
-            image: "/images/gallery2.png",
-            title: "It is a long established fact",
-            type: "image"
-        },
-        {
-            image: "/images/gallery3.png",
-            title: "It is a long established fact",
-            type: "image"
+            type: "video",
         },
 
-    ]
+        {
+            src: "/images/gallery3.png",
+            title: "It is a long established fact",
+            type: "image",
+        },
+        {
+            src: "https://www.youtube.com/embed/fZNrl_xILys",
+            title: "It is a long established fact",
+            type: "video",
+        },
+        {
+            src: "/images/gallery5.png",
+            title: "It is a long established fact",
+            type: "image",
+        },
+        {
+            src: "/images/gallery6.png",
+            title: "It is a long established fact",
+            type: "image",
+        },
+        {
+            src: "https://www.youtube.com/embed/hxU9gtORwWU",
+            title: "It is a long established fact",
+            type: "video",
+        },
+        {
+            src: "/images/gallery1.png",
+            title: "It is a long established fact",
+            type: "image",
+        },
+        {
+            src: "/images/gallery2.png",
+            title: "It is a long established fact",
+            type: "image",
+        },
+        {
+            src: "/images/gallery3.png",
+            title: "It is a long established fact",
+            type: "image",
+        },
+    ];
     return (
         <>
             <div className="MomentList">
@@ -82,7 +82,7 @@ export default function MomentList() {
                         display: flex;
                         align-items: center;
                         flex-direction: column;
-                        .centerVM{
+                        .centerVM {
                             margin-top: 10px;
                         }
                     }

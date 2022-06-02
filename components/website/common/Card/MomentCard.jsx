@@ -1,24 +1,49 @@
+/* eslint-disable @next/next/no-img-element */
 import asset from "@/plugins/assets/asset";
 import ButtonPlay from "@/website/common/Button/ButtonPlay";
-import React from "react";
+import React, { useEffect } from "react";
+import { LightgalleryItem } from "react-lightgallery";
 
 export default function MomentCard({ data }) {
-    const { image, title, type } = data;
+    const { src, title, type } = data;
+
+    // const el = document.getElementById();
+    useEffect(() => {
+        if (typeof document != "undefined") {
+            const el = document.querySelector(".react_lightgallery_item");
+        }
+    }, []);
     return (
-        <div className={`MomentCard ${type}`}>
-            <div className="MomentCard-content" style={{ position: "relative" }}>
-                <div className="img">
-                    <img src={asset(image)} />
-                </div>
-                <div className="layer"></div>
-                <div className="textWrapLayer flexSB">
-                    <div>
-                        <p className="headline">{title}</p>
-                        <p className="headlineSmall">{type}</p>
+        <>
+            <div className={`MomentCard ${type}`}>
+                <LightgalleryItem group="any" src={src}>
+                    <div className="MomentCard-content" style={{ position: "relative" }}>
+                        <div className="img">
+                            {type === "video" ? (
+                                <iframe
+                                    width={"100%"}
+                                    height={"100%"}
+                                    src={`${asset(src)}?controls=0`}
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen></iframe>
+                            ) : (
+                                <img src={asset(src)} alt="" />
+                            )}
+                        </div>
+                        <div className="layer"></div>
+                        <div className="textWrapLayer flexSB">
+                            <div>
+                                <p className="headline">{title}</p>
+                                <p className="headlineSmall">{type}</p>
+                            </div>
+                        </div>
+                        {type === "video" && <ButtonPlay position="center" />}
                     </div>
-                </div>
-                {type === "video" && <ButtonPlay position="center" />}
+                </LightgalleryItem>
             </div>
+
             <style jsx global>{`
                 @keyframes buttonScale {
                     0% {
@@ -32,40 +57,42 @@ export default function MomentCard({ data }) {
                     cursor: pointer;
                     position: relative;
                     transition: all 0.3s;
-                    &:before {
-                        position: absolute;
-                        content: "";
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 15px;
-                        background: radial-gradient(29.05% 47.14% at 50.01% 51.19%, rgba(92, 91, 113, 0) 0%, rgba(17, 12, 99, 0.4) 100%);
-                        transition: all 0.3s;
-                        opacity: 0;
-                        z-index: 2;
-                    }
-                    &:hover {
-                        transform: scale(1.01);
-                        transition: all 0.3s;
-                        &:before {
-                            transition: all 0.3s;
-                            opacity: 1;
-                        }
-                    }
                     &.video {
-                        &:before {
-                            background: radial-gradient(29.05% 47.14% at 50.01% 51.19%, rgba(78, 65, 72, 0) 0%, rgba(231, 24, 130, 0.4) 100%);
-                        }
-                        &:hover {
-                            .iconPlay.center {
-                                animation: buttonScale 0.5s linear infinite alternate;
+                        .MomentCard-content {
+                            &:before {
+                                background: radial-gradient(29.05% 47.14% at 50.01% 51.19%, rgba(78, 65, 72, 0) 0%, rgba(231, 24, 130, 0.4) 100%);
+                            }
+                            &:hover {
+                                .iconPlay.center {
+                                    animation: buttonScale 0.5s linear infinite alternate;
+                                }
                             }
                         }
                     }
                     &-content {
                         position: relative;
                         border-radius: 15px;
+                        &:before {
+                            position: absolute;
+                            content: "";
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 15px;
+                            background: radial-gradient(29.05% 47.14% at 50.01% 51.19%, rgba(92, 91, 113, 0) 0%, rgba(17, 12, 99, 0.4) 100%);
+                            transition: all 0.3s;
+                            opacity: 0;
+                            z-index: 2;
+                        }
+                        &:hover {
+                            transform: scale(1.01);
+                            transition: all 0.3s;
+                            &:before {
+                                transition: all 0.3s;
+                                opacity: 1;
+                            }
+                        }
                     }
                     .headline {
                         font-size: 18px;
@@ -86,7 +113,7 @@ export default function MomentCard({ data }) {
                             font-size: 14px;
                         }
                     }
-                    .headlineSmall{
+                    .headlineSmall {
                         font-size: 12px;
                         line-height: 16px;
                         letter-spacing: 0px;
@@ -103,6 +130,6 @@ export default function MomentCard({ data }) {
                     }
                 }
             `}</style>
-        </div>
+        </>
     );
 }

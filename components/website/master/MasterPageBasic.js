@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useNextResponsive } from "plugins/next-reponsive";
+import { LightgalleryProvider } from "react-lightgallery";
 import CONFIG from "web.config";
 import Body from "../elements/Body";
 import GtagScript from "../tracking/GtagScript";
@@ -16,7 +17,7 @@ const CommonStyle = dynamic(() => import('styles/common'));
 const VariableStyle = dynamic(() => import('styles/variable'));
 const MasterPageBasic = ({ pageName, children }) => {
 	const router = useRouter();
-	const { device, breakpoint, orientation } = useNextResponsive();
+    const { device, breakpoint, orientation } = useNextResponsive();
 
 	return (
         <>
@@ -50,13 +51,15 @@ const MasterPageBasic = ({ pageName, children }) => {
             {/* - STYLE OF THE WEBSITE */}
             <GlobalStyle />
             <CommonStyle />
-            <VariableStyle/>
+            <VariableStyle />
             {/* - ADD MORE PROVIDER INSIDE THIS COMPONENT */}
             <Providers>
                 <Body>
                     <Header />
-                    <Navigate/>
-                    <main className={[device, orientation, breakpoint].join(" ")}>{children}</main>
+                    <Navigate />
+                    <LightgalleryProvider lightgallerySettings={{ videoMaxWidth: "80vw", thumbnail: false}}>
+                        <main className={[device, orientation, breakpoint].join(" ")}>{children}</main>
+                    </LightgalleryProvider>
                     <Footer />
                 </Body>
             </Providers>

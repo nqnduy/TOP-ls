@@ -1,7 +1,7 @@
 import ButtonPlay from "@/website/common/Button/ButtonPlay";
 import ImageWrap from "@/website/common/ImageWrap";
 import React from "react";
-import { variable } from 'styles/variable';
+import { variable } from "styles/variable";
 
 export default function GalleryCard({ data }) {
     const { image, title, time, type } = data;
@@ -55,7 +55,7 @@ export default function GalleryCard({ data }) {
                                     line-height: 26px;
                                 }
                             }
-                            &__desc{
+                            &__desc {
                                 display: flex;
                                 justify-content: space-between;
                                 align-items: flex-start;
@@ -66,7 +66,7 @@ export default function GalleryCard({ data }) {
                                 > * {
                                     margin-left: 4px;
                                 }
-                                .type{
+                                .type {
                                     color: ${variable.color.secondary};
                                 }
                             }

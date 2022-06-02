@@ -1,13 +1,37 @@
 import Button from "@/website/common/Button/ButtonMain";
-import SearchItem from './SearchItem';
+import React, { useState } from 'react';
+import SearchItem from "./SearchItem";
+
 function SearchBar() {
+    const filters = [
+        {   id: 1,
+            title: "Category",
+        },
+        {
+            id: 2,
+            title: "When",
+        },
+        {
+            id: 3,
+            title: "Where"
+        }
+    ];
+    const [selectedItem, setSelectedItem] = useState(0);
+    const handleSelect = (id) => () => {
+        setSelectedItem(id);
+    };
     return (
         <>
             <div className="Search">
                 <div className="Search-filter">
-                    <SearchItem>Category</SearchItem>
-                    <SearchItem>When</SearchItem>
-                    <SearchItem>Where</SearchItem>
+                    {filters.map((x) => (
+                        <SearchItem
+                            key={x.id}
+                            show={x.id === selectedItem}
+                            onClick={x.id !== selectedItem ? handleSelect(x.id) : handleSelect(0)}>
+                            {x.title}
+                        </SearchItem>
+                    ))}
                 </div>
                 <Button>Search now</Button>
             </div>

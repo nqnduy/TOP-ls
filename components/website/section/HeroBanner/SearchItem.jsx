@@ -2,12 +2,14 @@ import SortDropdown from "@/components/website/common/SortDropDown";
 import React from "react";
 import { variable } from "styles/variable";
 
-export default function SearchItem({ children }) {
+export default function SearchItem({ children, onClick, show }) {
     return (
         <>
             <div className="Search-filter__item">
                 <p className="title">{children}</p>
-                <SortDropdown>Select a category</SortDropdown>
+                <SortDropdown width={140} show={show} onClick={onClick}>
+                    Select a category
+                </SortDropdown>
             </div>
             <style jsx>{`
                 .Search-filter__item {
