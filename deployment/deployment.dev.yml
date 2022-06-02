@@ -71,7 +71,7 @@ spec:
     spec:
       containers:
         - name: topliveshow-duy
-          image: 'asia.gcr.io/top-group-k8s/topliveshow-duy:2022-06-02-19-37-43'
+          image: 'asia.gcr.io/top-group-k8s/topliveshow-duy:2022-06-02-20-15-41'
           ports:
             - containerPort: 3000
           resources: {}
