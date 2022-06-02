@@ -1,4 +1,3 @@
-import SortDropdown from "@/components/website/common/SortDropdown";
 import NewsCard from "@/website/common/Card/NewsCard";
 import Paginate from "@/website/common/Paginate";
 import TextTitle from "@/website/common/TextTitle";
@@ -67,7 +66,6 @@ export default function NewsPromotionList() {
                 <div className="container">
                     <div className="NewsPromotion__title">
                         <TextTitle big_text="News & Promotion" />
-                        <SortDropdown>All categories</SortDropdown>
                     </div>
                     <div className="NewsPromotion__grid">
                         {news.map((item, index) => (
