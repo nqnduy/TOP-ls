@@ -5,9 +5,9 @@ import React, { useState } from "react";
 import { variable } from "styles/variable";
 
 export default function SortDropdown({ children, width = 110 }) {
-    const data = ["Liveshows", "Festival", "Workshops"];
     const [isShow, setIsShow] = useState(true);
     const [option, setOption] = useState(children);
+    const data = ["Liveshows", "Festival", "Workshops"];
 
     const handleOpen = (ev) => {
         setOption(ev.target.value);
@@ -22,7 +22,7 @@ export default function SortDropdown({ children, width = 110 }) {
                         <Image src={asset("/images/icons/arrow-dropdown.svg")} alt="" width={10} height={5} />
                     </div>
                 </div>
-                <div className={`optionList`}>
+                <div className="optionList">
                     {data.map((item, index) => (
                         <OptionSort key={index} value={item} onClick={handleOpen}>
                             {item}
