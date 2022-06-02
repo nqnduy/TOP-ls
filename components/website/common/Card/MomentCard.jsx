@@ -17,7 +17,7 @@ export default function MomentCard({ data }) {
                                 <iframe
                                     width={"100%"}
                                     height={"100%"}
-                                    src={`${asset(src)}?enablejsapi=1?controls=0&modestbranding=1&showinfo=0&autohide=1`}
+                                    src={`${src}?enablejsapi=1?controls=0&modestbranding=1&showinfo=0&autohide=1`}
                                     title="YouTube video player"
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
