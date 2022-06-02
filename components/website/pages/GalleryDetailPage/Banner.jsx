@@ -28,7 +28,7 @@ export default function Banner() {
                     </h3>
                     <div>
                         <div className="iframeWrap">
-                            <Vimeo {...settings} video={257713465} paused={pause} onPause={handlePlayerPause} onPlay={handlePlayerPlay} />
+                            <Vimeo {...settings} video={674492176} paused={pause} onPause={handlePlayerPause} onPlay={handlePlayerPlay} />
                         </div>
                         {pause && (
                             <>
