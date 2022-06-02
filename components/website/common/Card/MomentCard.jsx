@@ -10,7 +10,7 @@ export default function MomentCard({ data }) {
     return (
         <>
             <div className={`MomentCard ${type}`}>
-                <LightgalleryItem group="any" src={src}>
+                <LightgalleryItem group="any" src={asset(src)}>
                     <div className="MomentCard-content" style={{ position: "relative" }}>
                         {type === "video" ? (
                             <div className="video">
