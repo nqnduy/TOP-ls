@@ -1,20 +1,17 @@
 import asset from "@/plugins/assets/asset";
 import React from "react";
 
-export default function ButtonPlay({ position = "" }) {
+export default function ButtonPlay({ position = "", onClick }) {
     return (
         <>
-            <div className={`iconPlay ${position}`}>
+            <div className={`iconPlay ${position}`} onClick={onClick}>
                 <img src={asset("/images/icons/play.svg")} alt="" />
             </div>
             <style jsx>{`
                 .iconPlay {
+                    position: relative;
                     transition: 0.3s;
                     z-index: 3;
-                    img {
-                        width: 70px;
-                        height: auto;
-                    }
                     &.center {
                         position: absolute;
                         top: 50%;

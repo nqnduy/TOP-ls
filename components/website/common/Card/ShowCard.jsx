@@ -1,33 +1,29 @@
-import AppLink from "@/components/diginext/link/AppLink";
 import Button from "@/website/common/Button/ButtonMain";
 import ImageWrap from "@/website/common/ImageWrap";
-import React from 'react';
-import { variable } from 'styles/variable';
+import Link from "next/link";
+import React from "react";
+import { variable } from "styles/variable";
 
-function ShowCard({ data, isLink }) {
-    const {time, location, image, price, title, ticket} = data;
+function ShowCard({ data }) {
+    const { time, location, image, price, title, ticket } = data;
     return (
         <>
-            <div className="showCard">
-                <div>
-                    <ImageWrap src={image} gif="/images/gif/343x270.gif" bora={"15px"} />
+            <Link href="/upcoming-shows/123">
+                <div className="showCard">
+                    <div>
+                        <ImageWrap src={image} gif="/images/gif/343x270.gif" bora={"15px"} />
+                    </div>
+                    <div className="showCard__bottom">
+                        <div className="showCard__bottom-timeLocation">{`${time} • ${location}`}</div>
+                        <div className="showCard__bottom-title overText2 ">{title}</div>
+                        <pre className="showCard__bottom-desc">
+                            <span>Start at</span>
+                            <strong className="price">{`$${price}`}</strong>•<p>{`${ticket} TICKETS LEFT`}</p>
+                        </pre>
+                        <Button width="fullWidth">Get ticket now</Button>
+                    </div>
                 </div>
-                <div className="showCard__bottom">
-                    <div className="showCard__bottom-timeLocation">{`${time} • ${location}`}</div>
-                    <div className="showCard__bottom-title overText2 ">{title}</div>
-                    <pre className="showCard__bottom-desc">
-                        <span>Start at</span>
-                        <strong className="price">{`$${price}`}</strong>•<p>{`${ticket} TICKETS LEFT`}</p>
-                    </pre>
-                    <Button width="fullWidth">Get ticket now</Button>
-                </div>
-                {
-                    isLink ? (
-                        <AppLink href="/upcoming-shows/123">
-                            <div className="showCard__link"/>
-                        </AppLink>) : ""
-                }
-            </div>
+            </Link>
             <style jsx>{`
                 .showCard {
                     position: relative;

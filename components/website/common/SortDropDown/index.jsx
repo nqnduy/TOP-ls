@@ -4,28 +4,25 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { variable } from "styles/variable";
 
-export default function SortDropdown({ children, width = 110, show, onClick }) {
+export default function SortDropdown({ children, width = 110 }) {
     const data = ["Liveshows", "Festival", "Workshops"];
-    const [isShow, setIsShow] = useState(false);
+    const [isShow, setIsShow] = useState(true);
     const [option, setOption] = useState(children);
 
     const handleOpen = (ev) => {
-        if (show) {
-            setOption(ev.target.value);
-            setIsShow(false);
-        }
+        setOption(ev.target.value);
+        setIsShow(!isShow);
     };
-    console.log(show)
     return (
         <>
-            <div className={`SortDropdown ${show ? "show" : ""}`} onClick={onClick}>
-                <div className="typeSort noselect" onClick={() => setIsShow(!isShow)}>
+            <div className={`SortDropdown ${!isShow ? "show" : ""} noselect`}>
+                <div className="typeSort" onClick={() => setIsShow(!isShow)}>
                     <input value={option} readOnly />
                     <div className="arrow">
                         <Image src={asset("/images/icons/arrow-dropdown.svg")} alt="" width={10} height={5} />
                     </div>
                 </div>
-                <div className={`optionList ${!isShow ? "hidedn" : ""}`}>
+                <div className={`optionList`}>
                     {data.map((item, index) => (
                         <OptionSort key={index} value={item} onClick={handleOpen}>
                             {item}
@@ -45,6 +42,8 @@ export default function SortDropdown({ children, width = 110, show, onClick }) {
                     &.show {
                         .optionList {
                             display: block;
+                            animation: dropDown ease 0.2s;
+                            transform-origin: top;
                         }
                     }
                     &:last-child {
@@ -78,13 +77,8 @@ export default function SortDropdown({ children, width = 110, show, onClick }) {
                             transform: scaleY(1);
                         }
                     }
-                    &.hidedn {
-                        display: none;
-                        animation: dropDown ease .2s;
-                        transform-origin: top;
-                    }
                     display: none;
-                    animation: dropDown ease .2s;
+                    animation: dropDown ease 0.2s;
                     transform-origin: top;
                     position: absolute;
                     z-index: 100;

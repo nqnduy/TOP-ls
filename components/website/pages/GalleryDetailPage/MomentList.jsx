@@ -130,6 +130,9 @@ export default function MomentList() {
                         overflow: hidden;
                         margin-bottom: 50px;
                         .MomentCard {
+                            .video {
+                                height: var(--imgHeight);
+                            }
                             .img {
                                 height: var(--imgHeight);
                             }

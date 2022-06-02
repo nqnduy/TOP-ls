@@ -1,28 +1,33 @@
 import ButtonPlay from "@/website/common/Button/ButtonPlay";
 import ImageWrap from "@/website/common/ImageWrap";
+import Link from "next/link";
 import React from "react";
 import { variable } from "styles/variable";
 
 export default function GalleryCard({ data }) {
     const { image, title, time, type } = data;
     return (
-        <div className="GalleryCard">
-            <div className="GalleryCard-content">
-                <div className="img">
-                    <ImageWrap src={image} gif="/images/gif/295x370.gif" bora={"15px"} />
-                </div>
-                <div className="layer"></div>
-                <div className="textWrapLayer">
-                    <div>
-                        <p className="textWrapLayer__title">{title}</p>
-                        <div className="textWrapLayer__desc">
-                            <p className="type">{type}</p>
-                            <p>{`• ${time}`}</p>
+        <>
+            <Link href="/gallery/123">
+                <div className="GalleryCard">
+                    <div className="GalleryCard-content">
+                        <div className="img">
+                            <ImageWrap src={image} gif="/images/gif/295x370.gif" bora={"15px"} />
+                        </div>
+                        <div className="layer"></div>
+                        <div className="textWrapLayer">
+                            <div>
+                                <p className="textWrapLayer__title">{title}</p>
+                                <div className="textWrapLayer__desc">
+                                    <p className="type">{type}</p>
+                                    <p>{`• ${time}`}</p>
+                                </div>
+                            </div>
+                            <ButtonPlay />
                         </div>
                     </div>
-                    <ButtonPlay />
                 </div>
-            </div>
+            </Link>
             <style jsx>{`
                 .GalleryCard {
                     &-content {
@@ -88,6 +93,6 @@ export default function GalleryCard({ data }) {
                     }
                 }
             `}</style>
-        </div>
+        </>
     );
 }

@@ -1,37 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
 import asset from "@/plugins/assets/asset";
 import ButtonPlay from "@/website/common/Button/ButtonPlay";
-import React, { useEffect } from "react";
+import React from "react";
 import { LightgalleryItem } from "react-lightgallery";
 
 export default function MomentCard({ data }) {
     const { src, title, type } = data;
 
-    // const el = document.getElementById();
-    useEffect(() => {
-        if (typeof document != "undefined") {
-            const el = document.querySelector(".react_lightgallery_item");
-        }
-    }, []);
     return (
         <>
             <div className={`MomentCard ${type}`}>
                 <LightgalleryItem group="any" src={src}>
                     <div className="MomentCard-content" style={{ position: "relative" }}>
-                        <div className="img">
-                            {type === "video" ? (
+                        {type === "video" ? (
+                            <div className="video">
                                 <iframe
                                     width={"100%"}
                                     height={"100%"}
-                                    src={`${asset(src)}?controls=0`}
+                                    src={`${asset(src)}?enablejsapi=1?controls=0&modestbranding=1&showinfo=0&autohide=1`}
                                     title="YouTube video player"
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen></iframe>
-                            ) : (
+                            </div>
+                        ) : (
+                            <div className="img">
                                 <img src={asset(src)} alt="" />
-                            )}
-                        </div>
+                            </div>
+                        )}
                         <div className="layer"></div>
                         <div className="textWrapLayer flexSB">
                             <div>
@@ -93,6 +89,12 @@ export default function MomentCard({ data }) {
                                 opacity: 1;
                             }
                         }
+                        .iconPlay {
+                            img {
+                                width: 72px;
+                                height: auto;
+                            }
+                        }
                     }
                     .headline {
                         font-size: 18px;
@@ -117,6 +119,20 @@ export default function MomentCard({ data }) {
                         font-size: 12px;
                         line-height: 16px;
                         letter-spacing: 0px;
+                    }
+                    .video {
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 15px;
+                        iframe {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 0;
+                            pointer-events: none;
+                            width: 100%;
+                            height: 37.25vw;
+                        }
                     }
                     .img {
                         position: relative;
