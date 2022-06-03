@@ -1,6 +1,7 @@
-import NewsCard from "@/website/common/Card/NewsCard";
-import Paginate from "@/website/common/Paginate";
-import TextTitle from "@/website/common/TextTitle";
+import NewsCard from "@/common/Card/NewsCard";
+import Paginate from "@/common/Paginate";
+import SortDropdown from "@/common/SortDropDown/index";
+import TextTitle from "@/common/TextTitle";
 import React from "react";
 
 export default function NewsPromotionList() {
@@ -66,6 +67,7 @@ export default function NewsPromotionList() {
                 <div className="container">
                     <div className="NewsPromotion__title">
                         <TextTitle big_text="News & Promotion" />
+                        <SortDropdown>All categories</SortDropdown>
                     </div>
                     <div className="NewsPromotion__grid">
                         {news.map((item, index) => (
