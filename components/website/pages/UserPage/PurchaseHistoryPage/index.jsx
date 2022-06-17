@@ -3,9 +3,8 @@ import Button from "@/common/Button/ButtonMain";
 import MyTicketCard from "@/common/Card/MyTicketCard";
 import Paginate from "@/common/Paginate";
 import SortDropdown from "@/components/website/common/SortDropDown";
-import React from "react";
+import { useState } from "react";
 import { variable } from "styles/variable";
-
 export default function PurchaseHistory() {
     const cards = [
         {
@@ -33,6 +32,21 @@ export default function PurchaseHistory() {
             location: "ho chi minh",
         },
     ];
+    const filters = [
+        {
+            title: "Relevance",
+            options: ["Liveshows", "Festival", "Workshops"],
+        },
+        {
+            title: "All categories",
+            options: ["Festival", "EDM", "Class"],
+        },
+    ];
+    const [selectedItem, setSelectedItem] = useState(-1);
+    /* NOTE: SHORTHAND */
+    const handleSelect = (idx) => () => {
+        setSelectedItem(idx);
+    };
     return (
         <>
             <div className="PurchaseHistory">
@@ -40,8 +54,16 @@ export default function PurchaseHistory() {
                     <h2 className="headline">Purchase history</h2>
                     <div className="PurchaseHistory__top-sort">
                         <p className="titleSort">Sort by:</p>
-                        <SortDropdown>Relevance</SortDropdown>
-                        <SortDropdown>All categories</SortDropdown>
+                        {filters.map((item, index) => (
+                            <SortDropdown.Multi
+                                key={index}
+                                data={item.options}
+                                width={140}
+                                isShow={index === selectedItem}
+                                onClick={index !== selectedItem ? handleSelect(index) : handleSelect(-1)}>
+                                {item.title}
+                            </SortDropdown.Multi>
+                        ))}
                     </div>
                 </div>
                 <div className="PurchaseHistory__cardList" style={{ gap: 30 }}>

@@ -1,6 +1,6 @@
 import SortDropdown from "@/components/website/common/SortDropDown";
 import ShowCard from "@/website/common/Card/ShowCard";
-import React from "react";
+import { useState } from "react";
 import { variable } from "styles/variable";
 function GridCard() {
     const upcomingCards = [
@@ -53,13 +53,35 @@ function GridCard() {
             ticket: "25",
         },
     ];
+    const filters = [
+        {
+            title: "Relevance",
+            options: ["Liveshows", "Festival", "Workshops"],
+        },
+        {
+            title: "All categories",
+            options: ["Festival", "EDM", "Class"],
+        },
+    ];
+    const [selectedItem, setSelectedItem] = useState(-1);
+    const handleSelect = (idx) => () => {
+        setSelectedItem(idx);
+    };
     return (
         <>
             <div className="SortUpcomingShow PRMain">
                 <p>Sort by:</p>
                 <div className="sortGroup">
-                    <SortDropdown>Relevance</SortDropdown>
-                    <SortDropdown>All categories</SortDropdown>
+                    {filters.map((item, index) => (
+                        <SortDropdown.Multi
+                            key={index}
+                            data={item.options}
+                            width={140}
+                            isShow={index === selectedItem}
+                            onClick={index !== selectedItem ? handleSelect(index) : handleSelect(-1)}>
+                            {item.title}
+                        </SortDropdown.Multi>
+                    ))}
                 </div>
             </div>
             <div className="GridCard container">

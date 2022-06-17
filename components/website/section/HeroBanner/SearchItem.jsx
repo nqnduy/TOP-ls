@@ -1,14 +1,33 @@
 import SortDropdown from "@/components/website/common/SortDropDown";
-import React from "react";
+import { useState } from "react";
 import { variable } from "styles/variable";
+export default function SearchItem({ filterList }) {
+    const [selectedItem, setSelectedItem] = useState(-1);
 
-export default function SearchItem({ children }) {
+    // const handleSelect = (idx) => {
+    //     return () => {
+    //         setSelectedItem(idx);
+    //     }
+    // }
+
+    /* NOTE: SHORTHAND */
+    const handleSelect = (idx) => () => {
+        setSelectedItem(idx);
+    };
     return (
         <>
-            <div className="Search-filter__item">
-                <p className="title">{children}</p>
-                <SortDropdown width={140}>Select a category</SortDropdown>
-            </div>
+            {filterList.map((item, index) => (
+                <div className="Search-filter__item" key={index}>
+                    <p className="title">{item.title}</p>
+                    <SortDropdown.Multi
+                        data={item.filters}
+                        width={140}
+                        isShow={index === selectedItem}
+                        onClick={index !== selectedItem ? handleSelect(index) : handleSelect(-1)}>
+                        Select a category
+                    </SortDropdown.Multi>
+                </div>
+            ))}
             <style jsx>{`
                 .Search-filter__item {
                     p {

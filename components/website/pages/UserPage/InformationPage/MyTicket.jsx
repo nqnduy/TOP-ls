@@ -1,7 +1,6 @@
 import Button from "@/common/Button/ButtonMain";
 import MyTicketCard from "@/common/Card/MyTicketCard";
 import SortDropdown from "@/components/website/common/SortDropDown";
-import React from "react";
 
 export default function MyTicket() {
     const cards = [
@@ -18,12 +17,13 @@ export default function MyTicket() {
             location: "ho chi minh",
         },
     ];
+    const filters = ["Liveshows", "Festival", "Workshops"];
     return (
         <>
             <div className="MyTicket">
                 <div className="MyTicket__header">
                     <h3 className="headline">My ticket</h3>
-                    <SortDropdown>All Categories</SortDropdown>
+                    <SortDropdown.Single data={filters}>All Categories</SortDropdown.Single>
                 </div>
                 <div className="MyTicket__list">
                     {cards.map((item, index) => (

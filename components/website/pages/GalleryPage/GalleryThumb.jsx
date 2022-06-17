@@ -1,5 +1,5 @@
+import SortDropdown from "@/common/SortDropDown";
 import GalleryCard from "@/website/common/Card/GalleryCard";
-import React from "react";
 
 export default function GalleryThumb() {
     const moments = [
@@ -52,15 +52,30 @@ export default function GalleryThumb() {
             type: "liveshow",
         },
     ];
+    const filters = [
+        {
+            title: "All categories",
+            options: ["Liveshows", "Festival", "Workshops"],
+        },
+    ];
+    console.log("filters:", filters);
+    // const filters = ["Liveshows", "Festival", "Workshops"];
     return (
         <>
             <div className="GalleryThumb">
                 <div className="container">
-                    <div className="GalleryThumb__title">Let's take a look back at the great moments in our gallery</div>
+                    <div className="titleWrap">
+                        <div className="GalleryThumb__title">Let's take a look back at the great moments in our gallery</div>
+                        {filters.map((filter, index) => (
+                            <SortDropdown.Single key={index} data={filter.options}>
+                                {filter.title}
+                            </SortDropdown.Single>
+                        ))}
+                    </div>
                     <div className="GalleryThumb__grid">
-                            {moments.map((moment, index) => (
-                                <GalleryCard key={index} data={moment} />
-                            ))}
+                        {moments.map((moment, index) => (
+                            <GalleryCard key={index} data={moment} />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -68,6 +83,12 @@ export default function GalleryThumb() {
             <style jsx global>
                 {`
                     .GalleryThumb {
+                        .titleWrap {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 35px;
+                        }
                         &__title {
                             font-family: fm-m;
                             font-size: 21px;
@@ -75,9 +96,6 @@ export default function GalleryThumb() {
 
                             line-height: 32px;
                             color: #fff;
-
-                            padding-right: 100px;
-                            margin-bottom: 35px;
 
                             /*  Responsive   */
                             @media (max-width: 1220px) {

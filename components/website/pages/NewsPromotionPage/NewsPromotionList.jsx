@@ -2,7 +2,6 @@ import NewsCard from "@/common/Card/NewsCard";
 import Paginate from "@/common/Paginate";
 import SortDropdown from "@/common/SortDropDown/index";
 import TextTitle from "@/common/TextTitle";
-import React from "react";
 
 export default function NewsPromotionList() {
     const news = [
@@ -61,13 +60,14 @@ export default function NewsPromotionList() {
             title: "The point of using Lorem Ipsum is that it has a more-or",
         },
     ];
+    const filters = ["Liveshows", "Festival", "Workshops"]
     return (
         <>
             <div className="NewsPromotion">
                 <div className="container">
                     <div className="NewsPromotion__title">
                         <TextTitle big_text="News & Promotion" />
-                        <SortDropdown>All categories</SortDropdown>
+                        <SortDropdown.Single data={filters}>All categories</SortDropdown.Single>
                     </div>
                     <div className="NewsPromotion__grid">
                         {news.map((item, index) => (
